@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="bg-cream text-espresso antialiased">
         <Nav />
-        <main className="max-w-6xl mx-auto px-8">{children}</main>
+        <main className="max-w-6xl mx-auto px-4 md:px-8">{children}</main>
         <Footer />
       </body>
     </html>

@@ -26,7 +26,8 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
 
   return (
     <>
-      <div className="grid grid-cols-[1.6fr_1fr] gap-1 rounded-[14px] overflow-hidden h-[260px] md:h-[340px]">
+      {/* Desktop: grid layout */}
+      <div className="hidden md:grid grid-cols-[1.6fr_1fr] gap-1 rounded-[14px] overflow-hidden h-[340px]">
         <button
           onClick={() => { setActiveIndex(0); setLightboxOpen(true); }}
           className="relative overflow-hidden group"
@@ -36,7 +37,7 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
             alt={`${alt} — main photo`}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, 60vw"
+            sizes="60vw"
             priority
           />
         </button>
@@ -52,7 +53,7 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
                 alt={`${alt} — photo ${i + 2}`}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 50vw, 25vw"
+                sizes="25vw"
               />
               {i === sidePhotos.length - 1 && photos.length > 3 && (
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
@@ -69,6 +70,31 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
             </div>
           )}
         </div>
+      </div>
+
+      {/* Mobile: single hero image + "View all photos" */}
+      <div className="md:hidden">
+        <button
+          onClick={() => { setActiveIndex(0); setLightboxOpen(true); }}
+          className="relative w-full h-[240px] overflow-hidden rounded-[14px]"
+        >
+          <Image
+            src={`${basePath}/${mainPhoto}`}
+            alt={`${alt} — main photo`}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </button>
+        {photos.length > 1 && (
+          <button
+            onClick={() => { setActiveIndex(0); setLightboxOpen(true); }}
+            className="mt-2 w-full text-center text-sm font-semibold text-terracotta hover:underline py-2"
+          >
+            View all {photos.length} photos
+          </button>
+        )}
       </div>
 
       {lightboxOpen && (

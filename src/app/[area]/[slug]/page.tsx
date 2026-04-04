@@ -76,7 +76,7 @@ export default async function BuildingPage({ params }: Props) {
       />
 
       {/* Photo Gallery Hero */}
-      <div className="-mx-8 mb-8">
+      <div className="-mx-4 md:-mx-8 mb-8">
         <PhotoGallery
           photos={allPhotos}
           basePath={`/buildings/${building.slug}`}
@@ -95,7 +95,7 @@ export default async function BuildingPage({ params }: Props) {
           </span>
           {building.verified && <VerifiedBadge date={building.last_verified} />}
         </div>
-        <h1 className="font-serif font-bold text-[38px] text-espresso tracking-tight leading-tight">
+        <h1 className="font-serif font-bold text-[28px] md:text-[38px] text-espresso tracking-tight leading-tight">
           {building.name}
         </h1>
         <p className="text-latte text-sm mt-1">{building.address}</p>
@@ -117,7 +117,7 @@ export default async function BuildingPage({ params }: Props) {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="bg-milk rounded-[10px] border border-sand p-4 text-center">
               <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">Electric</div>
               <div className="font-bold text-espresso text-lg mt-1">{building.electric_rate} ฿</div>
@@ -194,7 +194,7 @@ export default async function BuildingPage({ params }: Props) {
           <NearbySpots spots={building.nearby_spots} guides={guides} />
 
           {/* Bottom CTA */}
-          <div className="bg-terracotta rounded-[14px] p-8 text-center">
+          <div className="bg-terracotta rounded-[14px] p-5 md:p-8 text-center">
             <h2 className="font-serif font-bold text-2xl text-cream mb-2">
               Interested in {building.name}?
             </h2>
@@ -230,11 +230,44 @@ export default async function BuildingPage({ params }: Props) {
 
         {/* Right Sidebar */}
         <div className="space-y-5 lg:sticky lg:top-8">
-          <ContactCard contact={building.contact} />
+          <div className="hidden lg:block">
+            <ContactCard contact={building.contact} />
+          </div>
           <QuickSummary building={building} />
           <LocationCard coordinates={building.coordinates} address={building.address} />
           <NearbyBuildings buildings={areaBuildings} currentSlug={building.slug} />
         </div>
+      </div>
+
+      {/* Spacer for mobile sticky bar */}
+      <div className="h-16 lg:hidden" />
+
+      {/* Mobile Sticky Contact Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-milk border-t border-sand p-3 flex gap-2 justify-center lg:hidden z-40">
+        {building.contact.phone && (
+          <a
+            href={`tel:${building.contact.phone}`}
+            className="bg-dark-roast text-cream px-5 py-2.5 rounded-[10px] text-sm font-semibold hover:opacity-90 transition-opacity"
+          >
+            Call
+          </a>
+        )}
+        {building.contact.line && (
+          <a
+            href={`https://line.me/R/ti/p/${building.contact.line.replace("@", "")}`}
+            className="bg-line-green text-white px-5 py-2.5 rounded-[10px] text-sm font-semibold hover:opacity-90 transition-opacity"
+          >
+            LINE
+          </a>
+        )}
+        {building.contact.email && (
+          <a
+            href={`mailto:${building.contact.email}`}
+            className="bg-terracotta text-cream px-5 py-2.5 rounded-[10px] text-sm font-semibold hover:opacity-90 transition-opacity"
+          >
+            Email
+          </a>
+        )}
       </div>
     </>
   );

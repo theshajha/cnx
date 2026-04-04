@@ -37,7 +37,7 @@ export default function BuildingCard({ building }: BuildingCardProps) {
           </div>
         )}
       </div>
-      <div className="p-5">
+      <div className="p-4 md:p-5">
         <h3 className="font-serif font-bold text-lg text-espresso">{building.name}</h3>
         <p className="text-xs text-latte mt-1">{building.address}</p>
         <div className="mt-3">

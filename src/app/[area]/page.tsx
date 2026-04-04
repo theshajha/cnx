@@ -27,10 +27,6 @@ export default async function AreaPage({ params }: Props) {
   const areaInfo = AREAS[area as AreaSlug];
   const buildings = getBuildingsByArea(area as AreaSlug);
 
-  const allFacilities = Array.from(
-    new Set(buildings.flatMap((b) => b.facilities)),
-  ).sort();
-
   const minPrice = buildings.length > 0
     ? Math.min(...buildings.map((b) => b.price_range[0]))
     : 0;
@@ -42,7 +38,7 @@ export default async function AreaPage({ params }: Props) {
     <>
       {/* Area Header */}
       <div className="mb-10 pt-4">
-        <h1 className="font-serif font-bold text-[40px] text-espresso tracking-tight leading-tight">
+        <h1 className="font-serif font-bold text-[30px] md:text-[40px] text-espresso tracking-tight leading-tight">
           {areaInfo.name}
         </h1>
         <p className="text-latte text-base mt-2 max-w-xl leading-relaxed">
@@ -62,7 +58,7 @@ export default async function AreaPage({ params }: Props) {
         </div>
       </div>
 
-      <AreaListingClient buildings={buildings} allFacilities={allFacilities} />
+      <AreaListingClient buildings={buildings} />
     </>
   );
 }

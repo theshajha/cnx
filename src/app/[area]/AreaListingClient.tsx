@@ -7,35 +7,25 @@ import BuildingCard from "@/components/BuildingCard";
 
 interface AreaListingClientProps {
   buildings: Building[];
-  allFacilities: string[];
 }
 
-export default function AreaListingClient({ buildings, allFacilities }: AreaListingClientProps) {
+export default function AreaListingClient({ buildings }: AreaListingClientProps) {
   const [filtered, setFiltered] = useState(buildings);
 
   function handleFilter(state: {
-    minPrice: number;
-    maxPrice: number;
-    facilities: string[];
-    types: string[];
+    maxPrice: number | null;
+    type: string | null;
   }) {
     let result = buildings;
 
-    // Price filter: building's range must overlap with filter range
-    result = result.filter(
-      (b) => b.price_range[1] >= state.minPrice && b.price_range[0] <= state.maxPrice,
-    );
-
-    // Facility filter: building must have all selected facilities
-    if (state.facilities.length > 0) {
-      result = result.filter((b) =>
-        state.facilities.every((f) => b.facilities.includes(f)),
-      );
+    // Budget filter: building's min price must be under the selected max
+    if (state.maxPrice !== null) {
+      result = result.filter((b) => b.price_range[0] <= state.maxPrice!);
     }
 
-    // Type filter: building must match one of selected types
-    if (state.types.length > 0) {
-      result = result.filter((b) => state.types.includes(b.type));
+    // Type filter: building must match selected type
+    if (state.type !== null) {
+      result = result.filter((b) => b.type === state.type);
     }
 
     setFiltered(result);
@@ -43,7 +33,7 @@ export default function AreaListingClient({ buildings, allFacilities }: AreaList
 
   return (
     <div className="space-y-8">
-      <FilterBar allFacilities={allFacilities} onFilter={handleFilter} />
+      <FilterBar onFilter={handleFilter} />
       {filtered.length === 0 ? (
         <div className="text-center py-16">
           <div className="text-4xl mb-3">🏠</div>

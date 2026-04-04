@@ -23,16 +23,27 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="text-center py-20">
-        <h1 className="font-serif font-bold text-[52px] text-espresso tracking-tight leading-none">
-          cnx cribs
+      <section className="text-center py-16 md:py-24">
+        <h1 className="font-serif font-bold text-[36px] md:text-[68px] text-espresso tracking-tight leading-[1.1]">
+          Find your place in<br />Chiang Mai.
         </h1>
-        <p className="text-xl text-dark-roast mt-4 font-medium">
-          long-term rentals, sorted.
+        <p className="text-base md:text-lg text-dark-roast mt-4 md:mt-6 max-w-xl mx-auto leading-relaxed">
+          Verified monthly rentals, real prices, and expat tips for Nimman and Old City.
         </p>
-        <p className="text-sm text-latte mt-2">
-          built by an expat, for expats.
-        </p>
+        <div className="flex gap-3 md:gap-4 justify-center mt-8 md:mt-10">
+          <Link
+            href="/nimman"
+            className="bg-espresso text-cream px-6 md:px-8 py-3 md:py-3.5 rounded-[10px] text-sm md:text-base font-bold hover:bg-dark-roast transition-colors"
+          >
+            Browse Nimman &rarr;
+          </Link>
+          <Link
+            href="/old-city"
+            className="bg-sand text-espresso px-6 md:px-8 py-3 md:py-3.5 rounded-[10px] text-sm md:text-base font-bold hover:bg-terracotta/20 transition-colors"
+          >
+            Browse Old City &rarr;
+          </Link>
+        </div>
       </section>
 
       {/* Area Cards */}
