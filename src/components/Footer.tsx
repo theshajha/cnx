@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-latte">
               <Link href="/nimman" className="hover:text-terracotta transition-colors">Nimman</Link>
               <Link href="/old-city" className="hover:text-terracotta transition-colors">Old City</Link>
-              <Link href="/guide" className="hover:text-terracotta transition-colors">Guide</Link>
+              <Link href="/directory" className="hover:text-terracotta transition-colors">Directory</Link>
               <Link href="/playbook" className="hover:text-terracotta transition-colors">Playbook</Link>
             </div>
           </div>

@@ -56,7 +56,7 @@ export default function PlaybookPage() {
             <h2 className="font-serif font-bold text-[22px] text-espresso tracking-tight mb-4">
               {section.title}
             </h2>
-            <div className="bg-milk rounded-2xl border border-sand border-l-4 border-l-terracotta p-6">
+            <div className="bg-milk rounded-2xl border border-sand p-6">
               {section.lines.map((line, i) => {
                 if (line.trimStart().startsWith("- ")) {
                   const text = line.trimStart().slice(2);

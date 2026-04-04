@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return guideMetadata(guide);
 }
 
-export default async function GuideCategoryPage({ params }: Props) {
+export default async function DirectoryCategoryPage({ params }: Props) {
   const { category } = await params;
   const guide = getGuideByCategory(category);
   if (!guide) notFound();

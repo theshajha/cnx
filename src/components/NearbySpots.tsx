@@ -60,7 +60,7 @@ export default function NearbySpots({ spots, guides }: NearbySpotsProps) {
                 })}
               </div>
               {guide && (
-                <Link href={`/guide/${cat}`} className="text-terracotta text-sm font-semibold mt-2 inline-block hover:underline">
+                <Link href={`/directory/${cat}`} className="text-terracotta text-sm font-semibold mt-2 inline-block hover:underline">
                   See full guide →
                 </Link>
               )}

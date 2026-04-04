@@ -1,4 +1,4 @@
-/** Pillar slugs must match `pillar` in `content/guides/*.md` frontmatter. Order = sections on /guide. */
+/** Pillar slugs must match `pillar` in `content/guides/*.md` frontmatter. Order = sections on /directory. */
 
 export const GUIDE_PILLAR_SEQUENCE = [
   "work",

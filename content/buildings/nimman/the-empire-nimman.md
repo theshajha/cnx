@@ -16,7 +16,7 @@ contact:
   line: null
   email: empire.jsw@gmail.com
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, exterior.jpg, lobby.jpg, interior-1.jpg, gym.jpg, common-area.jpg]
 verified: false
 contributed_by: shashank
 last_verified: "2026-04-04"

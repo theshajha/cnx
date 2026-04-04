@@ -83,6 +83,17 @@ export interface Contributor {
   joined: string;
 }
 
+export interface Guide {
+  title: string;
+  slug: string;
+  description: string;
+  author: string;
+  published: string;
+  updated: string;
+  reading_time: number;
+  content: string;
+}
+
 export type AreaSlug = "nimman" | "old-city";
 
 export interface AreaInfo {

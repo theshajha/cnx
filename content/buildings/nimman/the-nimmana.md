@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, pool.jpg, garden.jpg, common-area.jpg, exterior.jpg]
 verified: false
 contributed_by: shashank
 last_verified: "2026-04-04"

@@ -169,7 +169,7 @@ export default async function ArticlePage({ params }: Props) {
               <Link
                 key={a.slug}
                 href={`/guides/${a.slug}`}
-                className="block bg-milk rounded-2xl border border-sand border-l-4 border-l-terracotta p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="block bg-milk rounded-2xl border border-sand p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
                 <h3 className="font-serif font-bold text-lg text-espresso">{a.title}</h3>
                 <p className="text-sm text-latte mt-1 line-clamp-2">{a.description}</p>

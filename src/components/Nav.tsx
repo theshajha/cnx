@@ -7,7 +7,8 @@ import Image from "next/image";
 const NAV_LINKS = [
   { href: "/nimman", label: "Nimman" },
   { href: "/old-city", label: "Old City" },
-  { href: "/guide", label: "Guide" },
+  { href: "/directory", label: "Directory" },
+  { href: "/guides", label: "Guides" },
   { href: "/playbook", label: "Playbook" },
   { href: "/about", label: "About" },
 ];

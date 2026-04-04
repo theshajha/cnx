@@ -46,12 +46,6 @@ function parseContentSections(content: string) {
   return sections;
 }
 
-function sectionBorderClass(title: string): string {
-  const lower = title.toLowerCase();
-  if (lower.includes("expat") || lower.includes("tip")) return "border-l-4 border-l-terracotta";
-  if (lower.includes("gotcha") || lower.includes("warning")) return "border-l-4 border-l-latte";
-  return "";
-}
 
 export default async function BuildingPage({ params }: Props) {
   const { area, slug } = await params;
@@ -194,7 +188,7 @@ export default async function BuildingPage({ params }: Props) {
               <h2 className="font-serif font-bold text-[22px] text-espresso tracking-tight mb-4">
                 {section.title}
               </h2>
-              <div className={`bg-milk rounded-[14px] border border-sand p-6 ${sectionBorderClass(section.title)}`}>
+              <div className="bg-milk rounded-2xl border border-sand p-6">
                 {section.lines.map((line, i) => {
                   if (line.trimStart().startsWith("- ")) {
                     const text = line.trimStart().slice(2);

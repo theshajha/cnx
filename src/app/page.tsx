@@ -156,7 +156,7 @@ export default function Home() {
                 <Link
                   key={article.slug}
                   href={`/guides/${article.slug}`}
-                  className="block bg-milk rounded-2xl border border-sand border-l-4 border-l-terracotta p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                  className="block bg-milk rounded-2xl border border-sand p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <h3 className="font-serif font-bold text-[20px] text-espresso leading-snug">
                     {article.title}

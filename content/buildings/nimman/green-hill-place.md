@@ -16,7 +16,7 @@ contact:
   line: null
   email: info@greenhillplace.com
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, pool.jpg, exterior.jpg, garden.jpg, interior-1.jpg]
 verified: false
 contributed_by: shashank
 last_verified: "2026-04-04"
