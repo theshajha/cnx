@@ -38,7 +38,7 @@ Parking is easy. Most places have scooter parking. Malls have free scooter parki
 
 Technically, you need a valid driving license to ride a scooter in Thailand. An international driving permit (IDP) from your home country works if it covers motorcycles. Without a license, you can get fined 500-1,000 THB at police checkpoints — and more importantly, your travel insurance probably will not cover you in an accident.
 
-Getting a Thai driving license is technically possible on a tourist visa, though it has gotten harder. You need a medical certificate (150-200 THB at any clinic), your passport, a certificate of residence from immigration (500 THB express or 50-60 THB standard), and to pass a written test and practical riding test at the Chiang Mai Department of Land Transport.
+Getting a Thai driving license is technically possible on a tourist visa, though it has gotten harder. You need a medical certificate (150-200 THB at any clinic), your passport, a certificate of residence from immigration (see our [bank account guide](/guides/thai-bank-account) for details on getting one), and to pass a written test and practical riding test at the Chiang Mai Department of Land Transport.
 
 **2025-2026 change:** The DLT now requires online appointment booking through the DLT app — walk-ins are no longer accepted at most locations. Book your appointment before showing up or you will be turned away. Processing times have extended, and some offices are becoming stricter about accepting tourist visa holders (Bangkok has largely stopped; Chiang Mai is still more lenient but it varies).
 

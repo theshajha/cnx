@@ -5,7 +5,7 @@ description: "Real numbers from someone who lives here. Rent, food, transport, h
 author: shashank
 published: "2026-04-04"
 updated: "2026-04-04"
-reading_time: 6
+reading_time: 5
 ---
 
 Every "cost of living in Chiang Mai" article gives you different numbers because everyone lives differently. I am going to give you three tiers: budget (you are being careful), mid-range (comfortable without overthinking), and comfortable (you do not need to check prices but you are not being extravagant). All prices in Thai Baht. Divide by 35 for a rough USD conversion.
@@ -40,13 +40,7 @@ Monthly food budget — budget: 5,000-7,000 THB. Mid-range: 10,000-15,000 THB. C
 
 ## Transport
 
-You do not need a car in Chiang Mai. Most people get around on a scooter, and it changes everything.
-
-Scooter rental: 2,500-3,500 THB/month for a Honda Click or Yamaha NMAX. Petrol is cheap — 100-200 THB fills a tank, lasts about a week of normal use. If you are staying long-term, some people buy a used scooter for 15,000-25,000 THB and sell it when they leave.
-
-Grab (ride-hailing): works in Chiang Mai but not as well as in Bangkok. A Grab from Nimman to the Old City is about 80-120 THB. From Nimman to the airport, 100-180 THB. Availability can be spotty during peak hours or rain.
-
-Songthaew (red trucks): the traditional shared taxi. 30 THB per person within the city. Just flag one down, tell the driver where you are going, hop in the back. Not as reliable as Grab, but cheap and ubiquitous.
+You do not need a car in Chiang Mai. Most people get around on a scooter (2,500-3,500 THB/month for a Honda Click), Grab rides (80-120 THB across town), or red songthaew trucks (30 THB flat). See our [getting around guide](/guides/getting-around-chiang-mai) for the full breakdown on scooter rentals, licenses, Grab tips, and safety.
 
 Monthly transport — budget: 2,500-3,500 THB (scooter only). Mid-range: 4,000-6,000 THB (scooter plus occasional Grab). Comfortable: 6,000-10,000 THB (mostly Grab or a nice scooter).
 
@@ -72,13 +66,7 @@ Yoga: 200-400 THB per class, or 2,000-3,000 THB for a 10-class pass.
 
 ## Healthcare
 
-This is one of Chiang Mai's biggest selling points. Quality healthcare at a fraction of Western prices.
-
-GP visit at a private hospital: 500-1,000 THB including basic medication.
-
-Dental cleaning: 500-1,000 THB. Filling: 1,000-2,000 THB. Crown: 8,000-15,000 THB. Dental work here is genuinely excellent — many expats fly to Chiang Mai specifically for dental tourism.
-
-Health insurance: optional but recommended. Local plans run 15,000-30,000 THB/year for basic coverage. International plans (Cigna, AXA) are 40,000-80,000 THB/year depending on age and coverage. Some people self-insure and just pay out of pocket — viable given how cheap the care is. See our [healthcare guide](/guides/healthcare-chiang-mai) for hospital recommendations.
+Quality healthcare at a fraction of Western prices. A GP visit runs 500-800 THB, dental cleaning 600-1,500 THB, and you can self-insure or get local health insurance from 20,000-45,000 THB/year. See our [healthcare guide](/guides/healthcare-chiang-mai) for hospital recommendations, dental clinics, insurance options, and what happens when you actually get sick.
 
 ## Phone and Internet
 

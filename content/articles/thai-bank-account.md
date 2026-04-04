@@ -90,7 +90,7 @@ Wise (formerly TransferWise): the go-to for most expats. Good exchange rates, lo
 
 Other fintech: Revolut, OFX, and similar services work too. Compare rates for your specific currency — they vary.
 
-ATM withdrawal: works but expensive. Thai ATMs charge 220 THB per withdrawal, your bank probably charges another fee, and the exchange rate is mediocre. Only use this as a backup.
+ATM withdrawal: works but expensive (220 THB surcharge per withdrawal plus your bank's fee). Only use this as a backup.
 
 ## One More Thing
 
