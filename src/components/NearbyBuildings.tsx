@@ -18,7 +18,7 @@ export default function NearbyBuildings({ buildings, currentSlug }: NearbyBuildi
         {nearby.map((b, i) => (
           <div key={b.slug}>
             {i > 0 && <div className="border-t border-sand mb-3" />}
-            <Link href={`/${b.area}/${b.slug}`} className="flex justify-between items-center group">
+            <Link href={`/cribs/${b.area}/${b.slug}`} className="flex justify-between items-center group">
               <div>
                 <div className="text-espresso font-semibold text-sm group-hover:text-terracotta transition-colors">
                   {b.name}

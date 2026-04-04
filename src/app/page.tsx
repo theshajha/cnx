@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getAllBuildings, getAllGuides, getAllArticles, getAllContributors } from "@/lib/content";
 import { guidePillarTitle } from "@/lib/guide-pillars";
 import { websiteJsonLd } from "@/lib/seo";
-import { AREAS, AreaSlug } from "@/lib/types";
+import { getAllAreaMetadata } from "@/lib/content";
 import BuildingCard from "@/components/BuildingCard";
 import GuideCard from "@/components/GuideCard";
 
@@ -18,11 +18,7 @@ export default function Home() {
     .sort((a, b) => new Date(b.last_verified).getTime() - new Date(a.last_verified).getTime())
     .slice(0, 6);
 
-  const areaEntries = Object.entries(AREAS) as [AreaSlug, (typeof AREAS)[AreaSlug]][];
-  const areaIcons: Record<AreaSlug, string> = {
-    nimman: "\u2615",
-    "old-city": "\ud83c\udfef",
-  };
+  const allAreas = getAllAreaMetadata();
 
   return (
     <>
@@ -42,16 +38,10 @@ export default function Home() {
         </p>
         <div className="flex gap-3 md:gap-4 justify-center mt-8 md:mt-10">
           <Link
-            href="/nimman"
+            href="/cribs"
             className="bg-espresso text-cream px-6 md:px-8 py-3 md:py-3.5 rounded-[10px] text-sm md:text-base font-bold hover:bg-dark-roast transition-colors"
           >
-            Browse Nimman &rarr;
-          </Link>
-          <Link
-            href="/old-city"
-            className="bg-sand text-espresso px-6 md:px-8 py-3 md:py-3.5 rounded-[10px] text-sm md:text-base font-bold hover:bg-terracotta/20 transition-colors"
-          >
-            Browse Old City &rarr;
+            Browse All Cribs &rarr;
           </Link>
         </div>
       </section>
@@ -62,8 +52,8 @@ export default function Home() {
           Explore by Area
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {areaEntries.map(([slug, area]) => {
-            const areaBuildings = buildings.filter((b) => b.area === slug);
+          {allAreas.map((area) => {
+            const areaBuildings = buildings.filter((b) => b.area === area.slug);
             const minPrice = areaBuildings.length > 0
               ? Math.min(...areaBuildings.map((b) => b.price_range[0]))
               : 0;
@@ -73,11 +63,11 @@ export default function Home() {
 
             return (
               <Link
-                key={slug}
-                href={`/${slug}`}
+                key={area.slug}
+                href={`/cribs/${area.slug}`}
                 className="block bg-milk rounded-2xl border border-sand p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
-                <div className="text-4xl mb-2">{areaIcons[slug]}</div>
+                {area.icon && <div className="text-4xl mb-2">{area.icon}</div>}
                 <h3 className="font-serif font-bold text-2xl text-espresso">{area.name}</h3>
                 <p className="text-sm text-latte mt-2 leading-relaxed">{area.description}</p>
                 <div className="flex gap-6 mt-4 text-sm">

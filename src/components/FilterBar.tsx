@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { AreaInfo } from "@/lib/types";
 
 interface FilterState {
   maxPrice: number | null;
@@ -8,6 +10,10 @@ interface FilterState {
 }
 
 interface FilterBarProps {
+  areas: AreaInfo[];
+  activeArea?: string;
+  viewMode: "cards" | "list";
+  onViewModeChange: (mode: "cards" | "list") => void;
   onFilter: (state: FilterState) => void;
 }
 
@@ -25,7 +31,13 @@ const TYPE_OPTIONS = [
   { label: "Serviced Apartment", value: "serviced-apartment" },
 ] as const;
 
-export default function FilterBar({ onFilter }: FilterBarProps) {
+export default function FilterBar({
+  areas,
+  activeArea,
+  viewMode,
+  onViewModeChange,
+  onFilter,
+}: FilterBarProps) {
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
@@ -40,7 +52,37 @@ export default function FilterBar({ onFilter }: FilterBarProps) {
   }
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-5">
+    <div className="flex flex-wrap items-center gap-3 md:gap-4">
+      {/* Area Pills */}
+      <div className="flex gap-2 flex-wrap">
+        <Link
+          href="/cribs"
+          className={`px-4 py-2 rounded-full text-xs font-bold transition-colors ${
+            !activeArea
+              ? "bg-espresso text-cream"
+              : "bg-sand text-dark-roast hover:bg-espresso/10"
+          }`}
+        >
+          All Areas
+        </Link>
+        {areas.map((area) => (
+          <Link
+            key={area.slug}
+            href={`/cribs/${area.slug}`}
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-colors ${
+              activeArea === area.slug
+                ? "bg-espresso text-cream"
+                : "bg-sand text-dark-roast hover:bg-espresso/10"
+            }`}
+          >
+            {area.icon} {area.name}
+          </Link>
+        ))}
+      </div>
+
+      {/* Divider */}
+      <div className="hidden md:block w-px h-6 bg-sand" />
+
       {/* Budget Dropdown */}
       <select
         value={maxPrice ?? ""}
@@ -71,6 +113,35 @@ export default function FilterBar({ onFilter }: FilterBarProps) {
             {t.label}
           </button>
         ))}
+      </div>
+
+      {/* Spacer */}
+      <div className="ml-auto" />
+
+      {/* View Toggle */}
+      <div className="flex gap-1">
+        <button
+          onClick={() => onViewModeChange("cards")}
+          className={`px-3 py-2 rounded-l-lg text-sm font-bold transition-colors ${
+            viewMode === "cards"
+              ? "bg-espresso text-cream"
+              : "bg-sand text-dark-roast"
+          }`}
+          aria-label="Card view"
+        >
+          ▦
+        </button>
+        <button
+          onClick={() => onViewModeChange("list")}
+          className={`px-3 py-2 rounded-r-lg text-sm font-bold transition-colors ${
+            viewMode === "list"
+              ? "bg-espresso text-cream"
+              : "bg-sand text-dark-roast"
+          }`}
+          aria-label="List view"
+        >
+          ☰
+        </button>
       </div>
     </div>
   );

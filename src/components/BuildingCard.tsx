@@ -10,12 +10,12 @@ interface BuildingCardProps {
 
 export default function BuildingCard({ building }: BuildingCardProps) {
   const priceDisplay = `฿${(building.price_range[0] / 1000).toFixed(0)}–${(building.price_range[1] / 1000).toFixed(0)}k`;
-  const areaLabel = building.area === "nimman" ? "Nimman" : "Old City";
+  const areaLabel = building.area.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const heroPhoto = building.photos[0] || "hero.jpg";
 
   return (
     <Link
-      href={`/${building.area}/${building.slug}`}
+      href={`/cribs/${building.area}/${building.slug}`}
       className="block bg-milk rounded-2xl border border-sand overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
     >
       <div className="relative h-[180px] bg-sand">

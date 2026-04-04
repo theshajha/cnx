@@ -1,22 +1,32 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Building, GuideCategory, Guide, Contributor, AreaSlug } from "./types";
+import yaml from "js-yaml";
+import { Building, GuideCategory, Guide, Contributor, AreaInfo } from "./types";
 import { guidePillarSortIndex } from "./guide-pillars";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
+/* ------------------------------------------------------------------ */
+/*  Buildings                                                          */
+/* ------------------------------------------------------------------ */
+
 export function getAllBuildings(): Building[] {
-  const areas: AreaSlug[] = ["nimman", "old-city"];
+  const buildingsDir = path.join(CONTENT_DIR, "buildings");
+  if (!fs.existsSync(buildingsDir)) return [];
+
   const buildings: Building[] = [];
 
-  for (const area of areas) {
-    const areaDir = path.join(CONTENT_DIR, "buildings", area);
-    if (!fs.existsSync(areaDir)) continue;
+  // Scan all subdirectories under content/buildings/
+  const areaDirs = fs.readdirSync(buildingsDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name);
 
-    const files = fs.readdirSync(areaDir).filter((f) => f.endsWith(".md"));
+  for (const areaDir of areaDirs) {
+    const dirPath = path.join(buildingsDir, areaDir);
+    const files = fs.readdirSync(dirPath).filter((f) => f.endsWith(".md"));
     for (const file of files) {
-      const raw = fs.readFileSync(path.join(areaDir, file), "utf-8");
+      const raw = fs.readFileSync(path.join(dirPath, file), "utf-8");
       const { data, content } = matter(raw);
       buildings.push({ ...data, content } as Building);
     }
@@ -25,13 +35,49 @@ export function getAllBuildings(): Building[] {
   return buildings;
 }
 
-export function getBuildingsByArea(area: AreaSlug): Building[] {
+export function getBuildingsByArea(area: string): Building[] {
   return getAllBuildings().filter((b) => b.area === area);
 }
 
 export function getBuildingBySlug(area: string, slug: string): Building | undefined {
   return getAllBuildings().find((b) => b.area === area && b.slug === slug);
 }
+
+/* ------------------------------------------------------------------ */
+/*  Areas                                                              */
+/* ------------------------------------------------------------------ */
+
+export function getUniqueAreas(): string[] {
+  const buildings = getAllBuildings();
+  return [...new Set(buildings.map((b) => b.area))].sort();
+}
+
+export function getAreaMetadata(slug: string): AreaInfo {
+  const areasFile = path.join(CONTENT_DIR, "areas.yml");
+  if (fs.existsSync(areasFile)) {
+    const raw = fs.readFileSync(areasFile, "utf-8");
+    const areas = yaml.load(raw) as Record<string, { name: string; description: string; icon?: string }>;
+    if (areas[slug]) {
+      return {
+        slug,
+        name: areas[slug].name,
+        description: areas[slug].description,
+        icon: areas[slug].icon || "",
+      };
+    }
+  }
+  // Fallback: title-case the slug
+  const name = slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  return { slug, name, description: "", icon: "" };
+}
+
+export function getAllAreaMetadata(): AreaInfo[] {
+  return getUniqueAreas().map(getAreaMetadata);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Guides                                                             */
+/* ------------------------------------------------------------------ */
 
 export function getAllGuides(): GuideCategory[] {
   const guidesDir = path.join(CONTENT_DIR, "guides");

@@ -1,0 +1,8 @@
+nimman:
+  name: Nimman
+  description: The digital nomad heartland. Cafes, co-working, and condos within walking distance of everything.
+  icon: "\u2615"
+old-city:
+  name: Old City
+  description: Temples, night markets, and affordable living inside the ancient moat. Quieter pace, rich culture.
+  icon: "\ud83c\udfef"

@@ -1,4 +1,5 @@
 import { Building, GuideCategory } from "./types";
+import { getAreaMetadata } from "./content";
 import { Metadata } from "next";
 
 const SITE_NAME = "CNX Cribs";
@@ -6,9 +7,10 @@ const SITE_URL = "https://cnxcribs.com";
 
 export function buildingMetadata(building: Building): Metadata {
   const minPrice = building.price_range[0].toLocaleString();
+  const areaName = getAreaMetadata(building.area).name;
   return {
     title: `${building.name} — Monthly Rental from ฿${minPrice} | ${SITE_NAME}`,
-    description: `${building.name} in ${building.area === "nimman" ? "Nimman" : "Old City"}, Chiang Mai. ${building.units.map((u) => u.type).join(" & ")} from ฿${minPrice}/mo. Verified expat reviews, tips, and real pricing.`,
+    description: `${building.name} in ${areaName}, Chiang Mai. ${building.units.map((u) => u.type).join(" & ")} from ฿${minPrice}/mo. Verified expat reviews, tips, and real pricing.`,
     openGraph: {
       title: `${building.name} — Monthly Rental from ฿${minPrice} | ${SITE_NAME}`,
       description: `Verified monthly rental in Chiang Mai. ${building.units.map((u) => u.type).join(" & ")} from ฿${minPrice}/mo.`,
@@ -17,11 +19,18 @@ export function buildingMetadata(building: Building): Metadata {
   };
 }
 
-export function areaMetadata(area: "nimman" | "old-city", buildingCount: number): Metadata {
-  const areaName = area === "nimman" ? "Nimman" : "Old City";
+export function areaMetadata(area: string, buildingCount: number): Metadata {
+  const areaName = getAreaMetadata(area).name;
   return {
     title: `${areaName} Rentals — Monthly Condos & Apartments | ${SITE_NAME}`,
     description: `${buildingCount} verified monthly rentals in ${areaName}, Chiang Mai. Real prices, expat tips, and honest reviews.`,
+  };
+}
+
+export function cribsMetadata(buildingCount: number): Metadata {
+  return {
+    title: `All Cribs — ${buildingCount} Verified Monthly Rentals | ${SITE_NAME}`,
+    description: `Browse ${buildingCount} verified monthly rentals across Chiang Mai. Real prices, expat tips, and honest reviews.`,
   };
 }
 

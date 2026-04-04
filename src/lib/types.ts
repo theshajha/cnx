@@ -1,6 +1,6 @@
 export interface Building {
   name: string;
-  area: "nimman" | "old-city";
+  area: string;
   slug: string;
   address: string;
   type: "condo" | "serviced-condo" | "serviced-apartment" | "apartment";
@@ -94,26 +94,9 @@ export interface Guide {
   content: string;
 }
 
-export type AreaSlug = "nimman" | "old-city";
-
 export interface AreaInfo {
-  slug: AreaSlug;
+  slug: string;
   name: string;
   description: string;
-  photo: string;
+  icon: string;
 }
-
-export const AREAS: Record<AreaSlug, AreaInfo> = {
-  nimman: {
-    slug: "nimman",
-    name: "Nimman",
-    description: "The digital nomad heartland. Cafés, co-working, and condos within walking distance of everything.",
-    photo: "/areas/nimman.jpg",
-  },
-  "old-city": {
-    slug: "old-city",
-    name: "Old City",
-    description: "Temples, night markets, and affordable living inside the ancient moat. Quieter pace, rich culture.",
-    photo: "/areas/old-city.jpg",
-  },
-};
