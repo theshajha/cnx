@@ -13,6 +13,7 @@ import ContactCard from "@/components/ContactCard";
 import QuickSummary from "@/components/QuickSummary";
 import LocationCard from "@/components/LocationCard";
 import NearbyBuildings from "@/components/NearbyBuildings";
+import MobileContactBar from "@/components/MobileContactBar";
 
 interface Props {
   params: Promise<{ area: string; slug: string }>;
@@ -283,35 +284,10 @@ export default async function BuildingPage({ params }: Props) {
       </div>
 
       {/* Spacer for mobile sticky bar */}
-      <div className="h-16 lg:hidden" />
+      <div className="h-20 lg:hidden" />
 
       {/* Mobile Sticky Contact Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-milk border-t border-sand p-3 flex gap-2 justify-center lg:hidden z-40">
-        {building.contact.phone && (
-          <a
-            href={`tel:${building.contact.phone}`}
-            className="bg-dark-roast text-cream px-5 py-2.5 rounded-[10px] text-sm font-semibold hover:opacity-90 transition-opacity"
-          >
-            Call
-          </a>
-        )}
-        {building.contact.line && (
-          <a
-            href={`https://line.me/R/ti/p/${building.contact.line.replace("@", "")}`}
-            className="bg-line-green text-white px-5 py-2.5 rounded-[10px] text-sm font-semibold hover:opacity-90 transition-opacity"
-          >
-            LINE
-          </a>
-        )}
-        {building.contact.email && (
-          <a
-            href={`mailto:${building.contact.email}`}
-            className="bg-terracotta text-cream px-5 py-2.5 rounded-[10px] text-sm font-semibold hover:opacity-90 transition-opacity"
-          >
-            Email
-          </a>
-        )}
-      </div>
+      <MobileContactBar contact={building.contact} />
     </>
   );
 }
