@@ -47,6 +47,10 @@ export interface NearbySpotRef {
 export interface GuideCategory {
   name: string;
   category: string;
+  /** Hub grouping; must match `GUIDE_PILLAR_SEQUENCE` in guide-pillars.ts */
+  pillar: string;
+  /** Sort order within pillar (ascending) */
+  order: number;
   icon: string;
   description: string;
   recommended_by: string | null;

@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllGuides, getGuideByCategory, getAllContributors } from "@/lib/content";
+import { guideSpotAreaLabel } from "@/lib/guide-areas";
 import { guideMetadata } from "@/lib/seo";
 
 interface Props {
@@ -50,51 +51,60 @@ export default async function GuideCategoryPage({ params }: Props) {
       </div>
 
       {/* Spot Cards */}
-      <div className="space-y-5">
-        {guide.spots.map((spot) => {
-          const areaLabel = spot.area === "nimman" ? "Nimman" : spot.area === "old-city" ? "Old City" : spot.area;
-          return (
-            <div
-              key={spot.slug}
-              className="bg-milk rounded-[14px] border border-sand overflow-hidden flex flex-col md:flex-row"
-            >
-              <div className="relative w-full md:w-[240px] h-[180px] md:h-auto shrink-0">
-                <Image
-                  src={`/guides/${category}/${spot.photo}`}
-                  alt={spot.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 240px"
-                />
-              </div>
-              <div className="p-6 flex flex-col justify-center">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-serif font-bold text-lg text-espresso">{spot.name}</h3>
-                  <span className="bg-terracotta/90 text-cream px-2.5 py-0.5 rounded-full text-[10px] font-bold">
-                    {areaLabel}
-                  </span>
+      {guide.spots.length > 0 ? (
+        <div className="space-y-5">
+          {guide.spots.map((spot) => {
+            const areaLabel = guideSpotAreaLabel(spot.area);
+            return (
+              <div
+                key={spot.slug}
+                className="bg-milk rounded-[14px] border border-sand overflow-hidden flex flex-col md:flex-row"
+              >
+                <div className="relative w-full md:w-[240px] h-[180px] md:h-auto shrink-0">
+                  <Image
+                    src={`/guides/${category}/${spot.photo}`}
+                    alt={spot.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 240px"
+                  />
                 </div>
-                <p className="text-dark-roast text-sm leading-relaxed">{spot.one_liner}</p>
-                <div className="flex items-center gap-3 mt-2">
-                  <p className="text-latte text-xs">{spot.address}</p>
-                  <a
-                    href={`https://www.google.com/maps?q=${spot.coordinates[0]},${spot.coordinates[1]}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-terracotta font-semibold hover:underline whitespace-nowrap"
-                  >
-                    View on Map ↗
-                  </a>
+                <div className="p-6 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="font-serif font-bold text-lg text-espresso">{spot.name}</h3>
+                    <span className="bg-terracotta/90 text-cream px-2.5 py-0.5 rounded-full text-[10px] font-bold">
+                      {areaLabel}
+                    </span>
+                  </div>
+                  <p className="text-dark-roast text-sm leading-relaxed">{spot.one_liner}</p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <p className="text-latte text-xs">{spot.address}</p>
+                    <a
+                      href={`https://www.google.com/maps?q=${spot.coordinates[0]},${spot.coordinates[1]}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-terracotta font-semibold hover:underline whitespace-nowrap"
+                    >
+                      View on Map ↗
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="bg-milk rounded-[14px] border border-dashed border-sand p-6 mb-8 max-w-2xl">
+          <p className="text-dark-roast text-sm leading-relaxed">
+            Verified spots for this category are not published yet. Notes below describe what we are building; check
+            back or contribute via the contributors page.
+          </p>
+        </div>
+      )}
 
       {/* Guide Content */}
       {guide.content.trim() && (
-        <div className="mt-12 max-w-3xl">
+        <div className={`max-w-3xl ${guide.spots.length > 0 ? "mt-12" : "mt-2"}`}>
           {guide.content
             .split(/^## /m)
             .filter((s) => s.trim())

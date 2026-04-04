@@ -14,7 +14,16 @@ export default function NearbySpots({ spots, guides }: NearbySpotsProps) {
   const CATEGORY_ICONS: Record<string, string> = {
     coffee: "☕",
     massage: "💆",
-    coworking: "🏋️",
+    coworking: "💻",
+    motorbikes: "🛵",
+    supermarkets: "🛒",
+    laundry: "🧺",
+    gyms: "🏋️",
+    dentists: "🦷",
+    "language-schools": "📚",
+    "international-schools": "🎒",
+    "visa-legal": "📋",
+    "local-eats": "🍜",
     bikes: "🚲",
     weed: "🌿",
   };

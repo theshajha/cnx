@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllBuildings, getAllGuides } from "@/lib/content";
+import { guidePillarTitle } from "@/lib/guide-pillars";
 import { websiteJsonLd } from "@/lib/seo";
 import { AREAS, AreaSlug } from "@/lib/types";
 import BuildingCard from "@/components/BuildingCard";
@@ -110,13 +111,22 @@ export default function Home() {
             Beyond Rentals
           </h2>
           <p className="text-sm text-latte mb-6">
-            The expat essentials — cafes, co-working, massage, and more.
+            Curated guides for daily life, work, wellness, and more — organized by pillar on the full guide hub.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {guides.map((g) => (
-              <GuideCard key={g.category} guide={g} />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...guides]
+              .sort((a, b) => (b.spots.length > 0 ? 1 : 0) - (a.spots.length > 0 ? 1 : 0))
+              .slice(0, 6)
+              .map((g) => (
+                <GuideCard key={g.category} guide={g} pillarTitle={guidePillarTitle(g.pillar)} />
+              ))}
           </div>
+          <Link
+            href="/guide"
+            className="inline-block mt-6 text-sm font-semibold text-terracotta hover:underline"
+          >
+            View all guides →
+          </Link>
         </section>
       )}
     </>

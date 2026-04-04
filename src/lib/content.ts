@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { Building, GuideCategory, Contributor, AreaSlug } from "./types";
+import { guidePillarSortIndex } from "./guide-pillars";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -37,10 +38,17 @@ export function getAllGuides(): GuideCategory[] {
   if (!fs.existsSync(guidesDir)) return [];
 
   const files = fs.readdirSync(guidesDir).filter((f) => f.endsWith(".md"));
-  return files.map((file) => {
+  const guides = files.map((file) => {
     const raw = fs.readFileSync(path.join(guidesDir, file), "utf-8");
     const { data, content } = matter(raw);
     return { ...data, content } as GuideCategory;
+  });
+
+  return guides.sort((a, b) => {
+    const pa = guidePillarSortIndex(a.pillar);
+    const pb = guidePillarSortIndex(b.pillar);
+    if (pa !== pb) return pa - pb;
+    return (a.order ?? 0) - (b.order ?? 0);
   });
 }
 

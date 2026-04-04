@@ -234,12 +234,12 @@ export default async function BuildingPage({ params }: Props) {
                   Call Now
                 </a>
               )}
-              <a
+              <Link
                 href="/playbook"
                 className="bg-cream/20 text-cream px-6 py-3 rounded-[10px] text-sm font-bold hover:bg-cream/30 transition-colors"
               >
                 Read the Playbook
-              </a>
+              </Link>
             </div>
           </div>
         </div>
