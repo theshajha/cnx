@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: http://www.galarethong.com/
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, exterior.jpg, garden.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Built 1995 with a striking open-atrium design — 248 units on open walkways surrounding a naturally ventilated central atrium. Agoda 6.5/10 from 502 reviews, TripAdvisor 3.0/5 from 51 reviews. Has a salt-system pool, tennis court (extremely rare in Chiang Mai), gym, restaurant, coffee shop, and convenience store on-site. Thick concrete walls mean excellent sound insulation. West-facing upper floors get 180-degree Doi Suthep panoramas. But quality is a complete lottery — some units are beautifully renovated, others have rock-hard beds and plumbing issues. Slow drains and unreliable hot water are recurring complaints."

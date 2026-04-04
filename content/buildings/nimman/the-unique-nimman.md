@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, pool.jpg, exterior.jpg, lobby.jpg, interior-1.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 7
 contributor_note: "One of the best-managed condos in Nimman per Perfect Homes (the most established independent agent in Chiang Mai). Lanna-style design with interiors by a celebrated local designer — it looks and feels different from generic Thai condos. Separate men's and women's steam rooms are a rare touch. Units are spacious: 1BR starts at 52sqm, going up to 88sqm, vs the typical 30-45sqm in newer builds. 5-minute walk to Maya and One Nimman. No WiFi included — arrange your own fiber. No studios, no budget options. This is a mid-to-upper-range pick for people who want quality, space, and community in a small building."
 last_verified: "2026-04-04"
 units:

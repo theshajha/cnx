@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, pool.jpg, lobby.jpg, garden.jpg, interior-1.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 8
 contributor_note: "The best amenity package in Nimman: 3-storey clubhouse with wine bar, library, rooftop garden, lap pool with jacuzzi, gym, sauna, steam room, BBQ area — all for 68 units. Google rated 4.5/5 from 100 reviews. A recent reviewer called everything '1st class.' But two gotchas nobody warns you about: airplane noise (it's on the CNX takeoff path — 'the unit vibrates when the plane passes' per a Dec 2025 Google review) and parking is only 15 spots for 68 units. The pool is in shadow for part of the day. Wood floors are laminate, not hardwood. Fiber internet now available — previous WiFi complaints are resolved. Almost exclusively foreign residents."
 last_verified: "2026-04-04"
 units:

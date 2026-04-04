@@ -22,6 +22,7 @@ export interface Building {
   last_verified: string;
   contributed_by: string | null;
   contributor_note: string | null;
+  recommendation_score: number;
   units: Unit[];
   nearby_spots: NearbySpotRef[];
   content: string;

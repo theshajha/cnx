@@ -16,9 +16,10 @@ contact:
   line: "0888185151"
   email: the51hometel@gmail.com
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, exterior.jpg, interior-1.jpg, lobby.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 8
 contributor_note: "TripAdvisor 4.5/5 from 33 reviews, described as 'one of the most booked hotels in Chiang Mai' over a 60-day period. Purpose-built for digital nomads: free 24-hour coworking space, free bicycles, 90/24 Mbps WiFi, free laundry service (washed/dried/ironed in 1-2 days), complimentary daily breakfast at the connected Mai Bakery, weekly cleaning, water included. Run by a lovely Thai family. The only real downside is location — not walkable to Nimman or Old City, you need the free bicycle or a Grab. Minor laundry losses reported (socks and underwear occasionally go missing). Fresh cookies at reception daily."
 last_verified: "2026-04-04"
 units:

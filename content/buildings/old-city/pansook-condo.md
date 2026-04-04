@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "The 5 THB/unit electric rate is real — confirmed by PerfectHomes and expat blog reviews. That's near-government rate, when most buildings charge 7-8 THB. Rooms described as 'by far the best in their price range' on NomadRental (4.75/5 from 2 reviews). Full kitchens with cooking tools in every unit. Doi Suthep views from most rooms. Quiet soi 10 minutes walk from Maya and Nimman. No pool, no gym though — you're paying for apartment quality, not facilities. WiFi quality varies by unit."

@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, exterior.jpg, interior-1.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 7
 contributor_note: "Award-winning boutique condo that flies completely under the radar — only 48 units on a quiet lane off Sirimangklajarn. The wide 9-metre unit frontages make it feel noticeably more spacious than typical Nimman condos. Pool and gym are free for residents. Sinet fiber is available for fast dedicated broadband. The downside: only 48 units means very low turnover, so finding a vacant unit requires patience or luck. No pets. Almost zero online reviews exist, which tells you it's mostly long-term residents who don't cycle through booking platforms."
 last_verified: "2026-04-04"
 units:

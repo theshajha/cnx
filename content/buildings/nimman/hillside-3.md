@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, common-area.jpg, gym.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 7
 contributor_note: "Generally considered the best of the three Hillside buildings. Gym, yoga studio, laundry, coffee shop on-site, included WiFi, and bigger units than most newer condos — a typical 1-bed here is 75sqm vs 45sqm in modern builds. Set back 100m from Nimman on quieter Soi 8 but still walkable to everything. The big catch is renovation noise: owners are constantly gutting and modernizing individual units, especially April-October. Ask for floors 5+ to escape bar noise on weekends. Unit quality is a complete lottery — view the actual unit, not photos."
 last_verified: "2026-04-04"
 units:

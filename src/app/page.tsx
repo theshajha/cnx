@@ -14,8 +14,9 @@ export default function Home() {
   const contributors = getAllContributors();
   const recentArticles = articles.slice(0, 3);
 
-  const recentBuildings = [...buildings]
-    .sort((a, b) => new Date(b.last_verified).getTime() - new Date(a.last_verified).getTime())
+  const recommendedBuildings = [...buildings]
+    .filter((b) => (b.recommendation_score ?? 0) > 0)
+    .sort((a, b) => (b.recommendation_score ?? 0) - (a.recommendation_score ?? 0))
     .slice(0, 6);
 
   const allAreas = getAllAreaMetadata();
@@ -90,17 +91,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recently Verified */}
-      {recentBuildings.length > 0 && (
+      {/* Recommended */}
+      {recommendedBuildings.length > 0 && (
         <section className="mb-16">
-          <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight mb-6">
-            Recently Verified
+          <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight mb-2">
+            Recommended
           </h2>
+          <p className="text-sm text-latte mb-6">
+            Our top picks based on value, location, community feedback, and overall quality.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {recentBuildings.map((b) => (
+            {recommendedBuildings.map((b) => (
               <BuildingCard key={b.slug} building={b} />
             ))}
           </div>
+          <Link
+            href="/cribs"
+            className="inline-block mt-6 text-sm font-semibold text-terracotta hover:underline"
+          >
+            View all cribs →
+          </Link>
         </section>
       )}
 

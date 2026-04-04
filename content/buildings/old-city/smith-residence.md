@@ -16,7 +16,7 @@ contact:
   line: null
   email: smith_residence@hotmail.com
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "The original Smith property (opened 2007, after Smith Tower in 2003). TripAdvisor 4.0/5 from 183 reviews, Booking.com 7.9/10 from 57 reviews. Rooftop pool with Doi Suthep views is the headline feature. Saturday Walking Street is literally at your doorstep. But housekeeping quality is inconsistent — a Jan 2025 Booking review reported metal springs protruding from the mattress. The restaurant closes at 8 PM which is uselessly early. Several reviewers who stayed at both recommend Smith Suites (the newer 2012 sibling) over this one for better value and newer fit-out."

@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, interior-1.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Basically the cheapest monthly rental in the area at 5,000 THB. No pool, no gym, nothing fancy. But two desks per room and free WiFi — so if you just need a clean, quiet place to work from and don't care about amenities, it does the job. The rooftop has Doi Suthep views which is a nice bonus. Wouldn't put a couple here though, 28sqm is tight."

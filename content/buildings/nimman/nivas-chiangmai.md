@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, pool.jpg, exterior.jpg, interior-1.jpg, common-area.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 8
 contributor_note: "If cleanliness is your top priority, this is the one. Booking.com guests literally say 'cleanest room we've ever been in' and staff gets rated 10/10. Kitchen is actually usable: electric stove, kitchen hood, utensils, microwave, fridge — not just a kettle and microwave like most serviced apartments. WiFi handles video calls without dropouts per a verified long-term review. The tradeoff is location — you're on Huay Kaew Road, a solid 10-15 minute walk from Nimman. Budget for a scooter. The 8 THB electric and 35 THB water rates are on the high side, and water has a 200 THB monthly minimum even if you barely use it."
 last_verified: "2026-04-04"
 units:

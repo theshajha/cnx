@@ -16,7 +16,7 @@ contact:
   line: "@perfecthomes"
   email: info@perfecthomes.co.th
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, exterior.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Google rated 3.9/5 from 83 reviews for Srithana 2. Studios from 6,800 THB at 500m from Nimman is the best location-to-price ratio you'll find. Go for Srithana 2 — it's newer, cleaner, and has fiber-optic WiFi included. Unit quality is wildly inconsistent because each owner maintains differently; always inspect in person. One alarming Wanderlog review describes a security guard incident with management reportedly dismissing it — worth asking about current security staff. A hairdresser named Nuan operating near Srithana is legendary among expats as a 'fixer' who helps with apartment hunting, bank accounts, and general problem-solving."

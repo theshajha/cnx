@@ -16,7 +16,7 @@ contact:
   line: "@025vobud"
   email: narumol@v-oneasset.com
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Studios from 6,000 THB with a huge pool on Nimman Soi 6 — the cheapest pool option near Nimman. Quiet and community-oriented, popular with nomads and retirees. But our original listing had the electric rate wrong: multiple sources confirm 7 THB/unit, not 4-4.5. WiFi is 600 THB/month extra, not included. Water is a flat 200 THB/month. No online booking — call or show up in person. Sits directly under the airport flight path, so you'll see planes from the pool. No-frills but reliably clean."

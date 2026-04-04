@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 8
 contributor_note: "A solid all-inclusive deal: water, WiFi, weekly cleaning, washer in-unit, pool, and gym all included at 14-15K. Run by genuinely friendly women who care about the place — multiple reviewers single out the staff. Studios only at 35sqm so it's a solo traveler pick, not couples. The fridge is undersized (won't keep ice cream frozen) so don't plan on heavy meal prep. WiFi is adequate but not blazing — test it on arrival if video calls are your bread and butter. Some units face a farm next door which is actually a bonus: quiet, green, private. Booking.com rates it 9.3/10 from 49 reviews."
 last_verified: "2026-04-04"
 units:

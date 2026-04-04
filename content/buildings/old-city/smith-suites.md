@@ -16,9 +16,10 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 7
 contributor_note: "The community here is the real draw. Dr. Smith and his wife personally organize Christmas parties, happy hours, and day trips — it feels like a family. TripAdvisor 4.0/5 from 183 reviews (combined with Smith Residence listing). Saturday Walking Street literally at your doorstep. Full kitchen in every unit. But: kitchen counters are scaled for shorter people (taller folks will crouch), lower floors get ant problems, gym gets dangerously hot during the day, and it's cash only — no credit cards at all."
 last_verified: "2026-04-04"
 units:

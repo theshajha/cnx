@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, pool.jpg, exterior.jpg, lobby.jpg, interior-1.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 9
 contributor_note: "You'll almost always find something available here because it's huge — 514 units. But that's also the catch: some units are nicely renovated, others look like 2016 never ended. Don't commit without seeing the exact unit. Best for people who want pool+gym at a low price and don't mind dealing with individual owners instead of a management office."
 last_verified: "2026-04-04"
 units:

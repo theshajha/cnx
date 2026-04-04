@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, interior-2.jpg]
 verified: false
 contributed_by: shashank
+recommendation_score: 9
 contributor_note: "The best-kept secret in Nimman if you can get a unit. Only 25 apartments and they fill up fast. Owner Pang is personally involved and consistently praised by name in reviews — she'll show you around and is genuinely responsive. Each unit gets its own dedicated WiFi router (not shared building internet), which is a real win for remote work. Kitchen is properly equipped: two-ring stove, utensils, fridge, microwave. Weekly cleaning is thorough. The catch: no pool, no gym, 8 THB/unit electricity, and strict rules — 10,000 THB fine for smoking. If you cook, work remotely, and value a responsive landlord over a pool, this is your place."
 last_verified: "2026-04-04"
 units:

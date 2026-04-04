@@ -16,7 +16,7 @@ contact:
   line: huaykaewresidence
   email: info@huaykaewresidence.com
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Cheapest place with a pool that I've found in central Chiang Mai. The 3,500 THB rooms are bare-bones — bed, AC, that's about it. But the suites with kitchens are actually decent. WiFi costs 300/month extra which is annoying. Good if you're on a tight budget and want pool access. Not for you if you care about modern finishes."

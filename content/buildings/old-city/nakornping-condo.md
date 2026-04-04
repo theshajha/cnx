@@ -16,7 +16,7 @@ contact:
   line: "@perfecthomes"
   email: info@perfecthomes.co.th
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Wanderlog 4.2/5 from 86 reviews. The location is the star: walkable to both Old City and Nimman, 5 minutes to Maya and CAMP coworking. Self-contained with on-site convenience store, two restaurants (including the European-style Le BRUNCH bistro), and a saltwater pool. But renovation noise is a constant problem — 'rooms are always under renovation at this condo, too annoying' say multiple reviews. Unit quality varies wildly because each owner maintains differently. Built 2012, 300 units, 16 floors. Good negotiating leverage because there's always something available."

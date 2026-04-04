@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, common-area.jpg, exterior.jpg, garden.jpg, gym.jpg, interior-1.jpg, interior-2.jpg, lobby.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "The tallest residential building in northern Thailand at 32 floors. The views are genuinely stunning — 360-degree panoramic Doi Suthep, Doi Saket mountains, and the full city below. Resort-grade facilities: huge pool, sauna, steam room, gym, basketball half-court, sky garden. Right next to Central Festival. But it's a 734-unit tower so it can feel impersonal, and road noise is real on lower floors. Supalai is one of Thailand's largest public developers so build quality is consistent. Google rated 4.0/5. Remarkably few published reviews for a building this size."
