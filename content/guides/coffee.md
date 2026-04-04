@@ -26,6 +26,13 @@ spots:
     coordinates: [18.800, 98.967]
     one_liner: Free co-working space by TCDC. Great WiFi, gets crowded evenings.
     photo: camp-maya.jpg
+  - name: Hillkoff Learning Space
+    slug: hillkoff
+    area: nong-hoi
+    address: Nong Hoi, Mueang Chiang Mai
+    coordinates: [18.771, 98.984]
+    one_liner: Café, restaurant, and coffee learning space. Great beans, relaxing atmosphere, less touristy.
+    photo: hillkoff.jpg
 ---
 
 ## About Coffee in Chiang Mai

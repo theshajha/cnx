@@ -75,7 +75,17 @@ export default async function GuideCategoryPage({ params }: Props) {
                   </span>
                 </div>
                 <p className="text-dark-roast text-sm leading-relaxed">{spot.one_liner}</p>
-                <p className="text-latte text-xs mt-2">{spot.address}</p>
+                <div className="flex items-center gap-3 mt-2">
+                  <p className="text-latte text-xs">{spot.address}</p>
+                  <a
+                    href={`https://www.google.com/maps?q=${spot.coordinates[0]},${spot.coordinates[1]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-terracotta font-semibold hover:underline whitespace-nowrap"
+                  >
+                    View on Map ↗
+                  </a>
+                </div>
               </div>
             </div>
           );
