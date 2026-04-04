@@ -9,8 +9,8 @@ price_range: [10000, 18000]
 deposit: 2
 electric_rate: 7
 water_rate: 20
-wifi: included
-facilities: [pool, gym, parking, keycard, cctv, wifi]
+wifi: 0
+facilities: [pool, gym, sauna, parking, keycard, cctv]
 contact:
   phone: null
   line: null
@@ -49,15 +49,17 @@ nearby_spots:
 
 ## Overview
 
-Punna Nimman is managed by the Punna group with a walk-in office on Soi 7. Popular with remote workers for its reliable WiFi and quiet pool area. Management speaks good English and is used to dealing with monthly tenants.
+Punna Nimman (also called Punna Residence @ Nimman) is a well-regarded Punna Group condo on Soi 6 with two 8-floor towers and 158 units. Built in 2010 and consistently popular with long-term foreign residents, it offers a saltwater pool, dual gyms, a sauna, and underground parking. The building is well-maintained and management speaks English.
 
 ## Expat Tips
 
 - Ask for the 3-month rate even if you plan to stay longer — you can always extend
 - West-facing units get brutal afternoon sun — insist on north or east facing
 - Management is flexible in April (low season) — use this as leverage
+- Set up your own ISP on arrival — fiber (e.g. True, 3BB) is available in-building and straightforward to arrange
 
 ## Gotchas
 
-- Electric rate is fair at 7 ฿/unit but confirm at signing
-- Pool area can get noisy on weekends — check if your unit faces it
+- No shared WiFi at all — you must arrange your own ISP contract before you can work from home
+- Condo fee of 30 THB/sqm/year applies on top of rent (owner usually covers this, but confirm)
+- Foreign quota (49%) is reportedly full — check ownership structure if buying; irrelevant for renting
