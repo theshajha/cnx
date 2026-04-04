@@ -20,8 +20,9 @@ export default function Footer() {
           <div>
             <div className="font-semibold text-espresso mb-3">Explore</div>
             <div className="flex flex-col gap-2 text-latte">
-              <Link href="/nimman" className="hover:text-terracotta transition-colors">Nimman</Link>
-              <Link href="/old-city" className="hover:text-terracotta transition-colors">Old City</Link>
+              <Link href="/cribs" className="hover:text-terracotta transition-colors">All Cribs</Link>
+              <Link href="/cribs/nimman" className="hover:text-terracotta transition-colors">Nimman</Link>
+              <Link href="/cribs/old-city" className="hover:text-terracotta transition-colors">Old City</Link>
               <Link href="/directory" className="hover:text-terracotta transition-colors">Directory</Link>
               <Link href="/playbook" className="hover:text-terracotta transition-colors">Playbook</Link>
             </div>
@@ -41,12 +42,19 @@ export default function Footer() {
         <span>&copy; {new Date().getFullYear()} CNX Cribs</span>
         <span>
           Built by{" "}
-          {showInFooter.map((c, i) => (
-            <span key={c.slug}>
-              <span className="text-dark-roast font-medium">{c.name}</span>
-              {i < showInFooter.length - 1 && ", "}
-            </span>
-          ))}
+          {showInFooter.map((c, i) => {
+            const url = c.link || (c.slug === "shashank" ? "https://theshajha.com" : null);
+            return (
+              <span key={c.slug}>
+                {url ? (
+                  <a href={url} target="_blank" rel="noopener noreferrer" className="text-dark-roast font-medium hover:text-terracotta transition-colors">{c.name}</a>
+                ) : (
+                  <span className="text-dark-roast font-medium">{c.name}</span>
+                )}
+                {i < showInFooter.length - 1 && ", "}
+              </span>
+            );
+          })}
           {remaining > 0 && (
             <>
               {" & "}
