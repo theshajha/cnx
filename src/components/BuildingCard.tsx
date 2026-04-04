@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import { Building } from "@/lib/types";
 import VerifiedBadge from "./VerifiedBadge";
 import FacilityChips from "./FacilityChips";
@@ -19,7 +19,7 @@ export default function BuildingCard({ building }: BuildingCardProps) {
       className="block bg-milk rounded-[14px] border border-sand overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
     >
       <div className="relative h-[180px]">
-        <Image
+        <SafeImage
           src={`/buildings/${building.slug}/${heroPhoto}`}
           alt={building.name}
           fill

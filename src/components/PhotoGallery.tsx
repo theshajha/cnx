@@ -9,13 +9,36 @@ interface PhotoGalleryProps {
   alt: string;
 }
 
+function GalleryImage({ src, alt, sizes, priority, className }: {
+  src: string; alt: string; sizes: string; priority?: boolean; className?: string;
+}) {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    return <div className="w-full h-full bg-sand flex items-center justify-center text-latte text-sm">📸</div>;
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className={`object-cover ${className || ""}`}
+      sizes={sizes}
+      priority={priority}
+      loading={priority ? undefined : "lazy"}
+      onError={() => setError(true)}
+    />
+  );
+}
+
 export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
   if (photos.length === 0) {
     return (
-      <div className="bg-sand h-[260px] rounded-[14px] flex items-center justify-center text-latte">
+      <div className="bg-sand h-[240px] md:h-[300px] rounded-[14px] flex items-center justify-center text-latte">
         No photos yet
       </div>
     );
@@ -32,13 +55,12 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
           onClick={() => { setActiveIndex(0); setLightboxOpen(true); }}
           className="relative overflow-hidden group"
         >
-          <Image
+          <GalleryImage
             src={`${basePath}/${mainPhoto}`}
             alt={`${alt} — main photo`}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
             sizes="60vw"
             priority
+            className="group-hover:scale-105 transition-transform duration-300"
           />
         </button>
         <div className="grid grid-rows-2 gap-1">
@@ -48,12 +70,11 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
               onClick={() => { setActiveIndex(i + 1); setLightboxOpen(true); }}
               className="relative overflow-hidden group"
             >
-              <Image
+              <GalleryImage
                 src={`${basePath}/${photo}`}
                 alt={`${alt} — photo ${i + 2}`}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="25vw"
+                className="group-hover:scale-105 transition-transform duration-300"
               />
               {i === sidePhotos.length - 1 && photos.length > 3 && (
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
@@ -78,11 +99,9 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
           onClick={() => { setActiveIndex(0); setLightboxOpen(true); }}
           className="relative w-full h-[240px] overflow-hidden rounded-[14px]"
         >
-          <Image
+          <GalleryImage
             src={`${basePath}/${mainPhoto}`}
             alt={`${alt} — main photo`}
-            fill
-            className="object-cover"
             sizes="100vw"
             priority
           />
@@ -103,28 +122,26 @@ export default function PhotoGallery({ photos, basePath, alt }: PhotoGalleryProp
           onClick={() => setLightboxOpen(false)}
         >
           <button
-            className="absolute top-6 right-6 text-white text-2xl font-bold hover:opacity-70"
+            className="absolute top-6 right-6 text-white text-2xl font-bold hover:opacity-70 z-10"
             onClick={() => setLightboxOpen(false)}
           >
             ✕
           </button>
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:opacity-70"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:opacity-70 z-10"
             onClick={(e) => { e.stopPropagation(); setActiveIndex((activeIndex - 1 + photos.length) % photos.length); }}
           >
             ‹
           </button>
           <div className="relative w-[90vw] h-[80vh]" onClick={(e) => e.stopPropagation()}>
-            <Image
+            <GalleryImage
               src={`${basePath}/${photos[activeIndex]}`}
               alt={`${alt} — photo ${activeIndex + 1}`}
-              fill
-              className="object-contain"
               sizes="90vw"
             />
           </div>
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:opacity-70"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:opacity-70 z-10"
             onClick={(e) => { e.stopPropagation(); setActiveIndex((activeIndex + 1) % photos.length); }}
           >
             ›
