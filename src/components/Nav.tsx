@@ -21,7 +21,7 @@ export default function Nav() {
           href="/"
           className="font-serif font-bold text-[22px] text-espresso tracking-tight hover:text-terracotta transition-colors"
         >
-          cnx cribs
+          CNX Cribs
         </Link>
 
         {/* Desktop Links */}

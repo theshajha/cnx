@@ -8,6 +8,9 @@ interface ContactCardProps {
 }
 
 export default function ContactCard({ contact }: ContactCardProps) {
+  const hasAny = contact.phone || contact.line || contact.email || contact.website;
+  if (!hasAny) return null;
+
   return (
     <div className="bg-milk rounded-[14px] p-6 border border-sand">
       <h3 className="font-serif font-bold text-[17px] text-espresso mb-4">Get in Touch</h3>
