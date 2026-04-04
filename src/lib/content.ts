@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Building, GuideCategory, AreaSlug } from "./types";
+import { Building, GuideCategory, Contributor, AreaSlug } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -54,4 +54,12 @@ export function getPlaybookContent(): { content: string } {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(raw);
   return { content };
+}
+
+export function getAllContributors(): Contributor[] {
+  const filePath = path.join(CONTENT_DIR, "contributors.md");
+  if (!fs.existsSync(filePath)) return [];
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { data } = matter(raw);
+  return (data.contributors || []) as Contributor[];
 }

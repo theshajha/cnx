@@ -3,7 +3,7 @@ export interface Building {
   area: "nimman" | "old-city";
   slug: string;
   address: string;
-  type: "condo" | "serviced-apartment" | "apartment";
+  type: "condo" | "serviced-condo" | "serviced-apartment" | "apartment";
   coordinates: [number, number];
   price_range: [number, number];
   deposit: number;
@@ -60,6 +60,18 @@ export interface GuideSpot {
   coordinates: [number, number];
   one_liner: string;
   photo: string;
+}
+
+export interface Contributor {
+  name: string;
+  slug: string;
+  role: string;
+  bio: string;
+  photo: string | null;
+  link: string | null;
+  twitter: string | null;
+  contributions: string[];
+  joined: string;
 }
 
 export type AreaSlug = "nimman" | "old-city";

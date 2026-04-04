@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/playbook`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE_URL}/guide`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${BASE_URL}/contributors`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   ];
 
   const buildingPages = buildings.map((b) => ({
