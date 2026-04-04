@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg, exterior.jpg, lobby.jpg, interior-1.jpg, common-area.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "Popular with digital nomads — you'll see laptops on every floor. But the big thing nobody mentions upfront: it's directly under the Chiang Mai airport flight path. Planes from early morning to late night. Some people adapt after a few days, others can't stand it. The kitchen in Grand Deluxe rooms is barely functional — one-setting cooker, rusty knife, two spoons. The 'Sealy beds' marketing doesn't match recent guest reports of hard, aging mattresses. That said, Maya Mall is genuinely a 5-minute walk and the soi itself is quiet. Come for the Nimman proximity and nomad community, not the room quality."
 last_verified: "2026-04-04"
 units:
   - type: Superior
@@ -53,16 +54,22 @@ nearby_spots: []
 
 ## Overview
 
-The Bliss is a boutique serviced apartment on a quiet soi off Huay Kaew Road, 10 minutes walk from Nimman and Maya. It offers Sealy beds, cable TV, and bathtubs in Grand Deluxe/Suite rooms. The quiet residential soi is a draw for those who want to be close to Nimman without the noise.
+The Bliss is a ~40-unit serviced apartment on Huay Kaew Soi 2, with a Trip.com rating of 8.3/10 from 41 reviews and a NomadRental score of 4.65/5. It has a reputation as a digital nomad hub — one reviewer described floors "buzzing with people working on their online projects." Maya Mall is about a 5-minute walk across Huay Kaew Road (not 10 minutes as sometimes listed). The soi itself is quiet and residential. Based on blog reviews from expats who stayed 1-6 months, room quality is decent but aging — described as "clean but a little tired looking." The building has or has had an OYO partnership (listed as "OYO The Bliss Hotel" on Booking.com), which may explain some service inconsistency in recent reviews.
 
 ## Expat Tips
 
-- 10-minute walk to Nimman and Maya makes this viable for nomads who don't mind a stroll
-- Sealy beds are a genuine differentiator — sleep quality matters for long stays
-- Bathtubs available in Grand Deluxe and Suite rooms — specify if that matters to you
+- Maya Mall is genuinely a 5-minute walk, and core Nimman (Soi 9/12 area) about 10-12 minutes. 7-Eleven is 2 minutes away
+- WiFi is included and described as "decent" by blog reviewers. No speed test data available, but one long-term reviewer had no complaints during remote work
+- Bathtubs are only in Grand Deluxe and Suite rooms — not available in Superior. Confirm your room type if this matters
+- Weekly cleaning and linen change included. Self-service laundry room (30 THB per load) or external laundry shop (130 THB)
+- Grand Deluxe (45 sqm) is the sweet spot for long stays. An expat blogger paid 15,000 THB/month for this room type; another paid 18,000 THB. Rates are negotiable depending on season and length of stay
+- Request a west-facing room to avoid morning sun heat. East-facing units warm up significantly
 
 ## Gotchas
 
-- No pool and no gym — significant drawback at this price point
-- Prices listed in research may be outdated — confirm current rates directly
-- The building is boutique/small; limited unit availability
+- The building is directly under the Chiang Mai airport flight path. From an expat blog: "Several times a day from early morning to late night you will hear planes overhead. Does it get noisy? Yes it does." With windows closed it's manageable for some — one reviewer committed to 6 months despite it. For others it's a dealbreaker
+- Kitchen in Grand Deluxe rooms is poorly equipped despite being advertised. From a detailed stay review: single electric cooker with only "off or very hot" settings, "rusted kitchen knife," two teaspoons, two forks. The reviewer bought their own wok, pan, and knife for 405 THB
+- The "Sealy beds" claim appears on the official website but recent Trip.com reviews tell a different story: "The bed was so hard it made my shoulders ache" and "Old bed." Bed quality appears inconsistent or degraded over time
+- No pool and no gym — a significant gap at 15,000-30,000 THB/month when nearby condos like Punna Nimman, Hillside, or The Siri offer both
+- Electric at 8 THB/unit adds up — an expat reported 536 THB for a ~25-day stay. Run AC conservatively
+- Water pressure and temperature issues reported by multiple reviewers. Management responsiveness is mixed — some praise friendly staff, others experienced contract miscommunication and refund refusals
