@@ -87,17 +87,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ──────────────────────────────────────────────── */}
-      {/* TRUST BAR                                         */}
-      {/* ──────────────────────────────────────────────── */}
-      <section className="-mx-4 md:-mx-8 bg-sand">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-4 flex justify-center gap-6 md:gap-12 flex-wrap text-[13px] font-sans text-dark-roast">
-          <span><strong className="text-espresso font-bold">{buildings.length}</strong> verified buildings</span>
-          <span><strong className="text-espresso font-bold">฿{(cheapest / 1000).toFixed(0)}k</strong> cheapest monthly</span>
-          <span><strong className="text-espresso font-bold">{allAreas.length}</strong> neighborhoods</span>
-          <span>Updated <strong className="text-espresso font-bold">weekly</strong></span>
+        {/* Trust bar — inside hero, frosted glass at bottom */}
+        <div className="relative z-10 border-t border-cream/15">
+          <div className="bg-cream/10 backdrop-blur-md">
+            <div className="max-w-6xl mx-auto px-4 md:px-8 py-4 flex justify-center gap-6 md:gap-12 flex-wrap text-[13px] font-sans text-cream/80">
+              <span><strong className="text-cream font-bold">{buildings.length}</strong> verified buildings</span>
+              <span><strong className="text-cream font-bold">฿{(cheapest / 1000).toFixed(0)}k</strong> cheapest monthly</span>
+              <span><strong className="text-cream font-bold">{allAreas.length}</strong> neighborhoods</span>
+              <span>Updated <strong className="text-cream font-bold">weekly</strong></span>
+            </div>
+          </div>
         </div>
       </section>
 
