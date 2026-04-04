@@ -16,7 +16,7 @@ contact:
   line: "@atnimman"
   email: "yantarasriatnimman@gmail.com"
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, exterior.jpg, pool.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Good pick if you cook a lot — the shared kitchen has a proper oven and six stovetops, which you won't find at this price anywhere else in Nimman. No gym and no pool on-site, so you'd need to sort those separately. The bathtub is a nice surprise. Wouldn't recommend if you work out daily and don't want the hassle of a separate gym."
