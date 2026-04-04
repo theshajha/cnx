@@ -1,0 +1,241 @@
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import { getAllBuildings, getBuildingBySlug, getBuildingsByArea, getAllGuides } from "@/lib/content";
+import { buildingMetadata, buildingJsonLd } from "@/lib/seo";
+import PhotoGallery from "@/components/PhotoGallery";
+import VerifiedBadge from "@/components/VerifiedBadge";
+import FacilityChips from "@/components/FacilityChips";
+import UnitTabs from "@/components/UnitTabs";
+import NearbySpots from "@/components/NearbySpots";
+import ContactCard from "@/components/ContactCard";
+import QuickSummary from "@/components/QuickSummary";
+import LocationCard from "@/components/LocationCard";
+import NearbyBuildings from "@/components/NearbyBuildings";
+
+interface Props {
+  params: Promise<{ area: string; slug: string }>;
+}
+
+export function generateStaticParams() {
+  const buildings = getAllBuildings();
+  return buildings.map((b) => ({ area: b.area, slug: b.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { area, slug } = await params;
+  const building = getBuildingBySlug(area, slug);
+  if (!building) return {};
+  return buildingMetadata(building);
+}
+
+function parseContentSections(content: string) {
+  const sections: { title: string; lines: string[] }[] = [];
+  const parts = content.split(/^## /m);
+  for (const part of parts) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    const newlineIndex = trimmed.indexOf("\n");
+    if (newlineIndex === -1) continue;
+    const title = trimmed.slice(0, newlineIndex).trim();
+    const body = trimmed.slice(newlineIndex + 1).trim();
+    const lines = body.split("\n").filter((l) => l.trim() !== "");
+    sections.push({ title, lines });
+  }
+  return sections;
+}
+
+function sectionBorderClass(title: string): string {
+  const lower = title.toLowerCase();
+  if (lower.includes("expat") || lower.includes("tip")) return "border-l-4 border-l-terracotta";
+  if (lower.includes("gotcha") || lower.includes("warning")) return "border-l-4 border-l-latte";
+  return "";
+}
+
+export default async function BuildingPage({ params }: Props) {
+  const { area, slug } = await params;
+  const building = getBuildingBySlug(area, slug);
+  if (!building) notFound();
+
+  const areaBuildings = getBuildingsByArea(building.area);
+  const guides = getAllGuides();
+
+  const allPhotos = [
+    ...building.photos,
+    ...building.units.flatMap((u) => u.photos),
+  ];
+
+  const areaLabel = building.area === "nimman" ? "Nimman" : "Old City";
+  const typeLabel = building.type.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const sections = parseContentSections(building.content);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildingJsonLd(building)) }}
+      />
+
+      {/* Photo Gallery Hero */}
+      <div className="-mx-8 mb-8">
+        <PhotoGallery
+          photos={allPhotos}
+          basePath={`/buildings/${building.slug}`}
+          alt={building.name}
+        />
+      </div>
+
+      {/* Title Bar */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2.5 mb-3 flex-wrap">
+          <span className="bg-terracotta/90 text-cream px-3 py-1 rounded-full text-[11px] font-bold">
+            {areaLabel}
+          </span>
+          <span className="bg-sand text-dark-roast px-3 py-1 rounded-full text-[11px] font-bold">
+            {typeLabel}
+          </span>
+          {building.verified && <VerifiedBadge date={building.last_verified} />}
+        </div>
+        <h1 className="font-serif font-bold text-[38px] text-espresso tracking-tight leading-tight">
+          {building.name}
+        </h1>
+        <p className="text-latte text-sm mt-1">{building.address}</p>
+      </div>
+
+      {/* Two-Column Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
+        {/* Left Column */}
+        <div className="space-y-8">
+          {/* Price Banner */}
+          <div className="bg-milk rounded-[14px] border border-sand p-6 flex items-center justify-between">
+            <div>
+              <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">Monthly Rent</div>
+              <div className="font-serif font-bold text-3xl text-terracotta mt-1">
+                ฿{building.price_range[0].toLocaleString()} – {building.price_range[1].toLocaleString()}
+              </div>
+            </div>
+            <div className="text-sm text-latte">per month</div>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-4 gap-3">
+            <div className="bg-milk rounded-[10px] border border-sand p-4 text-center">
+              <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">Electric</div>
+              <div className="font-bold text-espresso text-lg mt-1">{building.electric_rate} ฿</div>
+              <div className="text-[10px] text-latte">per unit</div>
+            </div>
+            <div className="bg-milk rounded-[10px] border border-sand p-4 text-center">
+              <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">Water</div>
+              <div className="font-bold text-espresso text-lg mt-1">{building.water_rate} ฿</div>
+              <div className="text-[10px] text-latte">per unit</div>
+            </div>
+            <div className="bg-milk rounded-[10px] border border-sand p-4 text-center">
+              <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">WiFi</div>
+              <div className="font-bold text-espresso text-lg mt-1">
+                {building.wifi === "included" ? "Free" : `${building.wifi} ฿`}
+              </div>
+              <div className="text-[10px] text-latte">{building.wifi === "included" ? "included" : "per month"}</div>
+            </div>
+            <div className="bg-milk rounded-[10px] border border-sand p-4 text-center">
+              <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">Deposit</div>
+              <div className="font-bold text-espresso text-lg mt-1">{building.deposit}</div>
+              <div className="text-[10px] text-latte">month{building.deposit > 1 ? "s" : ""}</div>
+            </div>
+          </div>
+
+          {/* Facility Chips */}
+          <FacilityChips facilities={building.facilities} />
+
+          {/* Unit Tabs */}
+          <UnitTabs units={building.units} buildingSlug={building.slug} />
+
+          {/* Markdown Content Sections */}
+          {sections.map((section) => (
+            <div key={section.title}>
+              <h2 className="font-serif font-bold text-[22px] text-espresso tracking-tight mb-4">
+                {section.title}
+              </h2>
+              <div className={`bg-milk rounded-[14px] border border-sand p-6 ${sectionBorderClass(section.title)}`}>
+                {section.lines.map((line, i) => {
+                  if (line.trimStart().startsWith("- ")) {
+                    const text = line.trimStart().slice(2);
+                    return (
+                      <div key={i} className="flex gap-2 mb-2 last:mb-0">
+                        <span className="text-terracotta mt-1 shrink-0">&#8226;</span>
+                        <span
+                          className="text-dark-roast text-sm leading-relaxed"
+                          dangerouslySetInnerHTML={{
+                            __html: text.replace(
+                              /\*\*(.*?)\*\*/g,
+                              '<strong class="text-espresso font-semibold">$1</strong>'
+                            ),
+                          }}
+                        />
+                      </div>
+                    );
+                  }
+                  return (
+                    <p
+                      key={i}
+                      className="text-dark-roast text-sm leading-relaxed mb-3 last:mb-0"
+                      dangerouslySetInnerHTML={{
+                        __html: line.replace(
+                          /\*\*(.*?)\*\*/g,
+                          '<strong class="text-espresso font-semibold">$1</strong>'
+                        ),
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+
+          {/* Nearby Spots */}
+          <NearbySpots spots={building.nearby_spots} guides={guides} />
+
+          {/* Bottom CTA */}
+          <div className="bg-terracotta rounded-[14px] p-8 text-center">
+            <h2 className="font-serif font-bold text-2xl text-cream mb-2">
+              Interested in {building.name}?
+            </h2>
+            <p className="text-cream/80 text-sm mb-5">
+              Get in touch directly or read the playbook first.
+            </p>
+            <div className="flex gap-3 justify-center flex-wrap">
+              {building.contact.line && (
+                <a
+                  href={`https://line.me/R/ti/p/${building.contact.line.replace("@", "")}`}
+                  className="bg-cream text-espresso px-6 py-3 rounded-[10px] text-sm font-bold hover:bg-sand transition-colors"
+                >
+                  Message on LINE
+                </a>
+              )}
+              {building.contact.phone && (
+                <a
+                  href={`tel:${building.contact.phone}`}
+                  className="bg-cream text-espresso px-6 py-3 rounded-[10px] text-sm font-bold hover:bg-sand transition-colors"
+                >
+                  Call Now
+                </a>
+              )}
+              <a
+                href="/playbook"
+                className="bg-cream/20 text-cream px-6 py-3 rounded-[10px] text-sm font-bold hover:bg-cream/30 transition-colors"
+              >
+                Read the Playbook
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Sidebar */}
+        <div className="space-y-5 lg:sticky lg:top-8">
+          <ContactCard contact={building.contact} />
+          <QuickSummary building={building} />
+          <LocationCard coordinates={building.coordinates} address={building.address} />
+          <NearbyBuildings buildings={areaBuildings} currentSlug={building.slug} />
+        </div>
+      </div>
+    </>
+  );
+}
