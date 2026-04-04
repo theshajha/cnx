@@ -15,7 +15,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="px-4 md:px-8 py-5">
+    <nav className="px-4 md:px-8 py-5 max-w-6xl mx-auto">
       <div className="flex justify-between items-center">
         <Link
           href="/"
