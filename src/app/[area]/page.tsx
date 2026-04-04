@@ -37,8 +37,8 @@ export default async function AreaPage({ params }: Props) {
   return (
     <>
       {/* Area Header */}
-      <div className="mb-10 pt-4">
-        <h1 className="font-serif font-bold text-[30px] md:text-[40px] text-espresso tracking-tight leading-tight">
+      <div className="mb-10 pt-8 md:pt-12 pb-0">
+        <h1 className="font-serif font-bold text-[36px] md:text-[48px] text-espresso tracking-tight leading-tight">
           {areaInfo.name}
         </h1>
         <p className="text-latte text-base mt-2 max-w-xl leading-relaxed">

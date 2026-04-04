@@ -27,10 +27,28 @@ export default function PlaybookPage() {
   const sections = parsePlaybookSections(content);
 
   return (
-    <div className="max-w-3xl mx-auto pt-4">
-      <h1 className="font-serif font-bold text-[40px] text-espresso tracking-tight leading-tight mb-10">
+    <div className="max-w-3xl mx-auto pt-8 md:pt-12 pb-8">
+      <h1 className="font-serif font-bold text-[36px] md:text-[48px] text-espresso tracking-tight leading-tight mb-2">
         The Rental Playbook
       </h1>
+      <p className="text-latte text-base mb-8 max-w-xl leading-relaxed">
+        Everything you need to know about renting long-term in Chiang Mai.
+      </p>
+
+      {/* Table of Contents */}
+      {sections.length > 0 && (
+        <div className="bg-milk rounded-2xl border border-sand p-6 mb-10">
+          <h2 className="font-serif font-bold text-base text-espresso mb-3">In this guide</h2>
+          <ul className="space-y-1.5">
+            {sections.map((section) => (
+              <li key={section.title} className="text-sm text-dark-roast leading-relaxed flex gap-2">
+                <span className="text-terracotta shrink-0">&#8226;</span>
+                {section.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="space-y-10">
         {sections.map((section) => (
@@ -38,7 +56,7 @@ export default function PlaybookPage() {
             <h2 className="font-serif font-bold text-[22px] text-espresso tracking-tight mb-4">
               {section.title}
             </h2>
-            <div className="bg-milk rounded-[14px] border border-sand border-l-4 border-l-terracotta p-6">
+            <div className="bg-milk rounded-2xl border border-sand border-l-4 border-l-terracotta p-6">
               {section.lines.map((line, i) => {
                 if (line.trimStart().startsWith("- ")) {
                   const text = line.trimStart().slice(2);

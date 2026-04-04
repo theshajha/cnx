@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getAllBuildings, getAllGuides } from "@/lib/content";
+import { getAllBuildings, getAllGuides, getAllArticles, getAllContributors } from "@/lib/content";
 import { guidePillarTitle } from "@/lib/guide-pillars";
 import { websiteJsonLd } from "@/lib/seo";
 import { AREAS, AreaSlug } from "@/lib/types";
@@ -10,12 +10,19 @@ import GuideCard from "@/components/GuideCard";
 export default function Home() {
   const buildings = getAllBuildings();
   const guides = getAllGuides();
+  const articles = getAllArticles();
+  const contributors = getAllContributors();
+  const recentArticles = articles.slice(0, 3);
 
   const recentBuildings = [...buildings]
     .sort((a, b) => new Date(b.last_verified).getTime() - new Date(a.last_verified).getTime())
     .slice(0, 6);
 
   const areaEntries = Object.entries(AREAS) as [AreaSlug, (typeof AREAS)[AreaSlug]][];
+  const areaIcons: Record<AreaSlug, string> = {
+    nimman: "\u2615",
+    "old-city": "\ud83c\udfef",
+  };
 
   return (
     <>
@@ -68,8 +75,9 @@ export default function Home() {
               <Link
                 key={slug}
                 href={`/${slug}`}
-                className="block bg-milk rounded-[14px] border border-sand p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                className="block bg-milk rounded-2xl border border-sand p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
+                <div className="text-4xl mb-2">{areaIcons[slug]}</div>
                 <h3 className="font-serif font-bold text-2xl text-espresso">{area.name}</h3>
                 <p className="text-sm text-latte mt-2 leading-relaxed">{area.description}</p>
                 <div className="flex gap-6 mt-4 text-sm">
@@ -106,14 +114,14 @@ export default function Home() {
         </section>
       )}
 
-      {/* Guide Teaser */}
+      {/* Directory Teaser */}
       {guides.length > 0 && (
         <section className="mb-16">
           <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight mb-2">
-            Beyond Rentals
+            The Directory
           </h2>
           <p className="text-sm text-latte mb-6">
-            Curated guides for daily life, work, wellness, and more — organized by pillar on the full guide hub.
+            Curated spots for daily life, work, wellness, and more — your yellow pages for living in Chiang Mai.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...guides]
@@ -124,7 +132,48 @@ export default function Home() {
               ))}
           </div>
           <Link
-            href="/guide"
+            href="/directory"
+            className="inline-block mt-6 text-sm font-semibold text-terracotta hover:underline"
+          >
+            View full directory →
+          </Link>
+        </section>
+      )}
+
+      {/* Latest Guides */}
+      {recentArticles.length > 0 && (
+        <section className="mb-16">
+          <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight mb-2">
+            Latest Guides
+          </h2>
+          <p className="text-sm text-latte mb-6">
+            In-depth articles on living in Chiang Mai, written by expats who have figured it out.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {recentArticles.map((article) => {
+              const author = contributors.find((c) => c.slug === article.author);
+              return (
+                <Link
+                  key={article.slug}
+                  href={`/guides/${article.slug}`}
+                  className="block bg-milk rounded-2xl border border-sand border-l-4 border-l-terracotta p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <h3 className="font-serif font-bold text-[20px] text-espresso leading-snug">
+                    {article.title}
+                  </h3>
+                  <p className="text-dark-roast text-[14px] mt-2 leading-relaxed line-clamp-2">
+                    {article.description}
+                  </p>
+                  <div className="flex items-center gap-3 mt-4 pt-3 border-t border-sand text-xs text-latte">
+                    {author && <span className="font-medium text-dark-roast">{author.name}</span>}
+                    <span>{article.reading_time} min read</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+          <Link
+            href="/guides"
             className="inline-block mt-6 text-sm font-semibold text-terracotta hover:underline"
           >
             View all guides →

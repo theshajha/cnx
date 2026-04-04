@@ -16,9 +16,9 @@ export default function BuildingCard({ building }: BuildingCardProps) {
   return (
     <Link
       href={`/${building.area}/${building.slug}`}
-      className="block bg-milk rounded-[14px] border border-sand overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+      className="block bg-milk rounded-2xl border border-sand overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
     >
-      <div className="relative h-[180px]">
+      <div className="relative h-[180px] bg-sand">
         <SafeImage
           src={`/buildings/${building.slug}/${heroPhoto}`}
           alt={building.name}
@@ -26,6 +26,7 @@ export default function BuildingCard({ building }: BuildingCardProps) {
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
         <div className="absolute top-3 left-3">
           <span className="bg-terracotta/90 text-cream px-3 py-1 rounded-full text-[11px] font-bold">
             {areaLabel}
@@ -37,7 +38,7 @@ export default function BuildingCard({ building }: BuildingCardProps) {
           </div>
         )}
       </div>
-      <div className="p-4 md:p-5">
+      <div className="p-6">
         <h3 className="font-serif font-bold text-lg text-espresso">{building.name}</h3>
         <p className="text-xs text-latte mt-1">{building.address}</p>
         <div className="mt-3">

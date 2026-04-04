@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { getAllBuildings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About — CNX Cribs",
@@ -6,11 +7,17 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const buildings = getAllBuildings();
+  const areaCount = new Set(buildings.map((b) => b.area)).size;
+
   return (
-    <div className="max-w-3xl mx-auto pt-4">
-      <h1 className="font-serif font-bold text-[40px] text-espresso tracking-tight leading-tight mb-10">
+    <div className="max-w-3xl mx-auto pt-8 md:pt-12 pb-8">
+      <h1 className="font-serif font-bold text-[36px] md:text-[48px] text-espresso tracking-tight leading-tight mb-2">
         About
       </h1>
+      <p className="text-sm text-dark-roast font-medium mb-10">
+        Currently listing {buildings.length} buildings across {areaCount} areas
+      </p>
 
       <div className="space-y-10">
         {/* Why This Exists */}
@@ -18,19 +25,19 @@ export default function AboutPage() {
           <h2 className="font-serif font-bold text-[22px] text-espresso tracking-tight mb-4">
             Why this exists
           </h2>
-          <div className="bg-milk rounded-[14px] border border-sand p-6 border-l-4 border-l-terracotta">
-            <p className="text-dark-roast text-sm leading-relaxed mb-3">
+          <div className="space-y-4">
+            <p className="text-dark-roast text-base leading-[1.8]">
               Finding a monthly rental in Chiang Mai is either scrolling through
               blurry Facebook photos, trusting agent listings with inflated prices,
               or walking door-to-door hoping for the best.
             </p>
-            <p className="text-dark-roast text-sm leading-relaxed mb-3">
+            <p className="text-dark-roast text-base leading-[1.8]">
               CNX Cribs is what I wished existed when I moved here. Real pricing,
               honest reviews, and the insider details that only come from actually
               living in these buildings. No sponsored listings, no agent
               commissions, no BS.
             </p>
-            <p className="text-dark-roast text-sm leading-relaxed">
+            <p className="text-dark-roast text-base leading-[1.8]">
               Every building on this site has been visited on foot. Every price has
               been confirmed. Every tip comes from lived experience.
             </p>
@@ -42,7 +49,7 @@ export default function AboutPage() {
           <h2 className="font-serif font-bold text-[22px] text-espresso tracking-tight mb-4">
             What verified means
           </h2>
-          <div className="bg-milk rounded-[14px] border border-sand p-6">
+          <div className="bg-milk rounded-2xl border border-sand p-6">
             <div className="space-y-3 text-dark-roast text-sm leading-relaxed">
               <div className="flex gap-2">
                 <span className="text-terracotta shrink-0">&#8226;</span>
@@ -77,7 +84,7 @@ export default function AboutPage() {
           <h2 className="font-serif font-bold text-[22px] text-espresso tracking-tight mb-4">
             Contribute
           </h2>
-          <div className="bg-milk rounded-[14px] border border-sand p-6">
+          <div className="bg-milk rounded-2xl border border-sand p-6">
             <p className="text-dark-roast text-sm leading-relaxed mb-4">
               Know a building that should be listed? Have updated pricing or a
               correction? Lived somewhere great (or terrible) that other expats
