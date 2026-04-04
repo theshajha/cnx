@@ -46,18 +46,13 @@ export default function Home() {
       {/* ──────────────────────────────────────────────── */}
       {/* HERO — full-bleed atmospheric                     */}
       {/* ──────────────────────────────────────────────── */}
-      <section className="-mx-4 md:-mx-8 -mt-2 relative overflow-hidden bg-gradient-to-br from-espresso via-dark-roast to-terracotta">
+      <section className="-mx-4 md:-mx-8 -mt-16 relative overflow-hidden bg-gradient-to-br from-espresso via-dark-roast to-terracotta rounded-b-[2rem] md:rounded-b-[2.5rem] shadow-lg">
         {/* Texture overlay */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_50%,rgba(251,247,240,0.3),transparent_70%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-espresso/40" />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-20 md:py-28">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 pt-28 md:pt-36 pb-16 md:pb-24">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <span className="text-base">🐘</span>
-              <span className="text-cream/90 text-[11px] font-bold tracking-[1.5px] uppercase font-sans">CNX Cribs</span>
-            </div>
-
             <h1 className="font-serif font-bold text-[40px] md:text-[56px] text-cream tracking-tight leading-[1.08]">
               Your honest friend<br />in Chiang Mai.
             </h1>
