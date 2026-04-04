@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "Parlor is the third Palm Springs building. 74 units, own pool, own gym. Same compound, same developer, same quality tier."
+contributor_note: "Same compound, same developer, same quality. Pick whichever Palm Springs building has a unit available — they're interchangeable in terms of facilities and price."
 last_verified: "2026-04-04"
 units:
   - type: 1 Bedroom

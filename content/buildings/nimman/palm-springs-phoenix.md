@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "Phoenix is the fifth Palm Springs building, slightly separate from the main compound on Huay Kaew Road. Same developer, same quality. Note: this is near Phoenix Palm Spring hotel — different property, don't confuse them."
+contributor_note: "Slightly separate from the main Palm Springs compound, on Huay Kaew Road. Same quality. Don't confuse this with Phoenix Palm Spring which is a hotel nearby — different property entirely."
 last_verified: "2026-04-04"
 units:
   - type: 1 Bedroom

@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "One of five Palm Springs buildings in Nimman. Areca has 75 units and its own pool — you're not sharing facilities with hundreds of people. Solid mid-range pick if you can find availability."
+contributor_note: "One of five separate Palm Springs buildings near Soi 5. Each has its own pool and gym so you're not sharing with hundreds of people. Units are small though — 31sqm 1BR is really just a studio with a wall. Good for solo nomads who want pool+gym without paying 20k+."
 last_verified: "2026-04-04"
 units:
   - type: 1 Bedroom

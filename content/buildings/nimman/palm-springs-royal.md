@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "Royal is the only Palm Springs building with 2BR units (70-75sqm). If you're a couple or need more space, this is the one to look at. Same quality, but 68 units instead of 74."
+contributor_note: "The only Palm Springs building with 2BR units. If you're a couple or need a proper home office setup, this is the one to ask about. 2BR at 18-22k with a pool is hard to beat in Nimman. Availability is tighter here than the other four buildings."
 last_verified: "2026-04-04"
 units:
   - type: 1 Bedroom

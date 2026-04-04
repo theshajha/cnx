@@ -109,65 +109,52 @@ export default async function BuildingPage({ params }: Props) {
         <p className="text-latte text-sm mt-1">{building.address}</p>
       </div>
 
-      {/* Overview — right after title */}
-      {overviewSection && (
-        <div className="mb-8 text-[15px] text-dark-roast leading-relaxed max-w-3xl">
-          {overviewSection.lines.map((line, i) => (
-            <p key={i} className={i > 0 ? "mt-3" : ""} dangerouslySetInnerHTML={{
-              __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-espresso font-semibold">$1</strong>'),
-            }} />
-          ))}
-        </div>
-      )}
-
-      {/* Contributor Card */}
-      {contributor && (
-        <div className="mb-8 bg-milk rounded-[14px] border border-sand p-5 flex gap-4 items-start">
-          <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-sand">
-            {contributor.photo ? (
-              <Image
-                src={`/contributors/${contributor.photo}`}
-                alt={contributor.name}
-                fill
-                className="object-cover"
-                sizes="40px"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-latte text-sm font-serif font-bold">
-                {contributor.name.charAt(0)}
-              </div>
-            )}
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2">
-              <Link href="/contributors" className="text-sm font-semibold text-espresso hover:text-terracotta transition-colors">
-                {contributor.name}
-              </Link>
-              <span className="text-[10px] text-latte">contributed this listing · {building.last_verified}</span>
-            </div>
-            {building.contributor_note && (
-              <p className="text-sm text-dark-roast leading-relaxed mt-1.5 italic">
-                &ldquo;{building.contributor_note}&rdquo;
-              </p>
-            )}
-          </div>
-        </div>
-      )}
-
       {/* Two-Column Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
         {/* Left Column */}
         <div className="space-y-8">
-          {/* Price Banner */}
-          <div className="bg-milk rounded-[14px] border border-sand p-6 flex items-center justify-between">
-            <div>
-              <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">Monthly Rent</div>
-              <div className="font-serif font-bold text-3xl text-terracotta mt-1">
-                ฿{building.price_range[0].toLocaleString()} – {building.price_range[1].toLocaleString()}
+          {/* Overview — first thing in the content column */}
+          {overviewSection && (
+            <div className="text-[15px] text-dark-roast leading-relaxed">
+              {overviewSection.lines.map((line, i) => (
+                <p key={i} className={i > 0 ? "mt-3" : ""} dangerouslySetInnerHTML={{
+                  __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-espresso font-semibold">$1</strong>'),
+                }} />
+              ))}
+            </div>
+          )}
+
+          {/* Contributor Note */}
+          {contributor && building.contributor_note && (
+            <div className="flex gap-3 items-start">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-sand mt-0.5">
+                {contributor.photo ? (
+                  <Image
+                    src={`/contributors/${contributor.photo}`}
+                    alt={contributor.name}
+                    fill
+                    className="object-cover"
+                    sizes="32px"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-latte text-xs font-serif font-bold">
+                    {contributor.name.charAt(0)}
+                  </div>
+                )}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <Link href="/contributors" className="text-sm font-semibold text-espresso hover:text-terracotta transition-colors">
+                    {contributor.name}
+                  </Link>
+                  <span className="text-[10px] text-latte">{building.last_verified}</span>
+                </div>
+                <p className="text-sm text-dark-roast leading-relaxed mt-1 italic">
+                  &ldquo;{building.contributor_note}&rdquo;
+                </p>
               </div>
             </div>
-            <div className="text-sm text-latte">per month</div>
-          </div>
+          )}
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -283,6 +270,15 @@ export default async function BuildingPage({ params }: Props) {
 
         {/* Right Sidebar */}
         <div className="space-y-5 lg:sticky lg:top-8">
+          {/* Monthly Rent — top of sidebar */}
+          <div>
+            <div className="font-serif font-bold text-[28px] text-terracotta tracking-tight">
+              ฿{building.price_range[0].toLocaleString()} – {building.price_range[1].toLocaleString()}
+            </div>
+            <div className="text-sm text-latte mt-0.5">
+              per month · {building.units.map((u) => u.type).join(" & ")}
+            </div>
+          </div>
           <div className="hidden lg:block">
             <ContactCard contact={building.contact} />
           </div>

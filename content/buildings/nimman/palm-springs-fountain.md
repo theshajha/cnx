@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "Fountain is the second Palm Springs building. Same quality as Areca — own pool, own gym, 74 units. Identical floor plans, just a different building in the same compound."
+contributor_note: "Same deal as the other Palm Springs buildings — own pool, own gym, 74 units. 1BR here is 35sqm vs 31sqm at Areca, so slightly more livable. Check availability across all five and take whichever has the best unit."
 last_verified: "2026-04-04"
 units:
   - type: 1 Bedroom

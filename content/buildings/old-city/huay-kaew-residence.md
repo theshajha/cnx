@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "3,500 THB/month with a pool — this is the budget king of Chiang Mai. The basic rooms are no-frills, but the suites with kitchens are genuinely nice. WiFi is 300 THB/month extra, which is annoying but the overall value is unbeatable."
+contributor_note: "Cheapest place with a pool that I've found in central Chiang Mai. The 3,500 THB rooms are bare-bones — bed, AC, that's about it. But the suites with kitchens are actually decent. WiFi costs 300/month extra which is annoying. Good if you're on a tight budget and want pool access. Not for you if you care about modern finishes."
 last_verified: "2026-04-04"
 units:
   - type: Studio Standard

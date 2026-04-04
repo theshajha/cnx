@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "5,000 THB/month in Santitham with Doi Suthep views from the rooftop — hard to argue with that. No pool, no gym, but two desks per room is great for remote workers. The budget nomad's best friend."
+contributor_note: "Basically the cheapest monthly rental in the area at 5,000 THB. No pool, no gym, nothing fancy. But two desks per room and free WiFi — so if you just need a clean, quiet place to work from and don't care about amenities, it does the job. The rooftop has Doi Suthep views which is a nice bonus. Wouldn't put a couple here though, 28sqm is tight."
 last_verified: "2026-04-04"
 units:
   - type: Standard Room

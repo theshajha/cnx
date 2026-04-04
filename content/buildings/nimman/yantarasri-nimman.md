@@ -19,7 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
-contributor_note: "The communal kitchen is a game-changer at this price point — full oven, 6 stovetops. If you cook regularly, this alone makes it worth it over cheaper places with just a microwave. No gym though, so factor in a nearby gym membership."
+contributor_note: "Good pick if you cook a lot — the shared kitchen has a proper oven and six stovetops, which you won't find at this price anywhere else in Nimman. No gym and no pool on-site, so you'd need to sort those separately. The bathtub is a nice surprise. Wouldn't recommend if you work out daily and don't want the hassle of a separate gym."
 last_verified: "2026-04-04"
 units:
   - type: Studio
