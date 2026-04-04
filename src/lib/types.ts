@@ -20,6 +20,7 @@ export interface Building {
   photos: string[];
   verified: boolean;
   last_verified: string;
+  contributed_by: string | null;
   units: Unit[];
   nearby_spots: NearbySpotRef[];
   content: string;

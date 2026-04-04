@@ -18,6 +18,7 @@ contact:
   website: http://www.galarethong.com/
 photos: [hero.jpg]
 verified: false
+contributed_by: shashank
 last_verified: "2026-04-04"
 units:
   - type: Studio Standard

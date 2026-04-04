@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { getAllBuildings, getBuildingBySlug, getBuildingsByArea, getAllGuides } from "@/lib/content";
+import { getAllBuildings, getBuildingBySlug, getBuildingsByArea, getAllGuides, getAllContributors } from "@/lib/content";
+import Link from "next/link";
 import { buildingMetadata, buildingJsonLd } from "@/lib/seo";
 import PhotoGallery from "@/components/PhotoGallery";
 import VerifiedBadge from "@/components/VerifiedBadge";
@@ -58,6 +59,10 @@ export default async function BuildingPage({ params }: Props) {
 
   const areaBuildings = getBuildingsByArea(building.area);
   const guides = getAllGuides();
+  const contributors = getAllContributors();
+  const contributor = building.contributed_by
+    ? contributors.find((c) => c.slug === building.contributed_by)
+    : null;
 
   const allPhotos = [
     ...building.photos,
@@ -192,6 +197,17 @@ export default async function BuildingPage({ params }: Props) {
 
           {/* Nearby Spots */}
           <NearbySpots spots={building.nearby_spots} guides={guides} />
+
+          {/* Attribution */}
+          <div className="flex items-center justify-between text-sm text-latte border-t border-sand pt-4">
+            <span>Last verified: {building.last_verified}</span>
+            {contributor && (
+              <Link href="/contributors" className="flex items-center gap-1.5 hover:text-terracotta transition-colors">
+                <span>Contributed by</span>
+                <span className="font-semibold text-dark-roast">{contributor.name}</span>
+              </Link>
+            )}
+          </div>
 
           {/* Bottom CTA */}
           <div className="bg-terracotta rounded-[14px] p-5 md:p-8 text-center">
