@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllBuildings, getAllGuides, getAllArticles, getAllContributors, getAllAreaMetadata } from "@/lib/content";
 import { guidePillarTitle } from "@/lib/guide-pillars";
 import { websiteJsonLd } from "@/lib/seo";
@@ -46,10 +47,19 @@ export default function Home() {
       {/* ──────────────────────────────────────────────── */}
       {/* HERO — full-bleed atmospheric                     */}
       {/* ──────────────────────────────────────────────── */}
-      <section className="-mx-4 md:-mx-8 -mt-16 relative overflow-hidden bg-gradient-to-br from-espresso via-dark-roast to-terracotta rounded-b-[2rem] md:rounded-b-[2.5rem] shadow-lg">
-        {/* Texture overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_50%,rgba(251,247,240,0.3),transparent_70%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-espresso/40" />
+      <section className="-mx-4 md:-mx-8 -mt-16 relative overflow-hidden rounded-b-[2rem] md:rounded-b-[2.5rem] shadow-lg">
+        {/* Hero photo */}
+        <Image
+          src="/hero.jpg"
+          alt="Nimmanhaemin Road at golden hour — cafes, scooters, and Doi Suthep in the background"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/80 via-espresso/60 to-espresso/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/50 via-transparent to-espresso/20" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 pt-28 md:pt-36 pb-16 md:pb-24">
           <div className="max-w-2xl">
