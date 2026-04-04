@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllBuildings, getAllGuides } from "@/lib/content";
 import { guidePillarTitle } from "@/lib/guide-pillars";
 import { websiteJsonLd } from "@/lib/seo";
@@ -25,6 +26,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="text-center py-16 md:py-24">
+        <Image src="/mascot.svg" alt="CNX Cribs mascot" width={80} height={80} className="mx-auto mb-6 w-16 h-16 md:w-20 md:h-20" />
         <h1 className="font-serif font-bold text-[36px] md:text-[68px] text-espresso tracking-tight leading-[1.1]">
           Find your place in<br />Chiang Mai.
         </h1>

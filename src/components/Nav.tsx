@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "/nimman", label: "Nimman" },
@@ -19,9 +20,12 @@ export default function Nav() {
       <div className="flex justify-between items-center">
         <Link
           href="/"
-          className="font-serif font-bold text-[22px] text-espresso tracking-tight hover:text-terracotta transition-colors"
+          className="flex items-center gap-2 hover:opacity-90 transition-opacity"
         >
-          CNX Cribs
+          <Image src="/mascot.svg" alt="" width={32} height={32} className="w-8 h-8" />
+          <span className="font-serif font-bold text-[22px] text-espresso tracking-tight">
+            CNX Cribs
+          </span>
         </Link>
 
         {/* Desktop Links */}
