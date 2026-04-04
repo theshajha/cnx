@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getAllGuides, getGuideByCategory, getAllContributors } from "@/lib/content";
+import GuideSpotPhoto from "@/components/GuideSpotPhoto";
 import { guideSpotAreaLabel } from "@/lib/guide-areas";
 import { guideMetadata } from "@/lib/seo";
 
@@ -53,23 +53,21 @@ export default async function GuideCategoryPage({ params }: Props) {
       {/* Spot Cards */}
       {guide.spots.length > 0 ? (
         <div className="space-y-5">
-          {guide.spots.map((spot) => {
+          {guide.spots.map((spot, index) => {
             const areaLabel = guideSpotAreaLabel(spot.area);
             return (
               <div
                 key={spot.slug}
-                className="bg-milk rounded-[14px] border border-sand overflow-hidden flex flex-col md:flex-row"
+                className="bg-milk rounded-[14px] border border-sand overflow-hidden flex flex-col md:flex-row md:items-stretch"
               >
-                <div className="relative w-full md:w-[240px] h-[180px] md:h-auto shrink-0">
-                  <Image
-                    src={`/guides/${category}/${spot.photo}`}
-                    alt={spot.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 240px"
-                  />
-                </div>
-                <div className="p-6 flex flex-col justify-center">
+                <GuideSpotPhoto
+                  category={category}
+                  photo={spot.photo}
+                  alt={spot.name}
+                  priority={index === 0}
+                  photoCredit={spot.photo_credit}
+                />
+                <div className="p-6 flex flex-col justify-center flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="font-serif font-bold text-lg text-espresso">{spot.name}</h3>
                     <span className="bg-terracotta/90 text-cream px-2.5 py-0.5 rounded-full text-[10px] font-bold">

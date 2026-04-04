@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "The biggest condo complex in Nimman — 514 units means you can always find something, but quality varies wildly between units. Some owners have done full renovations, others haven't touched the place since 2016. Always visit the specific unit before signing."
 last_verified: "2026-04-04"
 units:
   - type: Studio

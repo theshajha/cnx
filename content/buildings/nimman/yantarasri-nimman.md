@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "The communal kitchen is a game-changer at this price point — full oven, 6 stovetops. If you cook regularly, this alone makes it worth it over cheaper places with just a microwave. No gym though, so factor in a nearby gym membership."
 last_verified: "2026-04-04"
 units:
   - type: Studio

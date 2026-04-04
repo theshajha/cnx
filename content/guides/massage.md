@@ -3,7 +3,7 @@ name: Massage
 category: massage
 pillar: wellness
 order: 1
-icon: "💆"
+icon: "\U0001F486"
 recommended_by: shashank
 description: Thai massage spots trusted by long-term expats. No tourist traps.
 spots:
@@ -11,58 +11,82 @@ spots:
     slug: lila-thai-massage
     area: nimman
     address: Nimmanhaemin Soi 4
-    coordinates: [18.796, 98.966]
+    coordinates:
+      - 18.796
+      - 98.966
     one_liner: Social-enterprise brand with trained therapists — book ahead on busy weekends.
-    photo: spot.png
+    photo: lila-thai-massage.jpg
+    photo_credit: 'minube.co.uk'
   - name: Fah Lanna Spa
     slug: fah-lanna-spa
     area: old-city
     address: Phra Pok Klao Road
-    coordinates: [18.788, 98.986]
+    coordinates:
+      - 18.788
+      - 98.986
     one_liner: Teak-house setting and spa-level service; prices match the polish.
-    photo: spot.png
+    photo: fah-lanna-spa.jpg
+    photo_credit: 'fahlanna.com'
   - name: Chiang Mai Women's Correctional Institution vocational centre
     slug: womens-correctional-massage
     area: old-city
     address: Ratvithi Road (Old City)
-    coordinates: [18.791, 98.983]
+    coordinates:
+      - 18.791
+      - 98.983
     one_liner: Famous training programme — queues at peak times; cash and patience required.
-    photo: spot.png
+    photo: womens-correctional-massage.jpg
+    photo_credit: 'National Geographic'
   - name: Green Bamboo Massage
     slug: green-bamboo-massage
     area: old-city
-    address: Old City, Ratchapakhinai area
-    coordinates: [18.790, 98.987]
+    address: 'Old City, Ratchapakhinai area'
+    coordinates:
+      - 18.79
+      - 98.987
     one_liner: Straightforward Thai massage house with consistent pressure; less spa fluff.
-    photo: spot.png
+    photo: green-bamboo-massage.jpg
+    photo_credit: 'thaisalons.com'
   - name: Chiang Mai Foot Massage (Ratchadamnoen)
     slug: chiang-mai-foot-massage-ratchadamnoen
     area: old-city
     address: Ratchadamnoen Road
-    coordinates: [18.787, 98.985]
+    coordinates:
+      - 18.787
+      - 98.985
     one_liner: Foot-and-Thai combo shops along the walking-street strip — pick the busy one with AC.
-    photo: spot.png
+    photo: chiang-mai-foot-massage-ratchadamnoen.jpg
+    photo_credit: 'chiangmailocator.com'
   - name: Let's Relax Spa
     slug: lets-relax-central-festival
     area: nimman
     address: Central Festival Chiang Mai (retail wing)
-    coordinates: [18.808, 98.968]
+    coordinates:
+      - 18.808
+      - 98.968
     one_liner: Mall chain = predictable English menus and timing; good for first-timers.
-    photo: spot.png
+    photo: lets-relax-central-festival.jpg
+    photo_credit: 'Trip.com'
   - name: Oasis Spa
     slug: oasis-spa-chiang-mai
     area: nimman
     address: Nimman / Suthep area (check branch)
-    coordinates: [18.795, 98.970]
+    coordinates:
+      - 18.795
+      - 98.97
     one_liner: Upscale oil treatments; use when you want quiet rooms and hotel-style service.
-    photo: spot.png
+    photo: oasis-spa-chiang-mai.jpg
+    photo_credit: 'thethaipass.com'
   - name: Baan Thai Massage
     slug: baan-thai-massage
     area: chang-khlan
     address: Night Bazaar / Chang Khlan vicinity
-    coordinates: [18.779, 98.998]
+    coordinates:
+      - 18.779
+      - 98.998
     one_liner: Tourist-zone option that still gets repeat expats — insist on pressure level up front.
-    photo: spot.png
+    photo: baan-thai-massage.jpg
+    photo_credit: 'thailand.org'
 ---
 
 ## About Massage in Chiang Mai

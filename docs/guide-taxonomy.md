@@ -65,8 +65,13 @@ Optional body markdown after `---` renders as sections below the spot cards (sam
 ### Spot entries
 
 - `slug` — stable id for `nearby_spots` in building markdown.
-- `area` — neighborhood slug; use `nimman`, `old-city`, or add new slugs and extend the area label map in `src/app/guide/[category]/page.tsx` if needed.
-- `photo` — filename only; file lives at `public/guides/{category}/{photo}`.
+- `area` — neighborhood slug; use `nimman`, `old-city`, or add new slugs and extend the area label map in `src/lib/guide-areas.ts` if needed.
+- `photo` — filename only; file must exist at `public/guides/{category}/{photo}`. Prefer **WebP** or **JPEG**, **4:3** or wider landscape, ~**1200px** on the long edge, compressed for web. The UI crops with `object-cover` inside a **4:3** frame (`md` width **288px**).
+- `photo_credit` (optional) — short line under the image (e.g. `Photo: Your Name` or permission note).
+
+`yarn build` runs **`yarn check:guide-photos`** first; missing files fail the build.
+
+**Place photos:** Use **real** images you shot or have permission to use — never random stock as if it were the venue. Until then, keep **`photo: guide-placeholder.png`** (regenerate with `yarn generate:guide-placeholder`; reset all spots to that file with `yarn sync:guide-placeholder-yaml`). The site shows a clear **“Venue photo soon”** label on the placeholder.
 
 ---
 
@@ -96,6 +101,9 @@ Create a **new** `content/guides/new-slug.md` with its own `category` and `order
 ## 6. Related code
 
 - Hub grouping: `src/app/guide/page.tsx`
+- Spot image frame: `src/components/GuideSpotPhoto.tsx`
 - Pillar config: `src/lib/guide-pillars.ts`
-- Types: `GuideCategory` in `src/lib/types.ts`
+- Types: `GuideCategory` / `GuideSpot` in `src/lib/types.ts`
 - Loader: `getAllGuides()` in `src/lib/content.ts`
+- Photo file check: `scripts/check-guide-photos.cjs` (`yarn check:guide-photos`)
+- Neutral placeholder asset: `scripts/generate-guide-placeholder.mjs` (`yarn generate:guide-placeholder`)

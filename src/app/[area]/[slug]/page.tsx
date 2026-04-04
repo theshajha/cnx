@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getAllBuildings, getBuildingBySlug, getBuildingsByArea, getAllGuides, getAllContributors } from "@/lib/content";
 import Link from "next/link";
 import { buildingMetadata, buildingJsonLd } from "@/lib/seo";
+import Image from "next/image";
 import PhotoGallery from "@/components/PhotoGallery";
 import VerifiedBadge from "@/components/VerifiedBadge";
 import FacilityChips from "@/components/FacilityChips";
@@ -71,7 +72,9 @@ export default async function BuildingPage({ params }: Props) {
 
   const areaLabel = building.area === "nimman" ? "Nimman" : "Old City";
   const typeLabel = building.type.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-  const sections = parseContentSections(building.content);
+  const allSections = parseContentSections(building.content);
+  const overviewSection = allSections.find((s) => s.title.toLowerCase() === "overview");
+  const sections = allSections.filter((s) => s.title.toLowerCase() !== "overview");
 
   return (
     <>
@@ -90,7 +93,7 @@ export default async function BuildingPage({ params }: Props) {
       </div>
 
       {/* Title Bar */}
-      <div className="mb-8">
+      <div className="mb-6">
         <div className="flex items-center gap-2.5 mb-3 flex-wrap">
           <span className="bg-terracotta/90 text-cream px-3 py-1 rounded-full text-[11px] font-bold">
             {areaLabel}
@@ -105,6 +108,51 @@ export default async function BuildingPage({ params }: Props) {
         </h1>
         <p className="text-latte text-sm mt-1">{building.address}</p>
       </div>
+
+      {/* Overview — right after title */}
+      {overviewSection && (
+        <div className="mb-8 text-[15px] text-dark-roast leading-relaxed max-w-3xl">
+          {overviewSection.lines.map((line, i) => (
+            <p key={i} className={i > 0 ? "mt-3" : ""} dangerouslySetInnerHTML={{
+              __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-espresso font-semibold">$1</strong>'),
+            }} />
+          ))}
+        </div>
+      )}
+
+      {/* Contributor Card */}
+      {contributor && (
+        <div className="mb-8 bg-milk rounded-[14px] border border-sand p-5 flex gap-4 items-start">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-sand">
+            {contributor.photo ? (
+              <Image
+                src={`/contributors/${contributor.photo}`}
+                alt={contributor.name}
+                fill
+                className="object-cover"
+                sizes="40px"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-latte text-sm font-serif font-bold">
+                {contributor.name.charAt(0)}
+              </div>
+            )}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2">
+              <Link href="/contributors" className="text-sm font-semibold text-espresso hover:text-terracotta transition-colors">
+                {contributor.name}
+              </Link>
+              <span className="text-[10px] text-latte">contributed this listing · {building.last_verified}</span>
+            </div>
+            {building.contributor_note && (
+              <p className="text-sm text-dark-roast leading-relaxed mt-1.5 italic">
+                &ldquo;{building.contributor_note}&rdquo;
+              </p>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Two-Column Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
@@ -197,17 +245,6 @@ export default async function BuildingPage({ params }: Props) {
 
           {/* Nearby Spots */}
           <NearbySpots spots={building.nearby_spots} guides={guides} />
-
-          {/* Attribution */}
-          <div className="flex items-center justify-between text-sm text-latte border-t border-sand pt-4">
-            <span>Last verified: {building.last_verified}</span>
-            {contributor && (
-              <Link href="/contributors" className="flex items-center gap-1.5 hover:text-terracotta transition-colors">
-                <span>Contributed by</span>
-                <span className="font-semibold text-dark-roast">{contributor.name}</span>
-              </Link>
-            )}
-          </div>
 
           {/* Bottom CTA */}
           <div className="bg-terracotta rounded-[14px] p-5 md:p-8 text-center">

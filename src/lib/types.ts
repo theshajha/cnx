@@ -21,6 +21,7 @@ export interface Building {
   verified: boolean;
   last_verified: string;
   contributed_by: string | null;
+  contributor_note: string | null;
   units: Unit[];
   nearby_spots: NearbySpotRef[];
   content: string;
@@ -65,7 +66,10 @@ export interface GuideSpot {
   address: string;
   coordinates: [number, number];
   one_liner: string;
+  /** Filename under public/guides/{category}/ — webp, jpg, or png recommended */
   photo: string;
+  /** Optional attribution (e.g. "Photo: name" or "© venue name") */
+  photo_credit?: string | null;
 }
 
 export interface Contributor {
