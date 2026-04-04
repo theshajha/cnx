@@ -38,9 +38,11 @@ Parking is easy. Most places have scooter parking. Malls have free scooter parki
 
 Technically, you need a valid driving license to ride a scooter in Thailand. An international driving permit (IDP) from your home country works if it covers motorcycles. Without a license, you can get fined 500-1,000 THB at police checkpoints — and more importantly, your travel insurance probably will not cover you in an accident.
 
-Getting a Thai driving license is possible on a tourist visa. You need a medical certificate (150-200 THB at any clinic), your passport, a certificate of residence from immigration (500 THB), and to pass a written test and practical riding test at the Chiang Mai Department of Land Transport.
+Getting a Thai driving license is technically possible on a tourist visa, though it has gotten harder. You need a medical certificate (150-200 THB at any clinic), your passport, a certificate of residence from immigration (500 THB express or 50-60 THB standard), and to pass a written test and practical riding test at the Chiang Mai Department of Land Transport.
 
-The written test is multiple choice and available in English. The practical test is easy — ride in a straight line, do a figure eight, stop at a line. The whole process takes most of a day. Some people hire a driving school to streamline it — costs about 2,000-3,000 THB including the medical certificate and transport to the testing center.
+**2025-2026 change:** The DLT now requires online appointment booking through the DLT app — walk-ins are no longer accepted at most locations. Book your appointment before showing up or you will be turned away. Processing times have extended, and some offices are becoming stricter about accepting tourist visa holders (Bangkok has largely stopped; Chiang Mai is still more lenient but it varies).
+
+The written test is multiple choice and available in English. The practical test is easy — ride in a straight line, do a figure eight, stop at a line. Some people hire a driving school to streamline it — costs about 2,000-3,000 THB including the medical certificate and transport to the testing center.
 
 Is it worth it? If you are staying more than a month, yes. It costs under 1,000 THB total (without a school), it keeps your insurance valid, and it means you can ride without worrying about checkpoints.
 
@@ -66,7 +68,7 @@ How it works: download the Grab app, enter your destination, and a driver comes 
 
 Availability: in Nimman and the Old City, you can usually get a Grab within 5-10 minutes during the day. Outside peak areas or late at night, waits can be 15-20 minutes. During heavy rain, drivers become scarce.
 
-Prices: typical trips within the city run 50-120 THB. Nimman to the airport is 100-150 THB. Nimman to the Old City is 60-80 THB. Prices surge during rain and late-night hours.
+Prices: typical trips within the city run 50-150 THB. Nimman to the airport is 100-180 THB. Nimman to the Old City is 80-120 THB. Prices surge during rain and late-night hours.
 
 GrabBike (motorcycle taxi) is cheaper than GrabCar but only available in some areas. If you are solo and not carrying much, it is a good option.
 

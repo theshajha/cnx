@@ -48,7 +48,7 @@ One warning: just because you can buy it does not mean you should self-medicate.
 
 Chiang Mai is a dental tourism destination for a reason. The quality is high, the prices are low, and many dentists trained in the US, UK, or Australia.
 
-A routine cleaning costs 500-1,000 THB. A filling runs 1,000-2,000 THB. A crown is 8,000-15,000 THB. Root canal: 5,000-10,000 THB. Dental implants: 35,000-50,000 THB. Compare these to US prices and you will understand why people fly here for dental work.
+A routine cleaning costs 600-1,500 THB. A filling runs 1,000-2,000 THB. A crown is 8,000-15,000 THB. Root canal: 5,000-10,000 THB. Dental implants: 35,000-50,000 THB. Compare these to US prices and you will understand why people fly here for dental work.
 
 Several dental clinics in Chiang Mai cater specifically to international patients with English-speaking staff and modern equipment. The dentists at these clinics are typically very experienced — they see a high volume of patients and have invested in good equipment because their reputation drives their business.
 
@@ -60,7 +60,7 @@ You have three basic approaches to health insurance in Chiang Mai.
 
 Self-insure (pay out of pocket): because healthcare is so cheap, some expats — especially younger, healthy ones — just pay as they go. A GP visit is 500 THB, blood work is a couple thousand, even minor procedures are affordable. This works until something major happens. A hospitalization, a surgery, or a medical evacuation can cost hundreds of thousands of baht. You are gambling that nothing serious will happen.
 
-Local Thai insurance: companies like AIA, Muang Thai, and Pacific Cross offer health plans for residents of Thailand. Premiums range from 15,000-40,000 THB per year depending on your age and coverage level. These plans cover hospitalization and sometimes outpatient care at Thai hospitals. They do not cover treatment abroad or medical evacuation.
+Local Thai insurance: companies like AIA, Muang Thai, and Pacific Cross offer health plans for residents of Thailand. Premiums range from 20,000-45,000 THB per year depending on your age and coverage level (premiums have risen ~19% in recent years). These plans cover hospitalization and sometimes outpatient care at Thai hospitals. They do not cover treatment abroad or medical evacuation.
 
 International health insurance: Cigna Global, AXA, Allianz, Luma, and similar companies offer comprehensive international plans. Premiums are higher — 40,000-120,000 THB per year depending on age, coverage area, and deductible. But they cover treatment worldwide, medical evacuation, and typically have higher coverage limits.
 

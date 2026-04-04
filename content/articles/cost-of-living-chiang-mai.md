@@ -44,7 +44,7 @@ You do not need a car in Chiang Mai. Most people get around on a scooter, and it
 
 Scooter rental: 2,500-3,500 THB/month for a Honda Click or Yamaha NMAX. Petrol is cheap — 100-200 THB fills a tank, lasts about a week of normal use. If you are staying long-term, some people buy a used scooter for 15,000-25,000 THB and sell it when they leave.
 
-Grab (ride-hailing): works in Chiang Mai but not as well as in Bangkok. A Grab from Nimman to the Old City is about 60-80 THB. From Nimman to the airport, 100-150 THB. Availability can be spotty during peak hours or rain.
+Grab (ride-hailing): works in Chiang Mai but not as well as in Bangkok. A Grab from Nimman to the Old City is about 80-120 THB. From Nimman to the airport, 100-180 THB. Availability can be spotty during peak hours or rain.
 
 Songthaew (red trucks): the traditional shared taxi. 30 THB per person within the city. Just flag one down, tell the driver where you are going, hop in the back. Not as reliable as Grab, but cheap and ubiquitous.
 

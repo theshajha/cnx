@@ -5,12 +5,12 @@ description: "Tourist visa, ED visa, retirement visa, visa runs — here's what 
 author: shashank
 published: "2026-04-04"
 updated: "2026-04-04"
-reading_time: 8
+reading_time: 12
 ---
 
 Thai visa rules are confusing, and every forum post seems to contradict the last one. Rules change often, enforcement varies by officer, and what worked for someone in 2023 might not work today. I've spent time talking to long-term expats in Chiang Mai — people who've been through visa runs, ED visas, the works — and cross-referenced what they told me with the latest immigration updates. This is what I've put together as of early 2026.
 
-The big thing to understand: Thailand does not have a digital nomad visa. There is no "I work remotely and want to live here for a year" option. Everyone who stays long-term is using one of the workarounds below, each with its own trade-offs.
+**Update (2026):** Thailand now has two visa options specifically relevant to remote workers — the DTV (Destination Thailand Visa, launched July 2024) and the LTR (Long-Term Resident Visa). The DTV is the game-changer most digital nomads have been waiting for. Details on both below, along with the other established options.
 
 ## Visa Exemption (30 or 60 Days)
 
@@ -29,6 +29,34 @@ Some embassies issue double-entry or triple-entry tourist visas, giving you two 
 The application process varies wildly by embassy. Kuala Lumpur and Vientiane are popular with Chiang Mai-based people. Some embassies want proof of accommodation, onward flights, and bank statements. Others barely look at your paperwork.
 
 Reality check: stacking tourist visas back-to-back works for a while, but immigration officers may eventually push back if they see you have spent 10 of the last 12 months in Thailand on tourist stamps. There is no hard rule, but the pattern matters.
+
+## DTV — Destination Thailand Visa (The Digital Nomad Visa)
+
+This is the big one. Launched in July 2024, the DTV is Thailand's answer to the digital nomad visa that other countries have offered for years. It is now the primary long-stay option for most remote workers in Chiang Mai.
+
+The basics: 5-year validity, multiple entries, 180 days per entry, extendable by another 180 days at immigration (1,900 THB). That means up to 360 days per entry before you need to leave and re-enter. The visa costs 10,000 THB (~$300 USD) at most embassies, though fees vary by location.
+
+You qualify under the "Workcation" category if you work remotely for companies or clients outside Thailand — freelancers, remote employees, business owners. You need to show proof of foreign income (salary slips, contracts, invoices) and bank statements showing at least 500,000 THB (~$15,000 USD) in savings.
+
+The application is now fully online through thaievisa.go.th — no embassy visit required in most cases. Upload your documents, pay the fee, and receive your visa by email. Processing takes 2-4 weeks depending on the embassy. Some neighboring country embassies (Vientiane, KL) process faster.
+
+Important caveats: the DTV is technically classified as a tourist visa variant. This means you cannot get a Thai work permit on it, and you cannot work for Thai companies or Thai clients. It is specifically for people earning income from abroad. Banks may also treat you as a tourist for account-opening purposes — bring extra documentation (see our [bank account guide](/guides/thai-bank-account)).
+
+Also important: there are no standardized document requirements. Each embassy officer has discretion over what they accept. The Nomad Summit blog documented one applicant's full experience — professional portfolio, business registration, contracts, and bank statements were sufficient. But another embassy might want different proof. Over-prepare rather than under-prepare.
+
+The DTV has changed the calculation for most digital nomads. Before mid-2024, everyone was stacking tourist visas or doing ED visas. Now, the DTV gives you legitimate long-term status with minimal hassle. If you earn remotely and can show 500,000 THB in savings, this is the move.
+
+## LTR — Long-Term Resident Visa (High Earners)
+
+The LTR visa is a 10-year visa launched in 2022 for high-earning professionals. It is not for everyone — the requirements are steep — but if you qualify, it is the most comfortable visa option in Thailand.
+
+Under the "Work-from-Thailand Professionals" category, you need: personal income of at least $80,000 USD per year for the past 2 years, employment with a company that is either publicly listed or has $150 million+ in annual revenue over the past 3 years, and health insurance with at least $50,000 USD coverage.
+
+If you meet those requirements, you get a 10-year visa with a flat 17% personal income tax rate (vs the normal progressive rates up to 35%), a digital work permit, no 90-day reporting requirement, fast-track immigration lanes, and permission to work remotely with full legal clarity.
+
+The application goes through Thailand's Board of Investment (BOI) at ltr.boi.go.th. Processing takes 4-8 weeks. The visa fee is 50,000 THB for a 5-year term or 100,000 THB for 10 years.
+
+This visa is clearly aimed at corporate remote workers at large companies, not freelancers or small business owners. If you work for a Fortune 500 company remotely and earn well, the LTR is worth investigating. For everyone else, the DTV is more realistic.
 
 ## ED Visa (Education Visa)
 
@@ -74,18 +102,24 @@ You can do it online (when the system works), by mail, or in person at immigrati
 
 Technically, working on a tourist visa or visa exemption is not legal. The Thai work permit law is broad — any "work" requires a work permit, and tourist entries do not come with one.
 
-In practice, enforcement against remote workers on laptops in cafes is essentially zero. Thailand knows that digital nomads bring money and do not take Thai jobs. But it is worth understanding the legal position. You are operating in a gray area.
+In practice, enforcement against remote workers on laptops in cafes is essentially zero. Thailand knows that digital nomads bring money and do not take Thai jobs. But it is worth understanding the legal position.
 
-If this bothers you, the Elite visa or ED visa are cleaner options. Neither explicitly authorizes remote work, but they give you long-term legal residence and nobody asks what you do on your laptop.
+The good news: the DTV explicitly addresses this. Its "Workcation" category is designed for people working remotely for foreign clients and employers. While it does not come with a formal work permit, the Thai government created this visa category specifically to legitimize remote work. It is the clearest legal footing a digital nomad has ever had in Thailand.
+
+If you want even more legal clarity, the LTR visa comes with an actual digital work permit. But the DTV is sufficient for the vast majority of remote workers.
 
 ## What I Would Actually Do
 
 If you are coming for 1-3 months to try Chiang Mai: use the visa exemption or a tourist visa. Simple, cheap, no commitments.
 
-If you want to stay 6-12 months: get an ED visa. Learn Thai. It is worth it for the language skills alone, and the visa is affordable.
+If you work remotely and want to stay 6-12+ months: the DTV is now the obvious choice. 10,000 THB, 180+180 days per entry, 5-year validity, fully online application. This did not exist before mid-2024 and it changes everything. You no longer need to do ED visa workarounds or stack tourist entries.
+
+If you want to stay AND learn Thai: get an ED visa. The DTV gives you legal residence, but the ED visa gives you a reason to actually learn the language, which makes life here significantly better. Some people do DTV for the visa and still take Thai classes independently.
 
 If you are 50+ and this is your base: retirement visa, hands down.
 
-If you earn well and want zero friction: Elite visa. The cost is real but the convenience is unmatched.
+If you earn $80k+ at a large company: look into the LTR visa. The 17% flat tax rate alone can save you thousands.
+
+If you earn very well and want zero friction regardless: Elite visa. The cost is real but the convenience is unmatched.
 
 Do not overthink it on your first visit. Come on a tourist entry, see if you like the life here, and figure out the long-term visa later. That is what most of us did. For what to expect financially, see our [cost of living guide](/guides/cost-of-living-chiang-mai). And when you're ready to settle in, check out [all our cribs](/cribs) for verified monthly rentals.

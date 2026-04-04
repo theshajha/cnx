@@ -26,7 +26,7 @@ Foreigners cannot own land in Thailand. Period. This means you cannot buy a hous
 
 You will hear about workarounds — setting up a Thai company to hold the land, using a Thai nominee, long-term leases. Let me be blunt about each.
 
-Thai company structure: some lawyers will help you set up a Thai limited company where Thai nationals hold 51% and you hold 49%, and the company buys the land. This is technically legal if the company has a real business purpose. But if the company exists solely to hold property and the Thai shareholders are nominees, it is illegal. The Land Department has gotten much better at spotting these structures. If they unwind it, you lose the property. I would not bet my life savings on this approach.
+Thai company structure: some lawyers will help you set up a Thai limited company where Thai nationals hold 51% and you hold 49%, and the company buys the land. This is technically legal if the company has a real business purpose. But if the company exists solely to hold property and the Thai shareholders are nominees, it is illegal — and **enforcement has escalated dramatically since 2025.** The Department of Business Development launched an AI-powered system (IBAS) in October 2025 that cross-references corporate registries with government databases to flag nominee structures. Over 46,000 companies have been targeted, with 852 prosecutions and 15 billion THB in damages. A proposed amendment to Section 94 of the Land Code would allow the state to confiscate illegally held land **without compensation** — currently the owner must sell but keeps proceeds. Multiple lawyers now describe the nominee model as "effectively dead." I would absolutely not go this route.
 
 Thai spouse or partner: if you are married to a Thai national, they can buy land in their name. You will not be on the title. This works for many mixed couples, but it means your ownership depends entirely on the relationship and Thai inheritance law.
 
@@ -52,7 +52,7 @@ Transfer fees typically run about 6% of the appraised value, split between buyer
 
 Here is the part that trips people up. To register a condo in a foreigner's name, you must bring the purchase money into Thailand as foreign currency and exchange it at a Thai bank. The bank issues a Foreign Exchange Transaction form (FETF) for any amount over $50,000 equivalent.
 
-You need this FETF at the Land Department to prove the money came from abroad. Wire transfer from your overseas bank to your Thai bank account, then exchange it. Do not bring cash, do not use crypto, do not get creative. The paper trail matters.
+You need this FETF at the Land Department to prove the money came from abroad. **Important:** even for amounts under $50,000, you still need proof of foreign remittance — request a credit advice letter from the bank, which serves the same purpose as the FETF. The bank only issues the FETF automatically above $50K; below that you must ask for it. Wire transfer from your overseas bank to your Thai bank account, then exchange it. Do not bring cash, do not use crypto, do not get creative. The paper trail matters.
 
 This means you need a Thai bank account before closing. See our [guide on opening a Thai bank account](/guides/thai-bank-account).
 
@@ -62,7 +62,7 @@ Common area fees (CAM fees) run 30-60 THB per sqm per month. For a 35 sqm condo,
 
 Electricity and water are usually billed separately. Expect the condo building to charge above the government rate — 7-9 THB per unit for electricity instead of the 4-5 THB government rate. Ask about this before buying.
 
-Property tax exists but is minimal for residential properties — effectively zero for properties under 50 million THB in value.
+Property tax exists but is minimal for **owner-occupied primary residences** — effectively zero for the first 50 million THB of value (10 million THB for condominiums specifically). However, if you rent out the property or it is your second home, the owner-occupied exemption does not apply and you will pay 0.02-0.30% annually depending on appraised value. Many foreign buyers who rent out their condos are surprised by this distinction.
 
 ## Buy or Rent?
 

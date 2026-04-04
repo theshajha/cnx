@@ -10,7 +10,7 @@ reading_time: 5
 
 Opening a Thai bank account is one of those things that sounds simple, takes a frustrating amount of effort, and then changes your life here overnight. Once you have one, you can pay for everything with QR codes, transfer money instantly, and stop carrying cash. Thailand runs on bank apps.
 
-I haven't opened a Thai bank account myself yet, but I've talked to enough people who have — and heard enough horror stories about wasted trips — that the process is pretty clear. Here's what they told me, including the tricks that actually work.
+**Important 2026 update:** The Thai banking landscape for foreigners has changed significantly since mid-2025. Major banks have tightened requirements — Bangkok Bank and KBank are no longer the easy walk-in experience they once were, especially for tourist visa and [DTV](/guides/visa-options-chiang-mai) holders. Read the full details below before making a trip to the bank.
 
 ## Why You Need One
 
@@ -18,15 +18,17 @@ Thailand has gone nearly cashless in many situations. Street food vendors, 7-Ele
 
 You also need a Thai bank account if you want to [buy property](/guides/buying-property-chiang-mai) (for the foreign exchange transaction form), pay bills automatically, or receive money from Thai sources.
 
-## Which Bank
+## Which Bank — And the 2025-2026 Reality
 
-The two most expat-friendly banks in Chiang Mai are Bangkok Bank and Kasikorn Bank (KBank).
+Bangkok Bank and Kasikorn Bank (KBank) were historically the easiest for foreigners. That has changed.
 
-Bangkok Bank is generally the easiest for foreigners. Their branches in Chiang Mai, especially the one near the airport and the branch on the Superhighway, are used to dealing with expat account openings. The staff speak English, and they know the paperwork.
+As of early 2026, Bangkok Bank has tightened requirements significantly. Tourist visa and DTV holders are being turned away at most branches. Reports from expats indicate Bangkok Bank is also freezing or closing accounts held by foreigners without long-term visas. KBank followed suit in mid-2025 with similar restrictions.
 
-Kasikorn Bank (the green one) is also good and has an excellent mobile app (K PLUS). Some branches are more willing than others — the ones in Nimman get a lot of expat requests.
+The key factor is now your **visa type**, not your documentation. If you hold a Non-Immigrant B (work), Non-Immigrant O (retirement/marriage), ED visa, or LTR visa, you will have a much easier time. Tourist visa, visa exemption, and DTV holders face serious difficulty at most branches.
 
-SCB (Siam Commercial Bank) and Krungthai Bank are options too, but in my experience they are more likely to turn you away without a work permit.
+That said, experiences still vary by branch. Bangkok Bank near the airport and the Superhighway branch still handle some foreign account openings. KBank branches in Nimman see regular expat requests. SCB and Krungthai are also options but historically stricter.
+
+**If you are on a DTV visa:** be prepared for rejection at your first attempt. The DTV is classified as a tourist-linked visa for banking purposes, despite being designed for long-stay remote workers. Bring extra documentation (employment contracts, tax returns, rental lease) and try multiple branches. Some DTV holders report success at smaller branches outside Nimman.
 
 ## What You Need
 
@@ -36,7 +38,7 @@ A rental contract or lease agreement. This is the big one. If you have a signed 
 
 A letter from your condo or landlord. Some banks accept a simple letter confirming you live at the address. Ask your building's juristic person office — they usually have a standard letter they give to tenants for this purpose.
 
-A certificate of residence from immigration. You can get this at Chiang Mai immigration. It costs 500 THB and takes a couple of days. This is the nuclear option — if a bank is giving you trouble, this document usually closes the deal. Bring two passport photos and copies of your passport and visa pages.
+A certificate of residence from immigration. You can get this at Chiang Mai immigration. Express processing costs 500 THB and is ready next business day. Standard processing is 50-60 THB but takes 2-3 weeks. This is the nuclear option — if a bank is giving you trouble, this document sometimes closes the deal. Bring two passport photos and copies of your passport and visa pages.
 
 Your passport with a valid visa or entry stamp. Some banks require a non-immigrant visa (not just a tourist entry). Others are fine with a tourist visa. It varies by branch and by the mood of the person helping you.
 
@@ -46,7 +48,7 @@ Step 1: Gather your documents. At minimum: passport, a copy of your passport's p
 
 Step 2: Go to the bank branch in person. This cannot be done online. Go in the morning — banks open at 8:30 or 9:00, and the lines get longer after lunch.
 
-Step 3: Tell the staff you want to open a savings account (banchii oom-sap). They will give you forms to fill in. You will need a Thai phone number — if you do not have one yet, get a SIM card first. AIS, True, and DTAC all sell tourist SIMs at any 7-Eleven for 100-300 THB.
+Step 3: Tell the staff you want to open a savings account (banchii oom-sap). They will give you forms to fill in. You will need a Thai phone number — if you do not have one yet, get a SIM card first. AIS, True, and DTAC sell SIMs at 7-Eleven (49-300 THB) but staff at tourist-area locations sometimes refuse to sell local-rate SIMs to foreigners. Going to an operator store (AIS or True shop in Maya Mall) is more reliable.
 
 Step 4: The staff may need to check with their manager. This is normal. Some branches have an internal policy about foreign account openings. If they say no, do not argue — just try another branch.
 
@@ -64,7 +66,7 @@ Dress reasonably. I know this sounds silly, but first impressions matter in Thai
 
 If one branch says no, try another. I have heard stories of people being rejected at one KBank branch and approved at another KBank branch two blocks away, with the same documents. Policies vary by branch manager.
 
-Consider getting a certificate of residence first. If you are on a tourist visa and worried about being rejected, spend the 500 THB at immigration. It takes a couple of days but it is basically a golden ticket for bank account opening.
+Consider getting a certificate of residence first. If you are on a tourist visa and worried about being rejected, get one at immigration (500 THB express, ready next day; or 50-60 THB standard, takes 2-3 weeks). It is no longer a guaranteed golden ticket given the 2025-2026 crackdowns, but it still helps.
 
 ## Mobile Banking
 
