@@ -1,5 +1,6 @@
-import { getAllContributors } from "@/lib/content";
+import { getAllContributors, getAllBuildings, getAllGuides } from "@/lib/content";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,11 +10,19 @@ export const metadata: Metadata = {
 
 export default function ContributorsPage() {
   const contributors = getAllContributors();
+  const buildings = getAllBuildings();
+  const guides = getAllGuides();
+
+  const stats = contributors.map((c) => {
+    const buildingCount = buildings.filter((b) => b.contributed_by === c.slug).length;
+    const guideCount = guides.filter((g) => g.recommended_by === c.slug).length;
+    return { ...c, buildingCount, guideCount };
+  });
 
   return (
     <>
       <section className="pt-8 pb-6">
-        <h1 className="font-serif font-bold text-[40px] text-espresso tracking-[-1.5px]">
+        <h1 className="font-serif font-bold text-[30px] md:text-[40px] text-espresso tracking-[-1.5px]">
           Contributors
         </h1>
         <p className="text-[15px] text-latte mt-2 max-w-2xl leading-relaxed">
@@ -23,7 +32,7 @@ export default function ContributorsPage() {
       </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12">
-        {contributors.map((c) => (
+        {stats.map((c) => (
           <div
             key={c.slug}
             className="bg-milk rounded-[14px] border border-sand p-6 flex gap-5"
@@ -44,14 +53,16 @@ export default function ContributorsPage() {
               )}
             </div>
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="font-serif font-bold text-lg text-espresso">{c.name}</h2>
                 <span className="bg-terracotta/10 text-terracotta px-2 py-0.5 rounded text-[10px] font-semibold">
                   {c.role}
                 </span>
               </div>
               <p className="text-sm text-latte mt-1 leading-relaxed">{c.bio}</p>
-              <div className="mt-3 flex items-center gap-4">
+
+              {/* Stats */}
+              <div className="mt-3 flex items-center gap-3 flex-wrap">
                 {c.twitter && (
                   <a
                     href={`https://twitter.com/${c.twitter}`}
@@ -72,9 +83,16 @@ export default function ContributorsPage() {
                     Website ↗
                   </a>
                 )}
-                <span className="text-[11px] text-latte">
-                  {c.contributions.length} contribution{c.contributions.length !== 1 ? "s" : ""}
-                </span>
+                {c.buildingCount > 0 && (
+                  <span className="text-[11px] bg-sand text-dark-roast px-2 py-0.5 rounded">
+                    {c.buildingCount} listing{c.buildingCount !== 1 ? "s" : ""}
+                  </span>
+                )}
+                {c.guideCount > 0 && (
+                  <span className="text-[11px] bg-sand text-dark-roast px-2 py-0.5 rounded">
+                    {c.guideCount} guide{c.guideCount !== 1 ? "s" : ""} recommended
+                  </span>
+                )}
                 <span className="text-[11px] text-latte">
                   Since {new Date(c.joined).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                 </span>
@@ -86,7 +104,7 @@ export default function ContributorsPage() {
 
       {/* CTA */}
       <section className="pb-16 text-center">
-        <div className="bg-milk rounded-[14px] border border-sand p-10 max-w-xl mx-auto">
+        <div className="bg-milk rounded-[14px] border border-sand p-8 md:p-10 max-w-xl mx-auto">
           <h2 className="font-serif font-bold text-[24px] text-espresso tracking-tight">
             Want to contribute?
           </h2>

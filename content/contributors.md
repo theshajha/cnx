@@ -7,6 +7,5 @@ contributors:
     photo: shashank.jpg
     link: https://twitter.com/theshajha
     twitter: theshajha
-    contributions: [punna-nimman, yantarasri-nimman, d-condo-nim, playbook]
     joined: "2026-04-04"
 ---

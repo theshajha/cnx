@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Image from "next/image";
-import { getAllGuides, getGuideByCategory } from "@/lib/content";
+import Link from "next/link";
+import { getAllGuides, getGuideByCategory, getAllContributors } from "@/lib/content";
 import { guideMetadata } from "@/lib/seo";
 
 interface Props {
@@ -25,17 +26,27 @@ export default async function GuideCategoryPage({ params }: Props) {
   const guide = getGuideByCategory(category);
   if (!guide) notFound();
 
+  const contributors = getAllContributors();
+  const recommender = guide.recommended_by
+    ? contributors.find((c) => c.slug === guide.recommended_by)
+    : null;
+
   return (
     <div className="pt-4">
       {/* Category Header */}
       <div className="mb-10">
         <div className="text-5xl mb-4">{guide.icon}</div>
-        <h1 className="font-serif font-bold text-[40px] text-espresso tracking-tight leading-tight">
+        <h1 className="font-serif font-bold text-[30px] md:text-[40px] text-espresso tracking-tight leading-tight">
           {guide.name}
         </h1>
         <p className="text-latte text-base mt-2 max-w-xl leading-relaxed">
           {guide.description}
         </p>
+        {recommender && (
+          <Link href="/contributors" className="inline-flex items-center gap-1.5 mt-3 text-sm text-dark-roast hover:text-terracotta transition-colors">
+            Recommended by <span className="font-semibold">{recommender.name}</span>
+          </Link>
+        )}
       </div>
 
       {/* Spot Cards */}

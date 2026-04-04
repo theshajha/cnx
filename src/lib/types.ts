@@ -49,6 +49,7 @@ export interface GuideCategory {
   category: string;
   icon: string;
   description: string;
+  recommended_by: string | null;
   spots: GuideSpot[];
   content: string;
 }
@@ -71,7 +72,6 @@ export interface Contributor {
   photo: string | null;
   link: string | null;
   twitter: string | null;
-  contributions: string[];
   joined: string;
 }
 

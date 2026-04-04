@@ -2,6 +2,7 @@
 name: Co-working Spaces
 category: coworking
 icon: "💻"
+recommended_by: shashank
 description: The best spots to work from in Chiang Mai — tested WiFi, real reviews.
 spots:
   - name: CAMP at Maya

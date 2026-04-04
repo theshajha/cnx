@@ -2,6 +2,7 @@
 name: Coffee Shops
 category: coffee
 icon: "☕"
+recommended_by: shashank
 description: The best cafés for remote work and good beans in Chiang Mai.
 spots:
   - name: Ristr8to Lab

@@ -2,6 +2,7 @@
 name: Massage
 category: massage
 icon: "💆"
+recommended_by: shashank
 description: Thai massage spots trusted by long-term expats. No tourist traps.
 spots:
   - name: Lila Thai Massage
