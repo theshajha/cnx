@@ -38,7 +38,7 @@ In Chiang Mai, Thai language schools are the most common route. Expect to pay 20
 
 The upside: it is relatively affordable, gives you a full year of legal stay, and you actually learn some Thai (which makes life here significantly better). The downside: you are technically required to attend class, and the visa is tied to the school. If you stop attending, the school can cancel your visa.
 
-I have found it genuinely worth it. Even basic Thai — ordering food, talking to your landlord, navigating the market — changes the experience completely. Check our directory for language school recommendations.
+I have found it genuinely worth it. Even basic Thai — ordering food, talking to your landlord, navigating the market — changes the experience completely. Check our [directory for language school recommendations](/directory).
 
 ## Retirement Visa (50+)
 
@@ -88,4 +88,4 @@ If you are 50+ and this is your base: retirement visa, hands down.
 
 If you earn well and want zero friction: Elite visa. The cost is real but the convenience is unmatched.
 
-Do not overthink it on your first visit. Come on a tourist entry, see if you like the life here, and figure out the long-term visa later. That is what most of us did.
+Do not overthink it on your first visit. Come on a tourist entry, see if you like the life here, and figure out the long-term visa later. That is what most of us did. For what to expect financially, see our [cost of living guide](/guides/cost-of-living-chiang-mai). And when you're ready to settle in, check out [all our cribs](/cribs) for verified monthly rentals.

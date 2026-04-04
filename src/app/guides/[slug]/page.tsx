@@ -92,6 +92,9 @@ export default async function ArticlePage({ params }: Props) {
                                   __html: text.replace(
                                     /\*\*(.*?)\*\*/g,
                                     '<strong class="text-espresso font-semibold">$1</strong>'
+                                  ).replace(
+                                    /\[([^\]]+)\]\(([^)]+)\)/g,
+                                    '<a href="$2" class="text-terracotta underline underline-offset-2 hover:text-espresso transition-colors">$1</a>'
                                   ),
                                 }}
                               />
@@ -131,6 +134,9 @@ export default async function ArticlePage({ params }: Props) {
                                   __html: text.replace(
                                     /\*\*(.*?)\*\*/g,
                                     '<strong class="text-espresso font-semibold">$1</strong>'
+                                  ).replace(
+                                    /\[([^\]]+)\]\(([^)]+)\)/g,
+                                    '<a href="$2" class="text-terracotta underline underline-offset-2 hover:text-espresso transition-colors">$1</a>'
                                   ),
                                 }}
                               />
@@ -147,6 +153,9 @@ export default async function ArticlePage({ params }: Props) {
                         __html: para.replace(
                           /\*\*(.*?)\*\*/g,
                           '<strong class="text-espresso font-semibold">$1</strong>'
+                        ).replace(
+                          /\[([^\]]+)\]\(([^)]+)\)/g,
+                          '<a href="$2" class="text-terracotta underline underline-offset-2 hover:text-espresso transition-colors">$1</a>'
                         ),
                       }}
                     />

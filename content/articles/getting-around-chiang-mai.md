@@ -26,7 +26,7 @@ Sidewalks exist but they are not great. They appear, disappear, get blocked by p
 
 This is how most expats get around, and for good reason. A scooter solves Chiang Mai. Every errand, every dinner, every trip to the gym — hop on and go. The city was built for two-wheeled traffic.
 
-Rental costs: 2,500-3,500 THB/month for a Honda Click 125 or Yamaha Fino, the standard expat scooters. A Yamaha NMAX (bigger, more comfortable) runs 3,500-5,000 THB/month. Most rental shops are in Nimman — check our directory for scooter and motorbike rental spots.
+Rental costs: 2,500-3,500 THB/month for a Honda Click 125 or Yamaha Fino, the standard expat scooters. A Yamaha NMAX (bigger, more comfortable) runs 3,500-5,000 THB/month. Most rental shops are in Nimman — check our [directory for scooter and motorbike rentals](/directory/motorbikes).
 
 You will need to leave your passport or a deposit (usually 3,000-5,000 THB). I strongly recommend the deposit option — never leave your passport with a rental shop. If they insist on the passport, find another shop.
 
@@ -100,7 +100,7 @@ If you are staying in Nimman for a month or less: walk plus Grab. You probably d
 
 If you are staying anywhere for more than a month: rent a scooter. The freedom it gives you is worth the 3,000 THB. Get an IDP before you leave home, or get a Thai license here.
 
-If you do not want to ride a scooter: live in Nimman (walkable) and use Grab for everything else. Budget 4,000-6,000 THB per month for Grab.
+If you do not want to ride a scooter: live in [Nimman](/cribs/nimman) (walkable) and use Grab for everything else. Budget 4,000-6,000 THB per month for Grab. For a full monthly transport budget in context, see our [cost of living guide](/guides/cost-of-living-chiang-mai).
 
 If you are in the Old City: a bicycle plus occasional Grab works well. The Old City is compact and the pace is slow enough for cycling.
 

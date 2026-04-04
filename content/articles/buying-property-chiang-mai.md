@@ -54,7 +54,7 @@ Here is the part that trips people up. To register a condo in a foreigner's name
 
 You need this FETF at the Land Department to prove the money came from abroad. Wire transfer from your overseas bank to your Thai bank account, then exchange it. Do not bring cash, do not use crypto, do not get creative. The paper trail matters.
 
-This means you need a Thai bank account before closing. See our guide on opening a Thai bank account.
+This means you need a Thai bank account before closing. See our [guide on opening a Thai bank account](/guides/thai-bank-account).
 
 ## Costs Beyond the Purchase Price
 
@@ -70,7 +70,7 @@ I have gone back and forth on this. Renting in Chiang Mai is so cheap that the f
 
 The case for buying is more about stability and personalization — knowing you have a home base, decorating it how you like, not dealing with landlord issues. If Chiang Mai is genuinely your long-term base and you have the capital, it can make sense.
 
-The case for renting is flexibility. If you are not 100% sure you will stay, or if you want to try different neighborhoods first (check our Nimman and Old City listings), renting lets you do that with zero commitment. Month-to-month leases are common here.
+The case for renting is flexibility. If you are not 100% sure you will stay, or if you want to try different neighborhoods first (check our [Nimman](/cribs/nimman) and [Old City](/cribs/old-city) listings), renting lets you do that with zero commitment. Month-to-month leases are common here.
 
 My honest advice: rent for at least a year before you even think about buying. Get through burning season (February-April). Experience a full monsoon. See how the traffic patterns change when the university is in session. Then decide.
 

@@ -66,7 +66,7 @@ International health insurance: Cigna Global, AXA, Allianz, Luma, and similar co
 
 My take: if you are under 40 and healthy, a local Thai plan with a high deductible is a reasonable middle ground. It protects you against catastrophic costs while keeping premiums low, and you pay out of pocket for routine care (which is cheap anyway). If you are older, have pre-existing conditions, or want the security of global coverage, an international plan is worth the premium.
 
-If you came to Thailand with travel insurance, check the fine print. Many travel insurance policies have a 30-60 day limit and exclude "routine" care. They are designed for tourists, not long-stayers.
+If you came to Thailand with travel insurance, check the fine print. Many travel insurance policies have a 30-60 day limit and exclude "routine" care. They are designed for tourists, not long-stayers. For a full breakdown of insurance costs in context, see our [cost of living guide](/guides/cost-of-living-chiang-mai). And if you are on a retirement visa, note that health insurance is now a requirement — see our [visa guide](/guides/visa-options-chiang-mai) for details.
 
 ## What Happens When You Get Sick
 

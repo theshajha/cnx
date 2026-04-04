@@ -18,7 +18,7 @@ This is usually your biggest expense. Chiang Mai has options at every price poin
 
 Budget: 5,000-8,000 THB/month. A basic studio apartment outside the prime areas. Functional, air-conditioned, but nothing fancy. Might be a walk-up, might not have a pool.
 
-Mid-range: 10,000-18,000 THB/month. A proper one-bedroom in a good condo building in Nimman or Old City. Pool, gym, security. This is where most digital nomads land. Check our Nimman listings and Old City listings for real examples with verified prices.
+Mid-range: 10,000-18,000 THB/month. A proper one-bedroom in a good condo building in Nimman or Old City. Pool, gym, security. This is where most digital nomads land. Check our [Nimman listings](/cribs/nimman) and [Old City listings](/cribs/old-city) for real examples with verified prices.
 
 Comfortable: 20,000-35,000 THB/month. A large one-bedroom or two-bedroom in a newer building, or a serviced apartment with cleaning included. Top-floor units with views in the best buildings.
 
@@ -58,7 +58,7 @@ Casual: 0 THB. Many cafes in Nimman are effectively coworking spaces. Buy a 70 T
 
 Day pass: 150-300 THB at most coworking spaces. CAMP at Maya Mall is free with any purchase.
 
-Monthly membership: 2,500-5,000 THB for a hot desk. 5,000-8,000 THB for a dedicated desk. Check our directory for coworking recommendations.
+Monthly membership: 2,500-5,000 THB for a hot desk. 5,000-8,000 THB for a dedicated desk. Check our [directory for coworking recommendations](/directory/coworking).
 
 ## Gym and Fitness
 
@@ -66,7 +66,7 @@ Budget gyms: 800-1,500 THB/month. Basic equipment, gets the job done.
 
 Nice gyms: 1,500-3,000 THB/month. Good equipment, classes, sometimes a pool.
 
-Muay Thai: 300-500 THB per session, or 3,000-5,000 THB/month unlimited. Very popular with expats. Check our directory for gym recommendations.
+Muay Thai: 300-500 THB per session, or 3,000-5,000 THB/month unlimited. Very popular with expats. Check our [directory for gym recommendations](/directory/gyms).
 
 Yoga: 200-400 THB per class, or 2,000-3,000 THB for a 10-class pass.
 
@@ -78,7 +78,7 @@ GP visit at a private hospital: 500-1,000 THB including basic medication.
 
 Dental cleaning: 500-1,000 THB. Filling: 1,000-2,000 THB. Crown: 8,000-15,000 THB. Dental work here is genuinely excellent — many expats fly to Chiang Mai specifically for dental tourism.
 
-Health insurance: optional but recommended. Local plans run 15,000-30,000 THB/year for basic coverage. International plans (Cigna, AXA) are 40,000-80,000 THB/year depending on age and coverage. Some people self-insure and just pay out of pocket — viable given how cheap the care is. See our healthcare guide for hospital recommendations.
+Health insurance: optional but recommended. Local plans run 15,000-30,000 THB/year for basic coverage. International plans (Cigna, AXA) are 40,000-80,000 THB/year depending on age and coverage. Some people self-insure and just pay out of pocket — viable given how cheap the care is. See our [healthcare guide](/guides/healthcare-chiang-mai) for hospital recommendations.
 
 ## Phone and Internet
 
@@ -102,7 +102,7 @@ One caveat: these numbers assume you are single. If you are a couple, housing st
 
 ## What Catches People Off Guard
 
-The visa cost. Depending on which visa you use, budget 5,000-40,000 THB per year for visa-related expenses (fees, flights for visa runs, language school tuition). See our visa guide for the full breakdown.
+The visa cost. Depending on which visa you use, budget 5,000-40,000 THB per year for visa-related expenses (fees, flights for visa runs, language school tuition). See our [visa guide](/guides/visa-options-chiang-mai) for the full breakdown.
 
 Burning season. February through April, the air quality gets bad. Some people leave for those months — that is an extra cost. If you stay, a good air purifier (3,000-5,000 THB) and N95 masks help.
 

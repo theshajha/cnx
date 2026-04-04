@@ -16,7 +16,7 @@ I haven't opened a Thai bank account myself yet, but I've talked to enough peopl
 
 Thailand has gone nearly cashless in many situations. Street food vendors, 7-Elevens, taxis, restaurants — most accept PromptPay QR payments through banking apps. Without a Thai bank account, you are stuck paying cash (which means ATM fees of 220 THB per withdrawal on foreign cards) or using your foreign credit card (which many smaller places do not accept).
 
-You also need a Thai bank account if you want to buy property (for the foreign exchange transaction form), pay bills automatically, or receive money from Thai sources.
+You also need a Thai bank account if you want to [buy property](/guides/buying-property-chiang-mai) (for the foreign exchange transaction form), pay bills automatically, or receive money from Thai sources.
 
 ## Which Bank
 
@@ -32,7 +32,7 @@ SCB (Siam Commercial Bank) and Krungthai Bank are options too, but in my experie
 
 This is where it gets tricky. The official requirements are simple — passport and a Thai address. In practice, most banks also want one or more of these:
 
-A rental contract or lease agreement. This is the big one. If you have a signed lease with your landlord's name and address, most banks will accept it. Month-to-month is fine. It does not need to be notarized.
+A rental contract or lease agreement. This is the big one. If you have a signed lease with your landlord's name and address, most banks will accept it. Month-to-month is fine. It does not need to be notarized. If you are still looking for a place, check our [verified rental listings](/cribs) — most landlords provide a lease agreement that works for bank account purposes.
 
 A letter from your condo or landlord. Some banks accept a simple letter confirming you live at the address. Ask your building's juristic person office — they usually have a standard letter they give to tenants for this purpose.
 
