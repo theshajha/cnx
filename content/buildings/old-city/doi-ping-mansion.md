@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "A genuine expat retirement community with regular social events and a communal vibe you won't find in Nimman condos. The River Market restaurant next door hosts the Chiang Mai Expats Club's twice-monthly breakfast. Built in 1994 by Bangkok architect Dan Wongprasat — the units are massive by modern standards: 64sqm 1BR, 100sqm 2BR, 128sqm 3BR, even a 200sqm penthouse. These floor plans are impossible to find in modern Chiang Mai construction. Pool and gym included. 5-minute walk to downtown. It's old and it shows, but the space, community, and riverside location make up for it."
 last_verified: "2026-04-04"
 units:
   - type: 1 Bedroom

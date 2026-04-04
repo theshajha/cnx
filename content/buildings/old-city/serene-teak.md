@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "Wanderlog 4.4/5 from 48 reviews. The handmade teak furniture and Lanna design really are unique — reviewers say 'not really seen anywhere else in Chiang Mai anymore.' Owner Lucy gets personal praise for warmth and hospitality. Pool and tropical garden in a quiet Chang Phueak neighborhood with Doi Suthep views. Sinet WiFi with dedicated routers per room. But watch for: airplane noise and songthaew traffic reported by multiple guests, and one guest had a confirmed reservation canceled days before check-in. Electric at 8 THB/unit (listed as 7 in our data but research shows 8) is above average."
 last_verified: "2026-04-04"
 units:
   - type: Standard Apartment
