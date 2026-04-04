@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "Trip.com 8.5/10 from 46 reviews (for Bakuri-managed units), but TripAdvisor 3.5/5 tells a different story. The gap is because Trip.com reviewers book renovated Bakuri-managed units while TripAdvisor captures the wider range including neglected owner-managed ones. Full kitchens in every unit and 200m from Nimman is the value proposition. But built in 1991, common areas are described as 'run down and dirty.' The pool is reportedly a disaster — 'more like a building site' with broken tiles and step ladders. The Bakuri-managed units are the ones to target; avoid owner-managed units sight unseen."
 last_verified: "2026-04-04"
 units:
   - type: Studio

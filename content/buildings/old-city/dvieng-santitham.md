@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "Google rated 4.2/5 from 244 reviews. Sansiri developer means the build quality itself is solid, and the pool is reportedly cleaned almost daily — the best-maintained pool in Chiang Mai per some reviewers. Lanna-design grounds with gardens between buildings create a resort-like feel. But two serious issues: thin walls (you'll hear neighbors' phone conversations) and frequent power blackouts — up to 10 per month, some lasting 14+ hours, even when surrounding buildings have power. This is a building-specific electrical issue, not a city thing. Ironic for a premium Sansiri development. Walkable to Santitham market, Chang Phuak Gate."
 last_verified: "2026-04-04"
 units:
   - type: Studio
@@ -63,6 +64,7 @@ d'VIENG Santitham is a Sansiri-developed condo with 264 units across 5 floors in
 
 ## Gotchas
 
-- Thin walls — multiple independent reviews mention noise from neighbors; request upper corner units
+- Thin walls are the building's defining flaw. From Google reviews: residents hear neighbors' phone conversations, hallway footsteps, street noise, and AC units through both walls and windows. Request upper corner units
+- Frequent power blackouts — up to 10 per month, some lasting 14+ hours, even when surrounding buildings maintain power. This is a building-specific electrical issue, not city-wide. Residents have filed complaints but the issue reportedly persists. A serious concern for remote workers
 - Common fee of 55 THB/sqm/month is high; confirm whether owner absorbs this
 - 5-floor low-rise means fewer floors to choose from than taller competitors

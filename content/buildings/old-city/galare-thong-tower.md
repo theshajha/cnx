@@ -10,7 +10,7 @@ deposit: 1
 electric_rate: 5
 water_rate: 25
 wifi: "included"
-facilities: [parking, cctv, laundry, restaurant, elevator]
+facilities: [pool, gym, parking, cctv, laundry, restaurant, elevator]
 contact:
   phone: "+66 53 204 590"
   line: null
@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "Built 1995 with a striking open-atrium design — 248 units on open walkways surrounding a naturally ventilated central atrium. Agoda 6.5/10 from 502 reviews, TripAdvisor 3.0/5 from 51 reviews. Has a salt-system pool, tennis court (extremely rare in Chiang Mai), gym, restaurant, coffee shop, and convenience store on-site. Thick concrete walls mean excellent sound insulation. West-facing upper floors get 180-degree Doi Suthep panoramas. But quality is a complete lottery — some units are beautifully renovated, others have rock-hard beds and plumbing issues. Slow drains and unreliable hot water are recurring complaints."
 last_verified: "2026-04-04"
 units:
   - type: Studio Standard
@@ -73,5 +74,5 @@ Galare Thong Tower is a 15-floor, 248-unit condo on Chang Klan Road, steps from 
 ## Gotchas
 
 - Individual owners = huge variance; some TripAdvisor reviews warn about mold and dated bathrooms
-- No pool and no gym — bare-bones communal facilities
+- Research reveals a salt-system pool, gym, tennis court, restaurant, and convenience store on-site — facilities are better than the building's dated exterior suggests
 - 1 month deposit is the stated norm but verify with each owner; some ask for more

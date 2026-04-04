@@ -19,6 +19,7 @@ contact:
 photos: [hero.jpg]
 verified: false
 contributed_by: shashank
+contributor_note: "The location is the killer feature: 200 metres from Maya Mall, a 3-minute walk. Pool with waterfall on wood-panelled decking is above average for a 70-unit building. The sliding wall between bedroom and living area is a clever design touch — open it for a studio feel, close it for privacy. Very little review data exists online, which tells you it's mostly long-term residents who don't cycle through booking platforms. Front desk closes at 5 PM — you're on your own after that."
 last_verified: "2026-04-04"
 units:
   - type: 1 Bedroom
