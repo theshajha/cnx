@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, pool.jpg, exterior.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Same compound, same developer, same quality. Pick whichever Palm Springs building has a unit available — they're interchangeable in terms of facilities and price."

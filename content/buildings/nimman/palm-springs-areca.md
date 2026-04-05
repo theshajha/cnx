@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, pool.jpg, exterior.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "One of five separate Palm Springs buildings near Soi 5. Each has its own pool and gym so you're not sharing with hundreds of people. Units are small though — 31sqm 1BR is really just a studio with a wall. Good for solo nomads who want pool+gym without paying 20k+."

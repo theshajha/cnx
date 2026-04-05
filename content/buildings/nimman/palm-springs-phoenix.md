@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, pool.jpg, exterior.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Slightly separate from the main Palm Springs compound, on Huay Kaew Road. Same quality. Don't confuse this with Phoenix Palm Spring which is a hotel nearby — different property entirely."

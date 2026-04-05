@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, pool.jpg, exterior.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "The only Palm Springs building with 2BR units. If you're a couple or need a proper home office setup, this is the one to ask about. 2BR at 18-22k with a pool is hard to beat in Nimman. Availability is tighter here than the other four buildings."

@@ -16,7 +16,7 @@ contact:
   line: null
   email: null
   website: null
-photos: [hero.jpg]
+photos: [hero.jpg, pool.jpg, exterior.jpg]
 verified: false
 contributed_by: shashank
 contributor_note: "Same deal as the other Palm Springs buildings — own pool, own gym, 74 units. 1BR here is 35sqm vs 31sqm at Areca, so slightly more livable. Check availability across all five and take whichever has the best unit."
