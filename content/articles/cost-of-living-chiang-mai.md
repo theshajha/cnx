@@ -4,25 +4,31 @@ slug: cost-of-living-chiang-mai
 description: "Real numbers from someone who lives here. Rent, food, transport, healthcare — the full breakdown."
 author: shashank
 published: "2026-04-04"
-updated: "2026-04-04"
-reading_time: 5
+updated: "2026-07-26"
+reading_time: 6
 ---
 
 Every "cost of living in Chiang Mai" article gives you different numbers because everyone lives differently. I am going to give you three tiers: budget (you are being careful), mid-range (comfortable without overthinking), and comfortable (you do not need to check prices but you are not being extravagant). All prices in Thai Baht. Divide by 35 for a rough USD conversion.
 
 These are real numbers from my own spending and from comparing notes with other expats here. Not projections, not averages from some database — actual money spent in 2025-2026. Your mileage will vary, but this gives you a realistic baseline.
 
+Where a number covers rent or utilities, I have checked it against the 43 buildings we list, so you can see the same figures on the listings themselves rather than taking my word for it.
+
 ## Rent
 
 This is usually your biggest expense. Chiang Mai has options at every price point.
 
-Budget: 5,000-8,000 THB/month. A basic studio apartment outside the prime areas. Functional, air-conditioned, but nothing fancy. Might be a walk-up, might not have a pool.
+Budget: 3,500-8,000 THB/month. A basic studio apartment outside the prime areas. Functional, air-conditioned, but nothing fancy. Might be a walk-up, might not have a pool. The cheapest building we list starts at 3,500 THB, and eight of our 43 buildings have entry rents under 10,000.
 
-Mid-range: 10,000-18,000 THB/month. A proper one-bedroom in a good condo building in Nimman or Old City. Pool, gym, security. This is where most digital nomads land. Check our [Nimman listings](/cribs/nimman) and [Old City listings](/cribs/old-city) for real examples with verified prices.
+Mid-range: 10,000-18,000 THB/month. A proper one-bedroom in a good condo building in Nimman or Old City. Pool, gym, security. This is where most digital nomads land — and it matches our own listings almost exactly: across the one-bedrooms we track, the median asking rent is 13,750 THB, with the middle half falling between 12,000 and 18,000. Check our [Nimman listings](/cribs/nimman) and [Old City listings](/cribs/old-city) for real examples.
 
 Comfortable: 20,000-35,000 THB/month. A large one-bedroom or two-bedroom in a newer building, or a serviced apartment with cleaning included. Top-floor units with views in the best buildings.
 
-Deposit is typically two months rent. Electricity is usually 7-9 THB per unit (more than the government rate — condos mark it up). Water is 18-25 THB per unit. For a one-bedroom with regular AC use, expect 1,500-3,000 THB/month in utilities during hot season, less during cool season (November-February).
+Deposit is two months rent at most buildings, but not all — about a third of the buildings we list ask for one month, and the [playbook](/playbook) covers how to negotiate it down on a longer contract.
+
+Electricity is the one to watch. Across our listings it runs 5-8 THB per unit and is most commonly 7 — always above the government rate of roughly 4-5, because buildings mark it up. Anything above 8 THB per unit is a red flag worth pushing back on. Water is usually 25 THB per unit, though it ranges from 18 to 35, and a few buildings bill a flat monthly figure instead.
+
+For a one-bedroom with regular AC use, expect 1,500-3,000 THB/month in utilities during hot season, less during cool season (November-February). The median across our buildings works out to about 2,400 THB/month all in — electricity, water and internet — assuming 300 kWh, which is a realistic figure with the AC running most nights.
 
 ## Food
 
@@ -72,7 +78,7 @@ Quality healthcare at a fraction of Western prices. A GP visit runs 500-800 THB,
 
 Mobile plan: 300-700 THB/month for unlimited data with AIS, DTAC, or True. 5G works in Chiang Mai. Most expats use AIS or True — the coverage is roughly equal.
 
-Home internet: usually included in your condo or costs 500-800 THB/month for fiber. Speeds of 100-300 Mbps are standard. Thailand has excellent internet infrastructure.
+Home internet: usually included in your condo — 34 of the 43 buildings we list include it in the rent. Where it is billed separately, expect 300-600 THB/month. Watch for the third case: seven of our buildings provide no building internet at all, and you arrange your own line with AIS Fibre or True (roughly 600-1,200 THB/month for 100Mbps-1Gbps, and worth budgeting for). Speeds of 100-300 Mbps are standard. Thailand has excellent internet infrastructure.
 
 ## The Monthly Total
 

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getAllArticles, getAllContributors } from "@/lib/content";
+import { articleDate } from "@/lib/freshness";
 
 export const metadata: Metadata = {
   title: "Guides — In-Depth Articles on Living in Chiang Mai | CNX Cribs",
@@ -46,7 +47,14 @@ export default function GuidesPage() {
                 <div className="flex items-center gap-3 mt-4 pt-3 border-t border-sand text-xs text-latte">
                   {author && <span className="font-medium text-dark-roast">{author.name}</span>}
                   <span>{article.reading_time} min read</span>
-                  <span>{new Date(article.published).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+                  {(() => {
+                    const d = articleDate(article.published, article.updated, "short");
+                    return (
+                      <span className={d.revised ? "text-verified font-medium" : undefined}>
+                        {d.label}
+                      </span>
+                    );
+                  })()}
                 </div>
               </Link>
             );

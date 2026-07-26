@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { articleDate } from "@/lib/freshness";
 import Link from "next/link";
 import { getAllArticles, getArticleBySlug, getAllContributors } from "@/lib/content";
 
@@ -27,6 +28,7 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const contributors = getAllContributors();
+  const dateLine = articleDate(article.published, article.updated);
   const author = contributors.find((c) => c.slug === article.author);
   const otherArticles = getAllArticles().filter((a) => a.slug !== slug).slice(0, 3);
 
@@ -57,11 +59,11 @@ export default async function ArticlePage({ params }: Props) {
           <div className="text-sm">
             {author && <div className="font-medium text-espresso">{author.name}</div>}
             <div className="text-latte">
-              {new Date(article.published).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}{" "}
+              {dateLine.revised ? (
+                <span className="text-verified font-medium">{dateLine.label}</span>
+              ) : (
+                dateLine.label
+              )}{" "}
               &middot; {article.reading_time} min read
             </div>
           </div>

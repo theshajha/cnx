@@ -5,7 +5,7 @@ description: "Do you need a scooter? How does Grab work here? Can you walk every
 author: shashank
 published: "2026-04-04"
 updated: "2026-04-04"
-reading_time: 6
+reading_time: 7
 ---
 
 Chiang Mai is not a walkable city in the way that Barcelona or Tokyo is. But it is not Bangkok either. Depending on where you live and what you need, you might walk everywhere, rent a scooter, or use a mix of everything. Here is the honest breakdown.

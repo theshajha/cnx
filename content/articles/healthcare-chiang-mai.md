@@ -5,7 +5,7 @@ description: "Hospitals, dentists, insurance, and what happens when you get sick
 author: shashank
 published: "2026-04-04"
 updated: "2026-04-04"
-reading_time: 6
+reading_time: 7
 ---
 
 One of the first things people ask when considering a move to Chiang Mai is about healthcare. I get it — being sick or injured far from home is a real fear. The good news is that Chiang Mai has genuinely excellent healthcare, much of it at prices that will make you question everything you have been paying back home.

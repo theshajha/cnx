@@ -1,24 +1,28 @@
 ---
 title: "Visa Options for Staying in Chiang Mai"
 slug: visa-options-chiang-mai
-description: "Tourist visa, ED visa, retirement visa, visa runs — here's what actually works for staying long-term."
+description: "DTV, ED visa, retirement, Thailand Privilege — what actually works for staying long-term, plus the visa-exemption cut approved in May 2026."
 author: shashank
 published: "2026-04-04"
-updated: "2026-04-04"
-reading_time: 12
+updated: "2026-07-26"
+reading_time: 11
 ---
 
-Thai visa rules are confusing, and every forum post seems to contradict the last one. Rules change often, enforcement varies by officer, and what worked for someone in 2023 might not work today. I've spent time talking to long-term expats in Chiang Mai — people who've been through visa runs, ED visas, the works — and cross-referenced what they told me with the latest immigration updates. This is what I've put together as of early 2026.
+Thai visa rules are confusing, and every forum post seems to contradict the last one. Rules change often, enforcement varies by officer, and what worked for someone in 2023 might not work today. I've spent time talking to long-term expats in Chiang Mai — people who've been through visa runs, ED visas, the works — and cross-referenced what they told me with the latest immigration updates. This is current as of July 2026.
 
-**Update (2026):** Thailand now has two visa options specifically relevant to remote workers — the DTV (Destination Thailand Visa, launched July 2024) and the LTR (Long-Term Resident Visa). The DTV is the game-changer most digital nomads have been waiting for. Details on both below, along with the other established options.
+**Read this first — the visa exemption is being cut.** On 19 May 2026 the Thai Cabinet approved ending the 60-day visa exemption and returning to 30 days for most nationalities, with 15 days for a small group. As of this writing it has **not yet taken effect** — it takes force 15 days after publication in the Royal Gazette, and that publication has not happened. So the 60-day rule still stands today, but it is on borrowed time. **Check the current rule before you book anything**, and do not build a trip around 60 visa-free days without confirming it first.
 
-## Visa Exemption (30 or 60 Days)
+Beyond that, the two options that matter most for remote workers are the DTV (Destination Thailand Visa, launched July 2024) and the LTR (Long-Term Resident Visa). Details on both below, along with the other established options.
 
-If you hold a passport from most Western countries, you land in Thailand and get stamped in for 30 days (land border) or 60 days (airport). No visa needed, no paperwork beforehand.
+## Visa Exemption (Currently 60 Days — Changing)
 
-You can extend this once at Chiang Mai immigration for an additional 30 days. It costs 1,900 THB, takes a morning of paperwork, and you need a passport photo, a copy of your passport, and the TM.30 form (your landlord should handle this). The immigration office is on the Superhighway — get there early, bring a book.
+If you hold a passport from most Western countries, you land in Thailand and get stamped in without applying for anything beforehand. Today that stamp is 60 days. Under the Cabinet decision described above it becomes 30 days for most nationalities once published, so treat the number as unstable and verify it against an official source close to your travel date.
 
-So with an air arrival plus one extension, you get up to 90 days. That is enough for a lot of people doing a trial run. But it is not renewable — you would need to leave the country and come back.
+You can extend the exemption once at Chiang Mai immigration for an additional 30 days. It costs 1,900 THB, takes a morning of paperwork, and you need a passport photo, a copy of your passport, and the TM.30 form (your landlord should handle this). The immigration office is on the Superhighway — get there early, bring a book.
+
+So on today's rules, an arrival plus one extension gets you up to 90 days. If the 30-day exemption comes back, that drops to 60. Either way it is not renewable — you would need to leave the country and come back.
+
+This is the single biggest reason not to plan a long stay around visa-free entry. If you know you want more than a couple of months, get a proper visa rather than betting on a rule that is already scheduled to change.
 
 ## Tourist Visa (60 Days + Extension)
 
@@ -37,6 +41,10 @@ This is the big one. Launched in July 2024, the DTV is Thailand's answer to the 
 The basics: 5-year validity, multiple entries, 180 days per entry, extendable by another 180 days at immigration (1,900 THB). That means up to 360 days per entry before you need to leave and re-enter. The visa costs 10,000 THB (~$300 USD) at most embassies, though fees vary by location.
 
 You qualify under the "Workcation" category if you work remotely for companies or clients outside Thailand — freelancers, remote employees, business owners. You need to show proof of foreign income (salary slips, contracts, invoices) and bank statements showing at least 500,000 THB (~$15,000 USD) in savings.
+
+Two things that have tightened during 2026. The savings need to have been **held for at least three months** — parking the money the week before you apply does not work, and consulates now ask for three to six months of statements. And they have got strict about document integrity: any statement that looks edited, cropped, or has gaps gets rejected outright. Request clean, stamped statements directly from your bank.
+
+Note also that the DTV's other track, "Soft Power" (cultural activities, Muay Thai, cooking courses, medical treatment), has narrowed — most language schools are no longer accepted under the 2026 interpretation of that category. If your plan was a DTV via Thai language study, check with the school before paying anything; the ED visa below is the more reliable route for that.
 
 The application is now fully online through thaievisa.go.th — no embassy visit required in most cases. Upload your documents, pay the fee, and receive your visa by email. Processing takes 2-4 weeks depending on the embassy. Some neighboring country embassies (Vientiane, KL) process faster.
 
@@ -76,13 +84,15 @@ The visa is valid for one year and renewable. You cannot work on it. The money-i
 
 Many retirees in Chiang Mai use this visa and are very happy with it. The process is well-documented and predictable. If you qualify, it is the least stressful option.
 
-## Thailand Elite Visa
+## Thailand Privilege (formerly the Elite Visa)
 
-The Elite visa is the premium option. Pay 600,000 THB (about $17,000 USD) for 5 years of stay, or more for longer terms. You get fast-track immigration, a dedicated concierge, and no need to do 90-day reports in person.
+The premium option, renamed and repriced. If you read an older guide quoting 600,000 THB, that was the retired "Elite Easy Access" tier — it no longer exists. The programme is now Thailand Privilege, run by a state-owned company under the Ministry of Tourism, with five tiers from **650,000 THB (Bronze) up to 5 million THB (Reserve)**. The commonly chosen Gold tier is **900,000 THB for five years**. Prices are fixed by the government and are identical across authorised agents, so nobody can undercut anyone.
 
-It is expensive, but if you are earning well remotely and want zero visa hassle, it makes the math simple. No school attendance, no bank balance requirements, no age restrictions. You just live here.
+You get fast-track immigration, a concierge, and no need to do 90-day reports in person. It is expensive, but if you are earning well remotely and want zero visa hassle, it makes the math simple. No school attendance, no bank balance requirements, no age restrictions. You just live here.
 
 The application takes a few weeks and is done online. They do a background check. If you have a clean record, approval is straightforward.
+
+Worth doing the arithmetic before you commit: Bronze at 650,000 THB over five years is around 130,000 THB a year, against 10,000 THB once every five years for a DTV. You are buying convenience, not access.
 
 ## Visa Runs
 
@@ -120,6 +130,6 @@ If you are 50+ and this is your base: retirement visa, hands down.
 
 If you earn $80k+ at a large company: look into the LTR visa. The 17% flat tax rate alone can save you thousands.
 
-If you earn very well and want zero friction regardless: Elite visa. The cost is real but the convenience is unmatched.
+If you earn very well and want zero friction regardless: Thailand Privilege. The cost is real — 650,000 THB at the entry tier — but the convenience is unmatched.
 
 Do not overthink it on your first visit. Come on a tourist entry, see if you like the life here, and figure out the long-term visa later. That is what most of us did. For what to expect financially, see our [cost of living guide](/guides/cost-of-living-chiang-mai). And when you're ready to settle in, check out [all our cribs](/cribs) for verified monthly rentals.

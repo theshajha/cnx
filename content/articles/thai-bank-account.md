@@ -5,7 +5,7 @@ description: "Which banks work, what documents you need, and the tricks that sav
 author: shashank
 published: "2026-04-04"
 updated: "2026-04-04"
-reading_time: 5
+reading_time: 6
 ---
 
 Opening a Thai bank account is one of those things that sounds simple, takes a frustrating amount of effort, and then changes your life here overnight. Once you have one, you can pay for everything with QR codes, transfer money instantly, and stop carrying cash. Thailand runs on bank apps.

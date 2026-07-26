@@ -4,8 +4,8 @@ slug: buying-property-chiang-mai
 description: "Short answer: condos yes, land no. Here's how it actually works and what to watch for."
 author: shashank
 published: "2026-04-04"
-updated: "2026-04-04"
-reading_time: 7
+updated: "2026-07-26"
+reading_time: 6
 ---
 
 This comes up constantly in expat conversations here. Someone's been in Chiang Mai three months, loves it, and is doing mental math on condo prices vs back home. The short answer is yes, you can buy property — but only certain types, and the process has some sharp edges.
@@ -60,13 +60,13 @@ This means you need a Thai bank account before closing. See our [guide on openin
 
 Common area fees (CAM fees) run 30-60 THB per sqm per month. For a 35 sqm condo, that is 1,000-2,000 THB monthly. Some buildings also charge a sinking fund — a one-time payment for future major repairs, typically 400-600 THB per sqm.
 
-Electricity and water are usually billed separately. Expect the condo building to charge above the government rate — 7-9 THB per unit for electricity instead of the 4-5 THB government rate. Ask about this before buying.
+Electricity and water are usually billed separately. Expect the condo building to charge above the government rate — across the 43 buildings we track, electricity runs 5-8 THB per unit and is most commonly 7, against a government rate of roughly 4-5. Above 8 THB per unit is a red flag. Water is typically 25 THB per unit. Ask about both before buying: the rate is set by the building, you cannot change it, and it follows you for as long as you own the unit.
 
 Property tax exists but is minimal for **owner-occupied primary residences** — effectively zero for the first 50 million THB of value (10 million THB for condominiums specifically). However, if you rent out the property or it is your second home, the owner-occupied exemption does not apply and you will pay 0.02-0.30% annually depending on appraised value. Many foreign buyers who rent out their condos are surprised by this distinction.
 
 ## Buy or Rent?
 
-I have gone back and forth on this. Renting in Chiang Mai is so cheap that the financial case for buying is weaker than in most places. A 35 sqm studio that costs 2 million THB to buy rents for maybe 8,000-12,000 THB per month. That is a 5-7% gross yield, which means as a buyer you are not getting a huge discount vs renting.
+I have gone back and forth on this. Renting in Chiang Mai is so cheap that the financial case for buying is weaker than in most places. A 35 sqm studio that costs 2 million THB to buy rents for maybe 8,000-12,000 THB per month — and that range holds up against our own listings, where the median studio asks 10,000 THB at around 33 sqm. That is a 5-7% gross yield, which means as a buyer you are not getting a huge discount vs renting.
 
 The case for buying is more about stability and personalization — knowing you have a home base, decorating it how you like, not dealing with landlord issues. If Chiang Mai is genuinely your long-term base and you have the capital, it can make sense.
 

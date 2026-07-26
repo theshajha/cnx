@@ -66,3 +66,26 @@ export function walkBucket(minutes: number): string {
 
 /** Prefix used wherever a derived (not measured) number is shown. */
 export const APPROX = "≈";
+
+/**
+ * Byline dating for guides. Shows the revision date when a piece has been
+ * revised, because on a site about visa rules and prices "when was this last
+ * checked" matters more than "when was it first written". Falls back to the
+ * publication date when they are the same, rather than implying an edit.
+ */
+export function articleDate(
+  published: string,
+  updated: string | undefined,
+  style: "long" | "short" = "long"
+): { label: string; revised: boolean } {
+  const opts: Intl.DateTimeFormatOptions =
+    style === "long"
+      ? { month: "long", day: "numeric", year: "numeric" }
+      : { month: "short", day: "numeric", year: "numeric" };
+
+  const wasRevised = Boolean(updated) && updated !== published;
+  const shown = wasRevised ? updated! : published;
+  const formatted = new Date(shown).toLocaleDateString("en-US", opts);
+
+  return { label: wasRevised ? `Updated ${formatted}` : formatted, revised: wasRevised };
+}
