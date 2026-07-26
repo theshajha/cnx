@@ -176,8 +176,39 @@ export function areaStats(buildings: Building[]) {
  * "What does it actually cost to live here" is the question everyone arrives
  * with, and this answers it from our own listings rather than from a blog post.
  */
-export function costBands(buildings: Building[]) {
-  const bands: { layout: Layout; label: string; low: number; typical: number; sqm: number | null }[] = [];
+export interface CostBand {
+  layout: Layout;
+  label: string;
+  /** Cheapest advertised rent for this layout anywhere in the set. */
+  low: number;
+  /** Median rent alone. */
+  rent: number;
+  /** Electricity + water + internet. Near-constant across layouts. */
+  utilities: number;
+  /** rent + utilities. */
+  typical: number;
+  /** Utilities as a share of the total — the point of the whole section. */
+  utilityShare: number;
+  sqm: number | null;
+  sampleSize: number;
+}
+
+/**
+ * Typical monthly cost by layout, split into rent and the bills that get left
+ * out of a listing price. Utilities land near-constant regardless of size, so
+ * they eat a much larger share of a studio's total than a two-bed's — that
+ * asymmetry is the reason this section exists, and it only shows if the two
+ * parts are rendered separately.
+ */
+export function costBands(buildings: Building[]): CostBand[] {
+  const utilities = median(
+    buildings.map((b) => {
+      const e = estimatedMonthly(b);
+      return e.electric + e.water + e.wifi;
+    })
+  )!;
+
+  const bands: CostBand[] = [];
   for (const layout of ["studio", "1br", "2br"] as Layout[]) {
     const rows: { price: number; sqm: number }[] = [];
     for (const b of buildings) {
@@ -188,20 +219,18 @@ export function costBands(buildings: Building[]) {
       }
     }
     if (rows.length === 0) continue;
-    const typicalRent = median(rows.map((r) => r.price))!;
-    // Add the median building's utilities so the figure is comparable to the list.
-    const utilities = median(
-      buildings.map((b) => {
-        const e = estimatedMonthly(b);
-        return e.electric + e.water + e.wifi;
-      })
-    )!;
+    const rent = median(rows.map((r) => r.price))!;
+    const typical = rent + utilities;
     bands.push({
       layout,
       label: LAYOUT_LABELS[layout],
       low: Math.min(...rows.map((r) => r.price)),
-      typical: typicalRent + utilities,
+      rent,
+      utilities,
+      typical,
+      utilityShare: utilities / typical,
       sqm: median(rows.map((r) => r.sqm).filter((n) => n > 0)),
+      sampleSize: rows.length,
     });
   }
   return bands;

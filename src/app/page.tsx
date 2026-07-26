@@ -17,9 +17,9 @@ import {
   sortBuildings,
   sqmRange,
   valueVsArea,
-  ASSUMED_KWH_PER_MONTH,
 } from "@/lib/metrics";
 import BuildingCard from "@/components/BuildingCard";
+import CostSection from "@/components/CostSection";
 
 /**
  * Three questions everyone arrives with. Giving them their own row replaces the
@@ -175,13 +175,13 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-6 items-stretch">
           {/* Lead pick — given real weight rather than being one of six equal cards. */}
           <Link
             href={`/cribs/${lead.area}/${lead.slug}`}
-            className="group block bg-milk rounded-2xl border border-sand overflow-hidden hover:shadow-[var(--shadow-lift)] transition-all duration-200"
+            className="group flex flex-col bg-milk rounded-2xl border border-sand overflow-hidden hover:shadow-[var(--shadow-lift)] transition-all duration-200"
           >
-            <div className="relative h-[280px] md:h-[340px] bg-sand">
+            <div className="relative flex-1 min-h-[300px] md:min-h-[360px] bg-sand">
               <Image
                 src={`/buildings/${lead.slug}/${lead.photos[0] || "hero.jpg"}`}
                 alt={lead.name}
@@ -189,7 +189,7 @@ export default function Home() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 55vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-espresso/85 via-espresso/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/25 to-espresso/10" />
               <div className="absolute top-4 left-4 flex gap-2">
                 <span className="bg-terracotta text-cream text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
                   Our top pick
@@ -200,31 +200,57 @@ export default function Home() {
                   </span>
                 )}
               </div>
-              <div className="absolute bottom-5 left-5 right-5">
+
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
                 <p className="text-cream/70 text-[11px] font-bold uppercase tracking-[0.14em]">
                   {leadArea?.name ?? lead.area}
                 </p>
-                <h3 className="font-display font-bold text-[30px] md:text-[34px] text-cream leading-tight mt-1">
+                <h3 className="font-display font-bold text-[30px] md:text-[36px] text-cream leading-[1.05] mt-1.5">
                   {lead.name}
                 </h3>
-                <div className="flex items-baseline gap-4 mt-2.5 text-cream/85 text-[13px]">
-                  <span className="font-display font-bold text-[22px] text-cream tnum">
+
+                {/* Metrics get their own rule and even spacing rather than being
+                    crammed onto the headline's baseline. */}
+                <div className="flex items-center gap-3 md:gap-4 mt-4 pt-4 border-t border-cream/20">
+                  <span className="font-display font-bold text-[24px] text-cream tnum leading-none">
                     ฿{(entryPrice(lead) / 1000).toFixed(0)}k
-                    <span className="text-[12px] font-sans font-medium text-cream/70">/mo</span>
+                    <span className="text-[12px] font-sans font-medium text-cream/65 ml-0.5">
+                      /mo
+                    </span>
                   </span>
                   {leadSizes && (
-                    <span className="tnum">
-                      {leadSizes[0]}–{leadSizes[1]} sqm
-                    </span>
+                    <>
+                      <span className="w-px h-4 bg-cream/25" aria-hidden />
+                      <span className="tnum text-cream/85 text-[13px]">
+                        {leadSizes[0]}–{leadSizes[1]}
+                        <span className="font-sans text-cream/55 text-[11px] ml-1">sqm</span>
+                      </span>
+                    </>
                   )}
-                  {leadValue && <span className="tnum">฿{leadValue.ppsm}/sqm</span>}
+                  {leadValue && (
+                    <>
+                      <span className="w-px h-4 bg-cream/25" aria-hidden />
+                      <span className="tnum text-cream/85 text-[13px]">
+                        ฿{leadValue.ppsm}
+                        <span className="font-sans text-cream/55 text-[11px] ml-1">/sqm</span>
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
+
+            {/* Padding lives on the wrapper: line-clamp on a padded element
+                measures the padding box and leaks a clipped extra line. */}
             {lead.contributor_note && (
-              <p className="text-[14px] text-dark-roast leading-relaxed p-5 line-clamp-3">
-                {lead.contributor_note}
-              </p>
+              <div className="p-5 md:p-6 border-t border-sand">
+                <p className="text-[14px] text-dark-roast leading-relaxed line-clamp-3">
+                  {lead.contributor_note}
+                </p>
+                <span className="inline-block mt-2.5 text-[12px] font-bold text-terracotta">
+                  Read the full take →
+                </span>
+              </div>
             )}
           </Link>
 
@@ -280,51 +306,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── What it actually costs — dark data band ──────── */}
-      {bands.length > 0 && (
-        <section className="-mx-4 md:-mx-8 bg-espresso py-14 md:py-16 mb-20">
-          <div className="max-w-6xl mx-auto px-4 md:px-8">
-            <div className="md:flex md:justify-between md:items-end gap-8">
-              <div className="max-w-lg">
-                <h2 className="font-display font-bold text-[28px] md:text-[32px] text-cream tracking-tight">
-                  What it actually costs
-                </h2>
-                <p className="text-cream/55 text-[14px] leading-relaxed mt-3">
-                  Typical all-in monthly cost from our own {buildings.length}{" "}
-                  buildings &mdash; rent plus electricity at {ASSUMED_KWH_PER_MONTH} kWh, water and
-                  internet. Not a listing price with the bills hidden underneath.
-                </p>
-              </div>
-              <Link
-                href="/guides/cost-of-living-chiang-mai"
-                className="inline-block mt-5 md:mt-0 text-[13px] font-bold text-terracotta hover:underline shrink-0"
-              >
-                Full cost breakdown →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-9">
-              {bands.map((b) => (
-                <div key={b.layout} className="bg-white/[0.055] border border-white/[0.09] rounded-xl p-5">
-                  <div className="flex items-baseline justify-between">
-                    <span className="text-cream font-bold text-[13px]">{b.label}</span>
-                    {b.sqm && (
-                      <span className="text-cream/40 text-[11px] tnum">~{b.sqm} sqm</span>
-                    )}
-                  </div>
-                  <div className="font-display font-bold text-[34px] text-cream tnum mt-3 leading-none">
-                    ฿{(b.typical / 1000).toFixed(1)}k
-                  </div>
-                  <p className="text-cream/45 text-[11px] mt-2">
-                    typical all-in · from{" "}
-                    <span className="tnum text-cream/70">฿{(b.low / 1000).toFixed(1)}k</span> rent
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ── What it actually costs — composition, not totals ──
+          Three totals in three boxes hid the actual finding. Splitting each bar
+          into rent and bills on one shared scale shows it: the bills are close
+          to flat, so they take a far bigger bite out of a studio than a two-bed. */}
+      {bands.length > 0 && <CostSection bands={bands} buildingCount={buildings.length} />}
 
       {/* ── Neighbourhood comparison ─────────────────────── */}
       <section className="mb-20">
