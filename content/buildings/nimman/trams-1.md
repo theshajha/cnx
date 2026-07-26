@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, exterior.jpg, gym.jpg, lobby.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Best facilities-to-price ratio in the Jed Yod area — pool, gym, and sauna at 10K is hard to beat anywhere in Chiang Mai. But you are NOT in Nimman. The '10 minute walk' is more like 15-20 minutes in reality; budget for a scooter rental. Units come well-furnished with two ACs and a washing machine, which is unusual at this price. Building is 12 years old now so condition depends on the individual unit owner. Very few online reviews exist specifically for Trams 1 — it flies under the radar compared to flashier Nimman condos."
 last_verified: "2026-04-04"
@@ -40,7 +40,31 @@ units:
     recommended_floor: "4-8"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 8
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 5
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 8
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 3
+  - slug: dentaland-chiang-mai
+    category: dentists
+    walk_minutes: 9
+  - slug: skykick-muay-thai
+    category: gyms
+    walk_minutes: 9
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 10
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 3
 ---
 
 ## Overview

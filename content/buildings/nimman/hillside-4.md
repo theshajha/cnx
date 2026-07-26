@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, pool.jpg, gym.jpg, lobby.jpg, exterior.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 last_verified: "2026-04-04"
 units:
@@ -48,7 +48,31 @@ units:
     recommended_floor: "10-15"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 3
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 3
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 6
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 4
+  - slug: skykick-muay-thai
+    category: gyms
+    walk_minutes: 5
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 4
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 5
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 6
 ---
 
 ## Overview

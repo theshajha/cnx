@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, exterior.jpg, interior-1.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 recommendation_score: 7
 contributor_note: "Award-winning boutique condo that flies completely under the radar — only 48 units on a quiet lane off Sirimangklajarn. The wide 9-metre unit frontages make it feel noticeably more spacious than typical Nimman condos. Pool and gym are free for residents. Sinet fiber is available for fast dedicated broadband. The downside: only 48 units means very low turnover, so finding a vacant unit requires patience or luck. No pets. Almost zero online reviews exist, which tells you it's mostly long-term residents who don't cycle through booking platforms."
@@ -41,7 +41,31 @@ units:
     recommended_floor: "4-7"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 7
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 10
+  - slug: powerhouse-punna-nimman
+    category: gyms
+    walk_minutes: 7
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 10
+  - slug: tong-tem-toh
+    category: local-eats
+    walk_minutes: 5
+  - slug: sompetch-kitchen
+    category: local-eats
+    walk_minutes: 8
+  - slug: lila-thai-massage
+    category: massage
+    walk_minutes: 7
+  - slug: rimping-nimman
+    category: supermarkets
+    walk_minutes: 7
 ---
 
 ## Overview

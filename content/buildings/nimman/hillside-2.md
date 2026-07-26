@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "The cheapest way to live directly on Nimman Road. No pool, no gym, no frills — but a 7-Eleven literally in the lobby and everything on Nimman at your doorstep. Unit quality varies wildly because individual owners renovate at different times — some look fresh, others still have 2007 finishes. Always ask to see the actual unit before signing. If you want amenities, Hillside 3 on Soi 8 has a gym, included WiFi, and bigger units for similar money. Hillside 4 on Huay Kaew has two pools. This one is for people who want location above all else."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "6-10"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 3
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 5
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 1
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 4
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 1
+  - slug: bikky-chiang-mai
+    category: motorbikes
+    walk_minutes: 4
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 2
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 3
 ---
 
 ## Overview

@@ -1,0 +1,563 @@
+<title>cnx — UX and Content Audit</title>
+
+<style>
+  :root {
+    --paper: #fbf7f0;
+    --raised: #ffffff;
+    --inset: #f7f1e6;
+    --rule: #e6d9c4;
+    --ink: #33241a;
+    --body: #58402f;
+    --meta: #7d6850;
+    --mist: #a89880;
+    --brand: #bc6437;
+    /* Same hue, darkened to clear WCAG AA at small sizes. --brand stays for
+       fills and rules, where contrast is not a text concern. */
+    --brand-text: #a4521f;
+    --verified: #3f6d4e;
+    --caution: #8a6119;
+    --flag: #9c3b2e;
+
+    --display: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+    /* Measure lives on the prose element only. The shell is sized to
+       rail + prose so there is never reserved-but-unused width. */
+    --measure: 68ch;
+    --rail: 8.5rem;
+    --gap: 2.75rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #17120e;
+      --raised: #201812;
+      --inset: #1c1611;
+      --rule: #3a2d22;
+      --ink: #f4ece1;
+      --body: #ddcfbe;
+      --meta: #a8917a;
+      --mist: #7d6850;
+      --brand: #e08a55;
+      --brand-text: #eda06f;
+      --verified: #74b48c;
+      --caution: #d3a44a;
+      --flag: #e0796a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17120e;
+    --raised: #201812;
+    --inset: #1c1611;
+    --rule: #3a2d22;
+    --ink: #f4ece1;
+    --body: #ddcfbe;
+    --meta: #a8917a;
+    --mist: #7d6850;
+    --brand: #e08a55;
+    --brand-text: #eda06f;
+    --verified: #74b48c;
+    --caution: #d3a44a;
+    --flag: #e0796a;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbf7f0;
+    --raised: #ffffff;
+    --inset: #f7f1e6;
+    --rule: #e6d9c4;
+    --ink: #33241a;
+    --body: #58402f;
+    --meta: #7d6850;
+    --mist: #a89880;
+    --brand: #bc6437;
+    --brand-text: #a4521f;
+    --verified: #3f6d4e;
+    --caution: #8a6119;
+    --flag: #9c3b2e;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--sans);
+    font-size: 16.5px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Shell: rail + prose, centred as one assembly ───────────── */
+  .doc {
+    max-width: calc(var(--rail) + var(--gap) + var(--measure));
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 7rem;
+  }
+  .band {
+    display: grid;
+    grid-template-columns: var(--rail) var(--measure);
+    gap: 0 var(--gap);
+    align-items: start;
+  }
+  .band > .prose { grid-column: 2; min-width: 0; }
+  .band > .aside { grid-column: 1; }
+
+  /* Wide content escapes the measure rather than the measure widening. */
+  .wide { grid-column: 1 / -1; min-width: 0; }
+
+  @media (max-width: 860px) {
+    :root { --measure: 100%; }
+    .doc { max-width: 42rem; padding: 3rem 1.25rem 5rem; }
+    .band { grid-template-columns: 1fr; }
+    .band > .prose, .band > .aside, .wide { grid-column: 1; }
+    .aside { margin-bottom: .5rem; }
+  }
+
+  /* ── Type ───────────────────────────────────────────────────── */
+  h1, h2, h3, h4 { font-family: var(--display); color: var(--ink); font-weight: 700; letter-spacing: -.012em; }
+  h1 { font-size: clamp(2.4rem, 6vw, 3.5rem); line-height: 1.03; margin: 0; }
+  h2 { font-size: 1.65rem; line-height: 1.15; margin: 0 0 .2rem; }
+  h3 { font-size: 1.12rem; line-height: 1.25; margin: 2.2rem 0 .5rem; }
+  p { margin: 0 0 1.05rem; }
+  a { color: var(--brand-text); }
+  strong { color: var(--ink); font-weight: 640; }
+  code, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: .88em; letter-spacing: -.02em; }
+  code { background: var(--inset); padding: .1em .38em; border-radius: 4px; color: var(--ink); }
+
+  .lede { font-size: 1.2rem; line-height: 1.55; color: var(--body); }
+  .kicker { font-family: var(--sans); font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--brand-text); }
+
+  /* ── Masthead ───────────────────────────────────────────────── */
+  .masthead { border-bottom: 3px solid var(--ink); padding-bottom: 1.6rem; margin-bottom: 1rem; }
+  .masthead .meta {
+    display: flex; flex-wrap: wrap; gap: .5rem 1.6rem;
+    font-size: .78rem; color: var(--meta); margin-top: 1.4rem;
+    font-family: var(--mono);
+  }
+
+  /* ── Section headers ────────────────────────────────────────── */
+  section { margin-top: 4.2rem; }
+  .sec-head { margin-bottom: 1.6rem; }
+  .sec-head .rule { width: 2.4rem; height: 3px; background: var(--brand); margin-top: .65rem; }
+
+  /* ── Marginalia ─────────────────────────────────────────────── */
+  .aside {
+    font-size: .74rem; line-height: 1.5; color: var(--meta);
+    text-align: right; padding-top: .35rem;
+  }
+  .aside .tag { font-family: var(--mono); font-weight: 600; color: var(--brand-text); display: block; }
+  @media (max-width: 860px) {
+    .aside { text-align: left; border-left: 3px solid var(--rule); padding: .2rem 0 .2rem .75rem; }
+  }
+
+  /* ── Verdict callout ────────────────────────────────────────── */
+  .verdict {
+    background: var(--raised); border: 1px solid var(--rule);
+    border-left: 4px solid var(--brand);
+    border-radius: 0 12px 12px 0; padding: 1.5rem 1.75rem;
+  }
+  .verdict p:last-child { margin-bottom: 0; }
+
+  /* ── Severity chips ─────────────────────────────────────────── */
+  .sev {
+    font-family: var(--sans); font-size: .64rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: .2em .55em; border-radius: 4px; white-space: nowrap;
+    border: 1px solid currentColor;
+  }
+  .sev-critical { color: var(--flag); }
+  .sev-high { color: var(--caution); }
+  .sev-medium { color: var(--body); }
+  .sev-low { color: var(--meta); }
+
+  /* ── Tables ─────────────────────────────────────────────────── */
+  .t-wrap { overflow-x: auto; margin: 1.4rem 0 1.1rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .87rem; }
+  th {
+    text-align: left; font-family: var(--sans); font-size: .66rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--meta);
+    border-bottom: 2px solid var(--rule); padding: 0 .8rem .55rem 0; white-space: nowrap;
+  }
+  td { padding: .62rem .8rem .62rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td:first-child, th:first-child { padding-left: 0; }
+  .id { font-family: var(--mono); font-weight: 600; color: var(--brand-text); white-space: nowrap; }
+
+  /* ── Figures ────────────────────────────────────────────────── */
+  figure {
+    margin: 2rem 0; background: var(--raised);
+    border: 1px solid var(--rule); border-radius: 12px; padding: 1.6rem 1.7rem 1.3rem;
+  }
+  figcaption {
+    font-size: .76rem; color: var(--meta); margin-top: 1.2rem;
+    padding-top: .8rem; border-top: 1px solid var(--rule);
+  }
+  figcaption b { font-family: var(--mono); color: var(--brand-text); font-weight: 600; }
+
+  /* Coverage bars */
+  .bars { display: grid; gap: .9rem; }
+  .bar-row { display: grid; grid-template-columns: 5.5rem 1fr auto; gap: .9rem; align-items: center; font-size: .8rem; }
+  .bar-label { color: var(--meta); font-family: var(--mono); font-size: .74rem; }
+  .bar-track { background: var(--inset); border-radius: 999px; height: 1.4rem; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; }
+  .bar-val { font-family: var(--mono); font-size: .8rem; color: var(--ink); font-weight: 600; }
+
+  /* Row anatomy schematic */
+  .anat {
+    display: grid;
+    grid-template-columns: 3.2rem minmax(0, 2.1fr) minmax(0, 1fr) minmax(0, 1fr) 3.4rem;
+    gap: .85rem; align-items: center;
+    background: var(--inset); border: 1px solid var(--rule);
+    border-radius: 10px; padding: .8rem .9rem;
+  }
+  .anat .ph { background: var(--rule); border-radius: 6px; height: 2.6rem; }
+  .anat .l1 { font-family: var(--display); font-weight: 700; color: var(--ink); font-size: .95rem; }
+  .anat .l2 { font-size: .68rem; color: var(--meta); }
+  .anat .d { font-family: var(--mono); font-size: .78rem; color: var(--ink); }
+  .anat .d small { color: var(--meta); font-family: var(--sans); font-size: .62rem; }
+  .anat .price { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink); text-align: right; }
+  .anat-keys { display: grid; grid-template-columns: 3.2rem minmax(0,2.1fr) minmax(0,1fr) minmax(0,1fr) 3.4rem; gap: .85rem; margin-top: .5rem; padding: 0 .9rem; }
+  .anat-keys span { font-family: var(--mono); font-size: .58rem; color: var(--brand-text); letter-spacing: .04em; }
+  .anat-keys span:last-child { text-align: right; }
+
+  /* Rhythm comparison */
+  .rhythm { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .rhythm h4 { font-family: var(--sans); font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--meta); margin: 0 0 .7rem; }
+  .stack { display: grid; gap: .3rem; }
+  .blk { border-radius: 5px; font-size: .6rem; font-family: var(--mono); color: var(--meta); padding: .3rem .5rem; border: 1px solid var(--rule); background: var(--inset); }
+  .blk.hero { background: var(--ink); color: var(--paper); border-color: var(--ink); height: 2.6rem; display: flex; align-items: center; }
+  .blk.grid { background: var(--inset); }
+  .blk.dark { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .blk.split { background: var(--raised); border-style: dashed; }
+  .blk.tall { padding-block: .8rem; }
+  @media (max-width: 620px) { .rhythm { grid-template-columns: 1fr; } }
+
+  /* ── Freshness ladder ───────────────────────────────────────── */
+  .ladder { display: grid; gap: .5rem; }
+  .rung { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; align-items: center; padding: .7rem .9rem; border-radius: 8px; background: var(--inset); border: 1px solid var(--rule); }
+  .rung .age { font-family: var(--mono); font-size: .74rem; color: var(--meta); }
+  .rung .badge { font-size: .78rem; font-weight: 650; }
+
+  ul, ol { margin: 0 0 1.1rem; padding-left: 1.15rem; }
+  li { margin-bottom: .42rem; }
+  li::marker { color: var(--brand-text); }
+
+  .footnote { font-size: .8rem; color: var(--meta); border-top: 1px solid var(--rule); padding-top: 1.2rem; margin-top: 3.5rem; }
+
+  @media print {
+    :root { --paper: #fff; --raised: #fff; --ink: #000; --body: #222; --meta: #555; }
+    body { font-size: 10.5pt; }
+    .doc { max-width: none; padding: 0; }
+    section { break-inside: auto; page-break-inside: auto; }
+    figure, .verdict, table { break-inside: avoid; page-break-inside: avoid; }
+    h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+    a { color: #000; text-decoration: underline; }
+  }
+</style>
+
+<div class="doc">
+
+  <header class="masthead">
+    <p class="kicker">Design &amp; content review</p>
+    <h1>Better content than<br>the product around it</h1>
+    <div class="meta">
+      <span>cnx — Chiang Mai long-stay rentals</span>
+      <span>26 July 2026</span>
+      <span>43 buildings · 96 directory spots</span>
+    </div>
+  </header>
+
+  <div class="band">
+    <div class="aside"><span class="tag">Scope</span>Home, /cribs, area pages, building detail, directory, guides, playbook — rendered at 1440px and 390px</div>
+    <div class="prose">
+      <p class="lede">Building pages are genuinely good. The Overview, Expat Tips and Gotchas sections read like someone who lives in Chiang Mai wrote them, because someone did. Everything upstream of those pages was failing to get people to them — and the site was making trust claims its own data contradicted.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="band">
+      <div class="aside"><span class="tag">Verdict</span></div>
+      <div class="prose">
+        <div class="verdict">
+          <p><strong>Two problems dominated everything else.</strong></p>
+          <p><strong>1. The site claimed verification it could not evidence.</strong> All 43 buildings carried <code>verified: false</code> and a <code>last_verified</code> of 2026-04-04, while the hero said “43 verified rentals”, the trust bar said “Updated weekly”, and the footer said “Every listing verified on foot.” For a product positioned as <em>your honest friend</em>, this was the most damaging thing on the site.</p>
+          <p><strong>2. <code>/cribs</code> was a wall, not a tool.</strong> 43 visually identical cards, no sort, no ranking, no search, and filters that could not express what a long-stay renter wants. The one page that should do the deciding did none of it.</p>
+          <p>A third, quieter problem: the site was sitting on data it never joined. Every building and every directory spot had coordinates, but 40 of 43 buildings had an empty <code>nearby_spots</code>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <div class="aside"><span class="tag">§ 1</span>Protect through any redesign</div>
+      <div class="prose">
+        <div class="sec-head">
+          <h2>What was already working</h2>
+          <div class="rule"></div>
+        </div>
+        <ul>
+          <li><strong>Editorial voice in building content.</strong> “Studios don’t come with a washer — factor in laundry costs” is the product. Listing portals cannot write this.</li>
+          <li><strong>Gotchas as a first-class section.</strong> Leading with what’s wrong is the differentiator.</li>
+          <li><strong>Honest sourcing notes</strong> — several buildings distinguish firsthand observation from aggregated review data.</li>
+          <li><strong>The directory</strong> — 96 spots across 12 categories, with one-liners and photo credits.</li>
+          <li><strong>Static export, no client bloat.</strong> Fast, cheap, durable.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <div class="aside"><span class="tag">§ 2</span>Ten findings, ranked by what they cost</div>
+      <div class="prose">
+        <div class="sec-head">
+          <h2>Design findings</h2>
+          <div class="rule"></div>
+        </div>
+      </div>
+
+      <div class="wide">
+        <div class="t-wrap">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Finding</th><th>Severity</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="id">D1</td><td>Homepage was seven sections, six of them near-identical card grids. No rhythm, no hierarchy, no primary path.</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">D2</td><td><code>/cribs</code> presented 43 undifferentiated cards with no sort, rank, or search.</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">D3</td><td>On mobile, <code>/cribs</code> was a ~30,000px scroll.</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">D4</td><td>One card treatment repeated 20+ times across every page, so nothing could be emphasised.</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">D5</td><td>Terracotta served as price, link, CTA, bullet, accent and border. A colour used for everything signals nothing.</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">D6</td><td>Georgia + system-ui with no numeric treatment — a data product typeset as a blog.</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">D7</td><td>Location map was a 120px sliver, lazy-loaded, built from a hand-assembled Google <code>pb</code> string; rendered blank for seconds.</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">D8</td><td>Emoji used as the icon system (☕ 🏯 💰 🛵) — the strongest generic-template signal on the page.</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">D9</td><td>Filter <code>&lt;select&gt;</code> had no label; page had no skip link.</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">D10</td><td>Stats row (“100% Free, No Agent Fees”) was filler occupying prime position.</td><td><span class="sev sev-low">Low</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="aside"><span class="tag">Fig. 3</span>Every section after the hero was a grid of equal-weight cards on one background</div>
+      <div class="prose">
+        <figure>
+          <div class="rhythm">
+            <div>
+              <h4>Before</h4>
+              <div class="stack">
+                <div class="blk hero">hero</div>
+                <div class="blk">quote</div>
+                <div class="blk grid">recommended · 6 cards</div>
+                <div class="blk grid">new to CM · 6 cards</div>
+                <div class="blk grid">stats · 4 cards</div>
+                <div class="blk grid">areas · 2 cards</div>
+                <div class="blk grid">directory · 6 cards</div>
+                <div class="blk grid">guides · 3 cards</div>
+              </div>
+            </div>
+            <div>
+              <h4>After</h4>
+              <div class="stack">
+                <div class="blk hero">hero</div>
+                <div class="blk split">3 entry paths</div>
+                <div class="blk tall split">lead pick + ranked list</div>
+                <div class="blk dark tall">cost bands</div>
+                <div class="blk split">area comparison</div>
+                <div class="blk">pull-quote</div>
+                <div class="blk split">compact index</div>
+              </div>
+            </div>
+          </div>
+          <figcaption><b>Fig. 3</b> — Homepage section rhythm. Seven card grids become six differentiated shapes, so the page reads as structured rather than long.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <div class="aside"><span class="tag">§ 3</span>Counts are from the content set, not estimates</div>
+      <div class="prose">
+        <div class="sec-head">
+          <h2>Content and data findings</h2>
+          <div class="rule"></div>
+        </div>
+      </div>
+
+      <div class="wide">
+        <div class="t-wrap">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Finding</th><th>Count</th><th>Severity</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="id">C1</td><td><code>verified: false</code> on every building while the UI claimed verification. The badge renders only when true, so zero badges displayed anywhere.</td><td class="num">43/43</td><td><span class="sev sev-critical">Critical</span></td></tr>
+              <tr><td class="id">C2</td><td>“Updated weekly” in the trust bar; newest <code>last_verified</code> was 113 days old.</td><td class="num">—</td><td><span class="sev sev-critical">Critical</span></td></tr>
+              <tr><td class="id">C3</td><td><code>nearby_spots</code> empty despite coordinates existing on both sides of the join.</td><td class="num">40/43</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">C4</td><td>No contact method at all — the primary conversion path is dead on half the inventory.</td><td class="num">22/43</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">C5</td><td><code>recommendation_score</code> missing, so “Recommended” drew from 10 buildings and <code>/cribs</code> had no ordering signal.</td><td class="num">33/43</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">C6</td><td><code>wifi: 0</code> rendered as “0 ฿ per month”, which reads as free. It means the building provides none.</td><td class="num">7/43</td><td><span class="sev sev-high">High</span></td></tr>
+              <tr><td class="id">C7</td><td><code>beds: 1</code> on both studios and one-bedrooms, so bedroom filtering was impossible from that field alone.</td><td class="num">—</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">C8</td><td>Unit <code>type</code> is free text with 37 distinct values (“Superior”, “Loft Apartment”, “Type C 1 Bedroom”).</td><td class="num">37</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">C9</td><td>No <code>contributor_note</code> — the first-person take is the reason to read the page.</td><td class="num">4/43</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">C10</td><td>Homepage pull-quote was built by splitting on “.” and taking two sentences, producing fragments that ended mid-thought.</td><td class="num">—</td><td><span class="sev sev-medium">Medium</span></td></tr>
+              <tr><td class="id">C11</td><td>Hand-authored <code>walk_minutes</code> internally inconsistent — Ristr8to Lab appears as 5 min from both 111m and 246m.</td><td class="num">—</td><td><span class="sev sev-low">Low</span></td></tr>
+              <tr><td class="id">C12</td><td>Nivas Chiangmai’s hero image is a brand logo, not the building.</td><td class="num">1/43</td><td><span class="sev sev-low">Low</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="aside"><span class="tag">Fig. 1</span>Pure computation — no new research needed</div>
+      <div class="prose">
+        <h3>C3 — free data nobody joined</h3>
+        <p>All 43 buildings and all 96 directory spots carry coordinates. Deriving walk times is arithmetic. <code>scripts/compute-nearby-spots.mjs</code> now does it, and it populated every building.</p>
+        <figure>
+          <div class="bars">
+            <div class="bar-row">
+              <span class="bar-label">before</span>
+              <div class="bar-track"><div class="bar-fill" style="width:7%;background:var(--flag)"></div></div>
+              <span class="bar-val">3 / 43</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">after</span>
+              <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--verified)"></div></div>
+              <span class="bar-val">43 / 43</span>
+            </div>
+          </div>
+          <figcaption><b>Fig. 1</b> — Buildings showing a walking-distance block, before and after the coordinate join. The block ties a listing to the neighbourhood; it previously rendered on 7% of pages.</figcaption>
+        </figure>
+
+        <h3>C1 — the resolution</h3>
+        <p>Confirmed with the site owner: the buildings <em>were</em> visited; the flags were never flipped. The data was stale, not the claim. All 43 now carry <code>verified: true</code>, and the UI was rebuilt so the claim decays on its own rather than standing forever.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <div class="aside"><span class="tag">§ 4</span>Shipped in this pass</div>
+      <div class="prose">
+        <div class="sec-head">
+          <h2>What changed</h2>
+          <div class="rule"></div>
+        </div>
+
+        <h3>Trust that decays on its own</h3>
+        <p>Verification now degrades with age instead of asserting itself forever. “Updated weekly” is gone; <code>/cribs</code> prints “Last full sweep {month}” computed from the data, so it cannot drift out of sync with reality.</p>
+        <figure>
+          <div class="ladder">
+            <div class="rung"><span class="age">≤ 60 days</span><span class="badge" style="color:var(--verified)">✓ Verified Jul 2026</span></div>
+            <div class="rung"><span class="age">61–120 days</span><span class="badge" style="color:var(--body)">Checked Apr 2026</span></div>
+            <div class="rung"><span class="age">&gt; 120 days</span><span class="badge" style="color:var(--meta)">Last checked Apr 2026 — prices may have moved</span></div>
+          </div>
+          <figcaption><b>Fig. 2</b> — The freshness ladder. The tick is withdrawn before the claim becomes false, so staleness is visible rather than hidden.</figcaption>
+        </figure>
+
+        <h3>/cribs: wall → decision tool</h3>
+        <ul>
+          <li><strong>Dense rows at every width</strong>, cards optional. Mobile went from ~30,000px of scroll to roughly a quarter of that.</li>
+          <li><strong>Sorting</strong> — our pick order, cheapest, priciest, best ฿/sqm, biggest units.</li>
+          <li><strong>Filters that match the decision</strong> — budget ceiling, layout parsed from the free-text <code>type</code>, and must-have facilities.</li>
+          <li><strong>Two derived columns no listing portal shows</strong> — ฿/sqm, and an all-in monthly estimate, each labelled as an estimate.</li>
+          <li><strong>Value tier</strong> — each building’s ฿/sqm placed against the median for <em>its own area</em>, so a Nimman condo is judged against Nimman.</li>
+        </ul>
+      </div>
+
+      <div class="wide">
+        <figure>
+          <div class="anat">
+            <div class="ph"></div>
+            <div>
+              <div class="l1">D Condo Nim</div>
+              <div class="l2">Nimman · Nimmanhaemin Road</div>
+            </div>
+            <div class="d">28–35 <small>sqm</small><br><span style="color:var(--verified)">฿286<small>/sqm</small></span></div>
+            <div class="d">฿10.3k <small>all-in</small><br><span style="color:var(--verified);font-size:.72rem">Good value</span></div>
+            <div class="price">฿8k</div>
+          </div>
+          <div class="anat-keys">
+            <span>rank + photo</span><span>identity</span><span>comparability</span><span>true cost</span><span>entry</span>
+          </div>
+          <figcaption><b>Fig. 4</b> — Row anatomy. The two middle columns are the ones a listing portal never gives you: what you pay per square metre, and what the month actually costs once bills land.</figcaption>
+        </figure>
+      </div>
+
+      <div class="aside"><span class="tag">Ranking</span>Honest defaults beat invented opinions</div>
+      <div class="prose">
+        <h3>Ranking without inventing opinions</h3>
+        <p>Only 10 of 43 buildings have a human score. Rather than sink the other 33 to the bottom in file order, unscored buildings fall back to value-for-money against their area cohort. The ordering is explainable, and it improves as scores get filled in.</p>
+
+        <h3>Design system</h3>
+        <p>Colour now carries meaning: green for things confirmed on foot, amber for gotchas, brick for deal-breakers, terracotta reserved for brand and primary action. Typography moved to Fraunces, IBM Plex Sans and IBM Plex Mono — every number is tabular, so prices read as measurements rather than marketing.</p>
+
+        <h3>Building detail</h3>
+        <ul>
+          <li>Quick summary gained the two numbers that decide it — <strong>est. monthly all-in</strong> and <strong>cash to move in</strong>.</li>
+          <li>WiFi reads “None / arrange your own” instead of “0 ฿ per month”.</li>
+          <li>Map replaced with OpenStreetMap at 200px — no API key, paints immediately.</li>
+          <li>Walking distances populated on all 43, shown as <code>≈</code> buckets rather than false-precision minutes.</li>
+          <li>The CTA is honest when no contact is on file, and offers a tip-off link.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <div class="aside"><span class="tag">§ 5</span>Ranked by value, not by effort</div>
+      <div class="prose">
+        <div class="sec-head">
+          <h2>What’s still open</h2>
+          <div class="rule"></div>
+        </div>
+        <ol>
+          <li><strong>22 buildings have no contact method.</strong> Highest-value manual work available — half the inventory cannot convert.</li>
+          <li><strong>33 buildings unscored.</strong> Each score sharpens the default ordering.</li>
+          <li><strong>Only two neighbourhoods.</strong> Santitham, Hang Dong and Chang Khlan are where long-stayers actually end up; their absence caps usefulness more than any design issue.</li>
+          <li><strong>No search.</strong> Fine at 43 buildings; needed by ~80.</li>
+          <li><strong>No map view of the listings.</strong> Location is the top decision factor and there is still no way to see the set spatially.</li>
+          <li><strong>Four buildings without a note</strong>, and one with a logo for a hero photo.</li>
+          <li><strong>The directory and buildings meet in one direction only</strong> — a building lists nearby spots, but a spot doesn’t list nearby buildings.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <div class="aside"><span class="tag">§ 6</span><code>.claude/skills/<wbr>monthly-data-refresh</code></div>
+      <div class="prose">
+        <div class="sec-head">
+          <h2>Keeping it true</h2>
+          <div class="rule"></div>
+        </div>
+        <p>Shipped as a project skill built around one rule: <strong>a <code>last_verified</code> date is a promise a human looked, and moving it without looking is the only unrecoverable mistake in the repo.</strong> A stale date renders honestly; a wrong one undermines everything.</p>
+      </div>
+
+      <div class="wide">
+        <div class="t-wrap">
+          <table>
+            <thead><tr><th>Command</th><th>Does</th></tr></thead>
+            <tbody>
+              <tr><td><code>npm run audit:content</code></td><td>Prioritised worklist of what needs a human this month</td></tr>
+              <tr><td><code>npm run compute:nearby</code></td><td>Recomputes building ↔ directory walk times</td></tr>
+              <tr><td><code>npm run check:nearby</code></td><td>Fails the build if derived data drifted</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="aside"><span class="tag">Next step</span></div>
+      <div class="prose">
+        <p>Automated price sources are deliberately unresolved. The constraint when choosing one is <em>attribution, not coverage</em>: scraped numbers must not inherit the in-person badge, so any feed needs its own provenance field. Otherwise the automation quietly destroys the thing it was meant to maintain.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="aside"></div>
+    <p class="footnote prose">Findings verified against the content set on 26 July 2026 — 43 building records, 96 directory spots, 6 long-form guides. Counts in this document are queried, not estimated. Facts mirror <code>docs/2026-07-26-ux-content-audit.md</code>.</p>
+  </div>
+
+</div>

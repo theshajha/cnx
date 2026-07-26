@@ -17,7 +17,7 @@ contact:
   email: info@theblisschiangmai.com
   website: null
 photos: [hero.jpg, exterior.jpg, lobby.jpg, interior-1.jpg, common-area.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Popular with digital nomads — you'll see laptops on every floor. But the big thing nobody mentions upfront: it's directly under the Chiang Mai airport flight path. Planes from early morning to late night. Some people adapt after a few days, others can't stand it. The kitchen in Grand Deluxe rooms is barely functional — one-setting cooker, rusty knife, two spoons. The 'Sealy beds' marketing doesn't match recent guest reports of hard, aging mattresses. That said, Maya Mall is genuinely a 5-minute walk and the soi itself is quiet. Come for the Nimman proximity and nomad community, not the room quality."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "4-6"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 5
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 5
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 7
+  - slug: dentaland-chiang-mai
+    category: dentists
+    walk_minutes: 5
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 5
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 5
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 4
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 5
 ---
 
 ## Overview

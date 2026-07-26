@@ -1,32 +1,47 @@
 interface LocationCardProps {
   coordinates: [number, number];
   address: string;
+  buildingName: string;
 }
 
-export default function LocationCard({ coordinates, address }: LocationCardProps) {
-  const mapsUrl = `https://www.google.com/maps?q=${coordinates[0]},${coordinates[1]}`;
+/**
+ * Location is the biggest factor in a long-stay decision, so the map gets real
+ * height instead of the 120px sliver it had. OpenStreetMap needs no API key and
+ * paints immediately — the old Google embed used a hand-assembled `pb` string,
+ * lazy-loaded, and showed a blank grey box for seconds.
+ */
+export default function LocationCard({ coordinates, address, buildingName }: LocationCardProps) {
+  const [lat, lng] = coordinates;
+  const bbox = [lng - 0.0045, lat - 0.003, lng + 0.0045, lat + 0.003].join(",");
+  const embed = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
 
   return (
-    <div className="bg-milk rounded-[14px] p-6 border border-sand">
-      <h3 className="font-serif font-bold text-[17px] text-espresso mb-3">Location</h3>
-      <div className="bg-sand h-[120px] rounded-[10px] flex items-center justify-center text-latte text-sm mb-3 overflow-hidden">
-        <iframe
-          src={`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2000!2d${coordinates[1]}!3d${coordinates[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sth`}
-          className="w-full h-full rounded-[10px]"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Location map"
-        />
+    <div className="bg-milk rounded-[14px] border border-sand overflow-hidden">
+      <div className="h-[200px] bg-sand">
+        <iframe src={embed} className="w-full h-full border-0" title={`Map showing ${buildingName}`} />
       </div>
-      <p className="text-sm text-dark-roast leading-relaxed">{address}</p>
-      <a
-        href={mapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-3 block bg-cream text-dark-roast py-2.5 px-4 rounded-lg text-sm font-semibold text-center hover:bg-sand transition-colors"
-      >
-        Open in Google Maps ↗
-      </a>
+      <div className="p-5">
+        <h3 className="font-display font-bold text-[15px] text-espresso">Location</h3>
+        <p className="text-[13px] text-dark-roast leading-relaxed mt-1">{address}</p>
+        <div className="flex gap-2 mt-4">
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-cream border border-sand text-dark-roast py-2.5 px-3 rounded-lg text-[12px] font-bold text-center hover:bg-sand transition-colors"
+          >
+            Google Maps ↗
+          </a>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-cream border border-sand text-dark-roast py-2.5 px-3 rounded-lg text-[12px] font-bold text-center hover:bg-sand transition-colors"
+          >
+            Directions ↗
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

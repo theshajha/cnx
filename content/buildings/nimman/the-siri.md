@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, exterior.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 last_verified: "2026-04-04"
 units:
@@ -30,7 +30,31 @@ units:
     recommended_floor: "4-7"
     recommended_facing: "west"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 7
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 10
+  - slug: powerhouse-punna-nimman
+    category: gyms
+    walk_minutes: 7
+  - slug: tong-tem-toh
+    category: local-eats
+    walk_minutes: 5
+  - slug: sompetch-kitchen
+    category: local-eats
+    walk_minutes: 8
+  - slug: lila-thai-massage
+    category: massage
+    walk_minutes: 7
+  - slug: rimping-nimman
+    category: supermarkets
+    walk_minutes: 7
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 9
 ---
 
 ## Overview

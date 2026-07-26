@@ -17,7 +17,7 @@ contact:
   email: info@perfecthomes.co.th
   website: null
 photos: [hero.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "The location is the killer feature: 200 metres from Maya Mall, a 3-minute walk. Pool with waterfall on wood-panelled decking is above average for a 70-unit building. The sliding wall between bedroom and living area is a clever design touch — open it for a studio feel, close it for privacy. Very little review data exists online, which tells you it's mostly long-term residents who don't cycle through booking platforms. Front desk closes at 5 PM — you're on your own after that."
 last_verified: "2026-04-04"
@@ -31,7 +31,31 @@ units:
     recommended_floor: "3-7"
     recommended_facing: "any"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 5
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 5
+  - slug: alt-chiangmai
+    category: coworking
+    walk_minutes: 8
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 5
+  - slug: skykick-muay-thai
+    category: gyms
+    walk_minutes: 4
+  - slug: kantary-hills-fitness
+    category: gyms
+    walk_minutes: 7
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 7
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 7
 ---
 
 ## Overview

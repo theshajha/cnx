@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Wanderlog 4.4/5 from 48 reviews. The handmade teak furniture and Lanna design really are unique — reviewers say 'not really seen anywhere else in Chiang Mai anymore.' Owner Lucy gets personal praise for warmth and hospitality. Pool and tropical garden in a quiet Chang Phueak neighborhood with Doi Suthep views. Sinet WiFi with dedicated routers per room. But watch for: airplane noise and songthaew traffic reported by multiple guests, and one guest had a confirmed reservation canceled days before check-in. Electric at 8 THB/unit (listed as 7 in our data but research shows 8) is above average."
 last_verified: "2026-04-04"
@@ -67,7 +67,31 @@ units:
     recommended_floor: "3-4"
     recommended_facing: "any"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: hub-chiang-mai
+    category: coworking
+    walk_minutes: 8
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 10
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 15
+  - slug: o2-gym-kampangdin
+    category: gyms
+    walk_minutes: 7
+  - slug: coin-laundry-chaiyaphoom
+    category: laundry
+    walk_minutes: 1
+  - slug: ems-laundry
+    category: laundry
+    walk_minutes: 14
+  - slug: mr-order-bike-car
+    category: motorbikes
+    walk_minutes: 8
+  - slug: first-choice-legal
+    category: visa-legal
+    walk_minutes: 8
 ---
 
 ## Overview

@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Budget king for having pool, gym, and sauna near Nimman. The KKN chain is no-frills but consistent — you know what you're getting. The 27sqm '1 bedroom' is really a studio with a partition; bring minimal stuff. Pool goes into shade by mid-afternoon. Cleanliness depends entirely on the individual owner since units are separately owned and rented. Rated 9.7/10 on Agoda from 26 reviews, which is surprisingly high for a budget property. Good pick if you're on a tight budget and want to be near CMU and Maya Mall."
 last_verified: "2026-04-04"
@@ -40,7 +40,31 @@ units:
     recommended_floor: "3-6"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 8
+  - slug: ss1254372-cafe
+    category: coffee
+    walk_minutes: 10
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 8
+  - slug: alt-chiangmai
+    category: coworking
+    walk_minutes: 9
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 9
+  - slug: skykick-muay-thai
+    category: gyms
+    walk_minutes: 5
+  - slug: kantary-hills-fitness
+    category: gyms
+    walk_minutes: 7
+  - slug: master-language-sirimangkalajarn
+    category: language-schools
+    walk_minutes: 7
 ---
 
 ## Overview

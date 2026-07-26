@@ -17,7 +17,7 @@ contact:
   email: info@perfecthomes.co.th
   website: null
 photos: [hero.jpg, common-area.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Wanderlog 4.2/5 from 86 reviews. The location is the star: walkable to both Old City and Nimman, 5 minutes to Maya and CAMP coworking. Self-contained with on-site convenience store, two restaurants (including the European-style Le BRUNCH bistro), and a saltwater pool. But renovation noise is a constant problem — 'rooms are always under renovation at this condo, too annoying' say multiple reviews. Unit quality varies wildly because each owner maintains differently. Built 2012, 300 units, 16 floors. Good negotiating leverage because there's always something available."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "10-16"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 7
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 7
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 9
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 4
+  - slug: skykick-muay-thai
+    category: gyms
+    walk_minutes: 7
+  - slug: kantary-hills-fitness
+    category: gyms
+    walk_minutes: 10
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 10
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 7
 ---
 
 ## Overview

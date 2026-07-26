@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, gym.jpg, interior-1.jpg, lobby.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Best option in Chiang Mai if you need space — 3-bedroom units at 107sqm with 3-metre ceilings are hard to find anywhere near this price. The saltwater pool is well-maintained and the CBP neighborhood is quiet and organized with Big C Extra, HomePro, and food nearby. But make no mistake: this is NOT Nimman. It's 5-6 km away and you absolutely need a scooter. Building 4 has about 60% vacancy, which means strong negotiating power on rent — push hard. From property reviews, the building is well-maintained for its age and staff are described as kind and caring."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "4-7"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: akha-ama-coffee
+    category: coffee
+    walk_minutes: 1
+  - slug: dc-dental-clinic
+    category: dentists
+    walk_minutes: 3
+  - slug: chiang-mai-thai-language-center
+    category: language-schools
+    walk_minutes: 3
+  - slug: ilcc-chiang-mai
+    category: language-schools
+    walk_minutes: 6
+  - slug: coconut-shell-thai-food
+    category: local-eats
+    walk_minutes: 1
+  - slug: fah-lanna-spa
+    category: massage
+    walk_minutes: 2
+  - slug: chiang-mai-foot-massage-ratchadamnoen
+    category: massage
+    walk_minutes: 3
+  - slug: anglo-thai-legal-atl
+    category: visa-legal
+    walk_minutes: 1
 ---
 
 ## Overview

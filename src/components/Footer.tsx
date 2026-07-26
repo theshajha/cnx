@@ -10,10 +10,10 @@ export default function Footer() {
     <footer className="border-t border-sand mt-16 py-12 px-4 md:px-8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-8">
         <div className="max-w-md">
-          <div className="font-serif font-bold text-lg text-espresso">CNX Cribs</div>
+          <div className="font-display font-bold text-lg text-espresso">CNX Cribs</div>
           <p className="text-sm text-latte mt-2 leading-relaxed">
-            Curated long-term rentals in Chiang Mai. Built by an expat, for expats.
-            Every listing verified on foot.
+            Long-stay rentals in Chiang Mai, checked in person. Built by an expat, for expats. No
+            agent fees and no paid placement &mdash; every listing carries the date we last saw it.
           </p>
         </div>
         <div className="flex gap-12 text-sm">

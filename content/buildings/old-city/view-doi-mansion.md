@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Basically the cheapest monthly rental in the area at 5,000 THB. No pool, no gym, nothing fancy. But two desks per room and free WiFi — so if you just need a clean, quiet place to work from and don't care about amenities, it does the job. The rooftop has Doi Suthep views which is a nice bonus. Wouldn't put a couple here though, 28sqm is tight."
 last_verified: "2026-04-04"
@@ -40,7 +40,28 @@ units:
     recommended_floor: "6-10"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: hub-chiang-mai
+    category: coworking
+    walk_minutes: 14
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 15
+  - slug: o2-gym-kampangdin
+    category: gyms
+    walk_minutes: 2
+  - slug: coin-laundry-chaiyaphoom
+    category: laundry
+    walk_minutes: 10
+  - slug: ems-laundry
+    category: laundry
+    walk_minutes: 15
+  - slug: mr-order-bike-car
+    category: motorbikes
+    walk_minutes: 10
+  - slug: first-choice-legal
+    category: visa-legal
+    walk_minutes: 8
 ---
 
 ## Overview

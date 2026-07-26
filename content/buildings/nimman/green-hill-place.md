@@ -17,7 +17,7 @@ contact:
   email: info@greenhillplace.com
   website: null
 photos: [hero.jpg, pool.jpg, exterior.jpg, garden.jpg, interior-1.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Two big saltwater pools (25x20m and 20x15m with waterfalls) and badminton courts — you won't find that combination anywhere else in Chiang Mai at this price. Google rated 3.9/5 from 192 reviews. The pool alone has 79 separate Google reviews at 4.2/5, described as 'great for serious swimming.' But the pool costs extra (50 THB/visit or 1,000 THB/month for residents), which is unusual. Building 3 is completely modern with new furniture — Buildings 1 and 2 are dated and described as 'austere and dark.' Sauna may be broken. Not walkable to Nimman despite marketing claims; you need a scooter. Pool noise is the #1 complaint — swimming classes with shouting instructors and screaming kids. Go early morning."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "4-7"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 7
+  - slug: hub-chiang-mai
+    category: coworking
+    walk_minutes: 11
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 10
+  - slug: virgin-active-central-festival
+    category: gyms
+    walk_minutes: 11
+  - slug: coin-laundry-chaiyaphoom
+    category: laundry
+    walk_minutes: 7
+  - slug: lets-relax-central-festival
+    category: massage
+    walk_minutes: 11
+  - slug: tops-central-festival
+    category: supermarkets
+    walk_minutes: 11
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 10
 ---
 
 ## Overview

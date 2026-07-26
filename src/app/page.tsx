@@ -1,41 +1,75 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getAllBuildings, getAllGuides, getAllArticles, getAllContributors, getAllAreaMetadata } from "@/lib/content";
-import { guidePillarTitle } from "@/lib/guide-pillars";
+import {
+  getAllBuildings,
+  getAllGuides,
+  getAllArticles,
+  getAllContributors,
+  getAllAreaMetadata,
+} from "@/lib/content";
 import { websiteJsonLd } from "@/lib/seo";
+import { freshnessOf } from "@/lib/freshness";
+import {
+  areaStats,
+  costBands,
+  entryPrice,
+  estimatedMonthly,
+  sortBuildings,
+  sqmRange,
+  valueVsArea,
+  ASSUMED_KWH_PER_MONTH,
+} from "@/lib/metrics";
 import BuildingCard from "@/components/BuildingCard";
-import GuideCard from "@/components/GuideCard";
+
+/**
+ * Three questions everyone arrives with. Giving them their own row replaces the
+ * old vague two-button hero and gets people to the answer in one click.
+ */
+const ENTRY_PATHS = [
+  {
+    href: "/guides/cost-of-living-chiang-mai",
+    kicker: "What will it cost?",
+    body: "Rent, bills, food and transport at three honest budget levels.",
+  },
+  {
+    href: "/cribs",
+    kicker: "Where should I live?",
+    body: "Every building we would live in, ranked, with ฿/sqm and all-in costs.",
+  },
+  {
+    href: "/playbook",
+    kicker: "How do I actually rent?",
+    body: "Deposits, contracts, negotiation and the red flags that cost people money.",
+  },
+];
 
 export default function Home() {
   const buildings = getAllBuildings();
   const guides = getAllGuides();
   const articles = getAllArticles();
   const contributors = getAllContributors();
-  const recentArticles = articles.slice(0, 3);
   const allAreas = getAllAreaMetadata();
 
-  const recommendedBuildings = [...buildings]
-    .filter((b) => (b.recommendation_score ?? 0) > 0)
-    .sort((a, b) => (b.recommendation_score ?? 0) - (a.recommendation_score ?? 0))
-    .slice(0, 6);
+  const ranked = sortBuildings(buildings, "recommended", buildings);
+  const [lead, ...rest] = ranked.slice(0, 7);
+  const bands = costBands(buildings);
+  const cheapest = Math.min(...buildings.map(entryPrice));
 
-  const cheapest = buildings.length > 0
-    ? Math.min(...buildings.map((b) => b.price_range[0]))
-    : 0;
+  const newestSweep = buildings.map((b) => b.last_verified).sort().at(-1)!;
+  const sweep = freshnessOf(newestSweep);
 
-  // Pick a compelling quote from a top-rated building
-  const quoteBuilding = recommendedBuildings.find((b) => b.contributor_note && b.recommendation_score >= 9);
-  const quoteText = quoteBuilding?.contributor_note?.split(".").slice(0, 2).join(".") + ".";
+  const leadValue = valueVsArea(lead, buildings.filter((b) => b.area === lead.area));
+  const leadSizes = sqmRange(lead);
+  const leadArea = allAreas.find((a) => a.slug === lead.area);
 
-  // Guide teasers for "New to Chiang Mai?" section
-  const guideTeasers = [
-    { slug: "cost-of-living-chiang-mai", icon: "💰", title: "Cost of Living", sub: "Real numbers, 3 budget tiers" },
-    { slug: "visa-options-chiang-mai", icon: "📋", title: "Visa Options", sub: "Tourist, ED, retirement, Elite" },
-    { slug: "getting-around-chiang-mai", icon: "🛵", title: "Getting Around", sub: "Scooters, Grab, walking" },
-    { slug: "healthcare-chiang-mai", icon: "🏥", title: "Healthcare", sub: "Hospitals, dentists, insurance" },
-    { slug: "thai-bank-account", icon: "🏦", title: "Bank Account", sub: "Which banks, what documents" },
-    { slug: "buying-property-chiang-mai", icon: "🏠", title: "Buying Property", sub: "Condos yes, land no" },
-  ];
+  // Use a whole contributor note rather than slicing it at the second full stop —
+  // the old version produced fragments that ended mid-thought.
+  const quoted = ranked.find(
+    (b) => b.contributor_note && b.contributor_note.length > 90 && b.contributor_note.length < 260
+  );
+  const quoteAuthor = quoted
+    ? contributors.find((c) => c.slug === quoted.contributed_by)
+    : null;
 
   return (
     <>
@@ -44,298 +78,404 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
       />
 
-      {/* ──────────────────────────────────────────────── */}
-      {/* HERO — full-bleed atmospheric                     */}
-      {/* ──────────────────────────────────────────────── */}
-      <section className="-mx-4 md:-mx-8 -mt-16 relative overflow-hidden rounded-b-[2rem] md:rounded-b-[2.5rem] shadow-lg">
-        {/* Hero photo */}
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="-mx-4 md:-mx-8 -mt-16 relative overflow-hidden rounded-b-[2rem] md:rounded-b-[2.5rem]">
         <Image
           src="/hero.jpg"
-          alt="Nimmanhaemin Road at golden hour — cafes, scooters, and Doi Suthep in the background"
+          alt=""
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-espresso/80 via-espresso/60 to-espresso/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-espresso/50 via-transparent to-espresso/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/88 via-espresso/65 to-espresso/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-espresso/25" />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 pt-28 md:pt-36 pb-16 md:pb-24">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 pt-32 md:pt-40 pb-14 md:pb-20">
           <div className="max-w-2xl">
-            <h1 className="font-serif font-bold text-[40px] md:text-[56px] text-cream tracking-tight leading-[1.08]">
-              Your honest friend<br />in Chiang Mai.
+            <p className="text-cream/60 text-[11px] font-bold uppercase tracking-[0.18em]">
+              Chiang Mai · long stay
+            </p>
+            <h1 className="font-display font-black text-[44px] md:text-[64px] text-cream tracking-tight leading-[1.02] mt-3">
+              Your honest friend
+              <br />
+              in Chiang Mai.
             </h1>
-
-            <p className="text-cream/75 text-base md:text-lg font-sans leading-relaxed mt-5 max-w-lg">
-              {buildings.length} verified rentals. Real prices, not listing fantasies. Expat tips from people who actually live here.
+            <p className="text-cream/80 text-[16px] md:text-[18px] leading-relaxed mt-5 max-w-xl">
+              {buildings.length} buildings walked in person. Real rents, the bills nobody quotes you,
+              and the gotchas a landlord will not mention.
             </p>
 
             <div className="flex gap-3 mt-8 flex-wrap">
               <Link
                 href="/cribs"
-                className="bg-cream text-espresso px-7 py-3.5 rounded-xl text-[15px] font-bold font-sans hover:bg-sand transition-colors"
+                className="bg-terracotta text-cream px-7 py-3.5 rounded-xl text-[15px] font-bold hover:bg-terracotta/90 transition-colors shadow-lg"
               >
-                Browse Cribs →
+                Browse every building →
               </Link>
               <Link
                 href="/playbook"
-                className="bg-white/10 text-cream border border-cream/20 px-7 py-3.5 rounded-xl text-[15px] font-semibold font-sans hover:bg-white/20 transition-colors backdrop-blur-sm"
+                className="bg-cream/10 text-cream border border-cream/25 px-7 py-3.5 rounded-xl text-[15px] font-semibold hover:bg-cream/20 transition-colors backdrop-blur-sm"
               >
-                New here? Start with the guide
+                New here? Read the playbook
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Trust bar — inside hero, frosted glass at bottom */}
-        <div className="relative z-10 border-t border-cream/15">
-          <div className="bg-cream/10 backdrop-blur-md">
-            <div className="max-w-6xl mx-auto px-4 md:px-8 py-4 flex justify-center gap-6 md:gap-12 flex-wrap text-[13px] font-sans text-cream/80">
-              <span><strong className="text-cream font-bold">{buildings.length}</strong> verified buildings</span>
-              <span><strong className="text-cream font-bold">฿{(cheapest / 1000).toFixed(0)}k</strong> cheapest monthly</span>
-              <span><strong className="text-cream font-bold">{allAreas.length}</strong> neighborhoods</span>
-              <span>Updated <strong className="text-cream font-bold">weekly</strong></span>
-            </div>
+        {/* Honest trust bar — states the real sweep date instead of "updated weekly". */}
+        <div className="relative z-10 border-t border-cream/15 bg-cream/10 backdrop-blur-md">
+          <div className="max-w-6xl mx-auto px-4 md:px-8 py-3.5 flex justify-center md:justify-start gap-5 md:gap-10 flex-wrap text-[12px] md:text-[13px] text-cream/75">
+            <span>
+              <strong className="text-cream font-bold tnum">{buildings.length}</strong> buildings
+            </span>
+            <span>
+              <strong className="text-cream font-bold tnum">
+                ฿{(cheapest / 1000).toFixed(1)}k
+              </strong>{" "}
+              cheapest rent
+            </span>
+            <span>
+              <strong className="text-cream font-bold tnum">{allAreas.length}</strong> neighbourhoods
+            </span>
+            <span>
+              Last sweep <strong className="text-cream font-bold">{sweep.label.replace(/^\S+ /, "")}</strong>
+            </span>
+            <span className="hidden sm:inline">No agent fees, ever</span>
           </div>
         </div>
       </section>
 
-      {/* ──────────────────────────────────────────────── */}
-      {/* SOCIAL PROOF QUOTE                                */}
-      {/* ──────────────────────────────────────────────── */}
-      {quoteBuilding && (
-        <section className="py-10 md:py-12 text-center max-w-2xl mx-auto">
-          <p className="text-dark-roast text-[15px] md:text-base leading-relaxed italic font-sans">
-            &ldquo;{quoteText}&rdquo;
-          </p>
-          <p className="text-latte text-[12px] font-sans mt-3">
-            — from{" "}
-            <Link href={`/cribs/${quoteBuilding.area}/${quoteBuilding.slug}`} className="text-terracotta hover:underline font-medium">
-              {quoteBuilding.name}
-            </Link>{" "}
-            review
-          </p>
-        </section>
-      )}
+      {/* ── Three entry paths ────────────────────────────── */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-px bg-sand rounded-2xl overflow-hidden border border-sand mt-12 mb-16">
+        {ENTRY_PATHS.map((p, i) => (
+          <Link key={p.href} href={p.href} className="group bg-cream hover:bg-milk transition-colors p-6 md:p-7">
+            <span className="tnum text-[11px] font-bold text-terracotta">0{i + 1}</span>
+            <h2 className="font-display font-bold text-[20px] text-espresso mt-2 group-hover:text-terracotta transition-colors">
+              {p.kicker}
+            </h2>
+            <p className="text-[13px] text-latte leading-relaxed mt-1.5">{p.body}</p>
+          </Link>
+        ))}
+      </section>
 
-      {/* ──────────────────────────────────────────────── */}
-      {/* RECOMMENDED — horizontal scroll on mobile         */}
-      {/* ──────────────────────────────────────────────── */}
-      {recommendedBuildings.length > 0 && (
-        <section className="mb-16">
-          <div className="flex justify-between items-baseline mb-6">
-            <div>
-              <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight">
-                Recommended
-              </h2>
-              <p className="text-sm text-latte mt-1 font-sans">
-                Our top picks based on value, reviews, and overall quality.
-              </p>
-            </div>
-            <Link href="/cribs" className="text-sm font-semibold text-terracotta hover:underline font-sans hidden md:block">
-              View all →
-            </Link>
+      {/* ── The picks: one lead + a ranked list ──────────── */}
+      <section className="mb-20">
+        <div className="flex justify-between items-end mb-6">
+          <div>
+            <h2 className="font-display font-bold text-[28px] md:text-[32px] text-espresso tracking-tight rule-tick">
+              Where we would live
+            </h2>
+            <p className="text-[14px] text-latte mt-3.5 max-w-md leading-relaxed">
+              Ranked by value against the neighbourhood, not by who is paying.
+            </p>
           </div>
+          <Link href="/cribs" className="text-[13px] font-bold text-terracotta hover:underline hidden md:block shrink-0">
+            All {buildings.length} buildings →
+          </Link>
+        </div>
 
-          {/* Mobile: horizontal scroll */}
-          <div className="md:hidden flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory">
-            {recommendedBuildings.map((b) => (
-              <div key={b.slug} className="min-w-[280px] snap-start">
-                <BuildingCard building={b} />
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-6 items-start">
+          {/* Lead pick — given real weight rather than being one of six equal cards. */}
+          <Link
+            href={`/cribs/${lead.area}/${lead.slug}`}
+            className="group block bg-milk rounded-2xl border border-sand overflow-hidden hover:shadow-[var(--shadow-lift)] transition-all duration-200"
+          >
+            <div className="relative h-[280px] md:h-[340px] bg-sand">
+              <Image
+                src={`/buildings/${lead.slug}/${lead.photos[0] || "hero.jpg"}`}
+                alt={lead.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 55vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/85 via-espresso/20 to-transparent" />
+              <div className="absolute top-4 left-4 flex gap-2">
+                <span className="bg-terracotta text-cream text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
+                  Our top pick
+                </span>
+                {leadValue?.tier === "great" && (
+                  <span className="bg-verified text-cream text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
+                    Good value
+                  </span>
+                )}
               </div>
-            ))}
-          </div>
-
-          {/* Desktop: grid */}
-          <div className="hidden md:grid grid-cols-2 gap-6">
-            {recommendedBuildings.map((b) => (
-              <BuildingCard key={b.slug} building={b} />
-            ))}
-          </div>
-
-          <Link href="/cribs" className="inline-block mt-6 text-sm font-semibold text-terracotta hover:underline font-sans md:hidden">
-            View all cribs →
+              <div className="absolute bottom-5 left-5 right-5">
+                <p className="text-cream/70 text-[11px] font-bold uppercase tracking-[0.14em]">
+                  {leadArea?.name ?? lead.area}
+                </p>
+                <h3 className="font-display font-bold text-[30px] md:text-[34px] text-cream leading-tight mt-1">
+                  {lead.name}
+                </h3>
+                <div className="flex items-baseline gap-4 mt-2.5 text-cream/85 text-[13px]">
+                  <span className="font-display font-bold text-[22px] text-cream tnum">
+                    ฿{(entryPrice(lead) / 1000).toFixed(0)}k
+                    <span className="text-[12px] font-sans font-medium text-cream/70">/mo</span>
+                  </span>
+                  {leadSizes && (
+                    <span className="tnum">
+                      {leadSizes[0]}–{leadSizes[1]} sqm
+                    </span>
+                  )}
+                  {leadValue && <span className="tnum">฿{leadValue.ppsm}/sqm</span>}
+                </div>
+              </div>
+            </div>
+            {lead.contributor_note && (
+              <p className="text-[14px] text-dark-roast leading-relaxed p-5 line-clamp-3">
+                {lead.contributor_note}
+              </p>
+            )}
           </Link>
+
+          {/* Runners-up as a compact ranked list, not more big cards. */}
+          <ol className="bg-milk rounded-2xl border border-sand overflow-hidden divide-y divide-sand">
+            {rest.map((b, i) => {
+              const v = valueVsArea(b, buildings.filter((p) => p.area === b.area));
+              const s = sqmRange(b);
+              return (
+                <li key={b.slug}>
+                  <Link
+                    href={`/cribs/${b.area}/${b.slug}`}
+                    className="group flex items-center gap-4 px-4 py-3.5 hover:bg-parchment/70 transition-colors"
+                  >
+                    <span className="tnum text-[13px] font-bold text-mist w-5 shrink-0">
+                      {i + 2}
+                    </span>
+                    <div className="relative w-14 h-14 rounded-lg overflow-hidden bg-sand shrink-0">
+                      <Image
+                        src={`/buildings/${b.slug}/${b.photos[0] || "hero.jpg"}`}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="56px"
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-display font-bold text-[15px] text-espresso truncate group-hover:text-terracotta transition-colors">
+                        {b.name}
+                      </h3>
+                      <p className="text-[11px] text-latte truncate mt-0.5">
+                        {allAreas.find((a) => a.slug === b.area)?.name}
+                        {s ? ` · ${s[0]}–${s[1]} sqm` : ""}
+                        {v ? ` · ฿${v.ppsm}/sqm` : ""}
+                      </p>
+                    </div>
+                    <span className="font-display font-bold text-[16px] text-espresso tnum shrink-0">
+                      ฿{(entryPrice(b) / 1000).toFixed(0)}k
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+            <li>
+              <Link
+                href="/cribs"
+                className="block px-4 py-3.5 text-[13px] font-bold text-terracotta hover:bg-parchment/70 transition-colors"
+              >
+                See all {buildings.length} buildings →
+              </Link>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* ── What it actually costs — dark data band ──────── */}
+      {bands.length > 0 && (
+        <section className="-mx-4 md:-mx-8 bg-espresso py-14 md:py-16 mb-20">
+          <div className="max-w-6xl mx-auto px-4 md:px-8">
+            <div className="md:flex md:justify-between md:items-end gap-8">
+              <div className="max-w-lg">
+                <h2 className="font-display font-bold text-[28px] md:text-[32px] text-cream tracking-tight">
+                  What it actually costs
+                </h2>
+                <p className="text-cream/55 text-[14px] leading-relaxed mt-3">
+                  Typical all-in monthly cost from our own {buildings.length}{" "}
+                  buildings &mdash; rent plus electricity at {ASSUMED_KWH_PER_MONTH} kWh, water and
+                  internet. Not a listing price with the bills hidden underneath.
+                </p>
+              </div>
+              <Link
+                href="/guides/cost-of-living-chiang-mai"
+                className="inline-block mt-5 md:mt-0 text-[13px] font-bold text-terracotta hover:underline shrink-0"
+              >
+                Full cost breakdown →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-9">
+              {bands.map((b) => (
+                <div key={b.layout} className="bg-white/[0.055] border border-white/[0.09] rounded-xl p-5">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-cream font-bold text-[13px]">{b.label}</span>
+                    {b.sqm && (
+                      <span className="text-cream/40 text-[11px] tnum">~{b.sqm} sqm</span>
+                    )}
+                  </div>
+                  <div className="font-display font-bold text-[34px] text-cream tnum mt-3 leading-none">
+                    ฿{(b.typical / 1000).toFixed(1)}k
+                  </div>
+                  <p className="text-cream/45 text-[11px] mt-2">
+                    typical all-in · from{" "}
+                    <span className="tnum text-cream/70">฿{(b.low / 1000).toFixed(1)}k</span> rent
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       )}
 
-      {/* ──────────────────────────────────────────────── */}
-      {/* NEW TO CHIANG MAI? — dark full-bleed section      */}
-      {/* ──────────────────────────────────────────────── */}
-      <section className="-mx-4 md:-mx-8 bg-espresso py-12 md:py-16 mb-16">
-        <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <h2 className="font-serif font-bold text-2xl text-cream tracking-tight">
-            New to Chiang Mai?
-          </h2>
-          <p className="text-cream/50 text-sm font-sans mt-2 mb-8">
-            Start here. These guides cover everything from visas to scooters.
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {guideTeasers.map((g) => (
-              <Link
-                key={g.slug}
-                href={`/guides/${g.slug}`}
-                className="block bg-white/[0.06] border border-white/[0.08] rounded-xl p-4 hover:bg-white/[0.12] transition-colors group"
-              >
-                <div className="text-2xl mb-2">{g.icon}</div>
-                <div className="font-bold text-[13px] text-cream font-sans group-hover:text-terracotta transition-colors">
-                  {g.title}
-                </div>
-                <div className="text-[11px] text-cream/40 font-sans mt-1 leading-snug">
-                  {g.sub}
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <Link href="/guides" className="inline-block mt-8 text-sm font-semibold text-terracotta hover:underline font-sans">
-            View all guides →
-          </Link>
-        </div>
-      </section>
-
-      {/* ──────────────────────────────────────────────── */}
-      {/* STATS GRID — pulled from real data                */}
-      {/* ──────────────────────────────────────────────── */}
-      <section className="mb-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <div className="bg-milk rounded-2xl border border-sand p-6 text-center">
-            <div className="font-serif font-bold text-[32px] text-espresso">{buildings.length}</div>
-            <div className="text-[12px] text-latte font-sans mt-1">Verified Buildings</div>
-          </div>
-          <div className="bg-milk rounded-2xl border border-sand p-6 text-center">
-            <div className="font-serif font-bold text-[32px] text-terracotta">฿{(cheapest / 1000).toFixed(0)}k</div>
-            <div className="text-[12px] text-latte font-sans mt-1">Cheapest Monthly</div>
-          </div>
-          <div className="bg-milk rounded-2xl border border-sand p-6 text-center">
-            <div className="font-serif font-bold text-[32px] text-espresso">{articles.length}</div>
-            <div className="text-[12px] text-latte font-sans mt-1">In-Depth Guides</div>
-          </div>
-          <div className="bg-milk rounded-2xl border border-sand p-6 text-center">
-            <div className="font-serif font-bold text-[32px] text-espresso">100%</div>
-            <div className="text-[12px] text-latte font-sans mt-1">Free, No Agent Fees</div>
-          </div>
-        </div>
-      </section>
-
-      {/* ──────────────────────────────────────────────── */}
-      {/* EXPLORE BY AREA                                   */}
-      {/* ──────────────────────────────────────────────── */}
-      <section className="mb-16">
-        <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight mb-6">
-          Explore by Area
+      {/* ── Neighbourhood comparison ─────────────────────── */}
+      <section className="mb-20">
+        <h2 className="font-display font-bold text-[28px] md:text-[32px] text-espresso tracking-tight rule-tick">
+          Pick a neighbourhood
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {allAreas.map((area) => {
-            const areaBuildings = buildings.filter((b) => b.area === area.slug);
-            const minPrice = areaBuildings.length > 0
-              ? Math.min(...areaBuildings.map((b) => b.price_range[0]))
-              : 0;
-            const maxPrice = areaBuildings.length > 0
-              ? Math.max(...areaBuildings.map((b) => b.price_range[1]))
-              : 0;
+        <p className="text-[14px] text-latte mt-3.5 mb-7 max-w-lg leading-relaxed">
+          The two areas we know well enough to have opinions about.
+        </p>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {allAreas.map((area) => {
+            const inArea = buildings.filter((b) => b.area === area.slug);
+            const s = areaStats(inArea);
             return (
               <Link
                 key={area.slug}
                 href={`/cribs/${area.slug}`}
-                className="block bg-milk rounded-2xl border border-sand p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="group block bg-milk rounded-2xl border border-sand p-6 md:p-7 hover:shadow-[var(--shadow-lift)] hover:-translate-y-0.5 transition-all duration-200"
               >
-                {area.icon && <div className="text-4xl mb-2">{area.icon}</div>}
-                <h3 className="font-serif font-bold text-2xl text-espresso">{area.name}</h3>
-                <p className="text-sm text-latte mt-2 leading-relaxed font-sans">{area.description}</p>
-                <div className="flex gap-6 mt-4 text-sm font-sans">
-                  <span>
-                    <span className="text-latte">Buildings: </span>
-                    <span className="text-espresso font-bold">{areaBuildings.length}</span>
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="font-display font-bold text-[24px] text-espresso group-hover:text-terracotta transition-colors">
+                    {area.name}
+                  </h3>
+                  <span className="tnum text-[13px] text-latte shrink-0">
+                    {s.count} buildings
                   </span>
-                  {areaBuildings.length > 0 && (
-                    <span>
-                      <span className="text-latte">From </span>
-                      <span className="text-terracotta font-bold">
-                        ฿{minPrice.toLocaleString()} – ฿{maxPrice.toLocaleString()}
-                      </span>
-                    </span>
-                  )}
                 </div>
+                <p className="text-[14px] text-dark-roast mt-2 leading-relaxed">{area.description}</p>
+
+                <dl className="grid grid-cols-3 gap-3 mt-5 pt-5 border-t border-sand">
+                  <div>
+                    <dt className="text-[10px] uppercase tracking-[0.1em] text-latte font-bold">
+                      Rent from
+                    </dt>
+                    <dd className="tnum text-[16px] text-espresso font-semibold mt-1">
+                      ฿{(s.minPrice / 1000).toFixed(1)}k
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] uppercase tracking-[0.1em] text-latte font-bold">
+                      Median ฿/sqm
+                    </dt>
+                    <dd className="tnum text-[16px] text-espresso font-semibold mt-1">
+                      {s.medianPpsm ? `฿${s.medianPpsm}` : "—"}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] uppercase tracking-[0.1em] text-latte font-bold">
+                      With a pool
+                    </dt>
+                    <dd className="tnum text-[16px] text-espresso font-semibold mt-1">
+                      {s.withPool}/{s.count}
+                    </dd>
+                  </div>
+                </dl>
               </Link>
             );
           })}
         </div>
       </section>
 
-      {/* ──────────────────────────────────────────────── */}
-      {/* DIRECTORY TEASER                                  */}
-      {/* ──────────────────────────────────────────────── */}
-      {guides.length > 0 && (
-        <section className="mb-16">
-          <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight mb-2">
-            The Directory
-          </h2>
-          <p className="text-sm text-latte mb-6 font-sans">
-            Curated spots for daily life, work, wellness, and more — your yellow pages for living in Chiang Mai.
+      {/* ── Voice moment ─────────────────────────────────── */}
+      {quoted?.contributor_note && (
+        <section className="mb-20 max-w-3xl mx-auto text-center">
+          <blockquote className="font-display text-[21px] md:text-[26px] text-espresso leading-[1.45] tracking-tight">
+            &ldquo;{quoted.contributor_note}&rdquo;
+          </blockquote>
+          <p className="text-[12px] text-latte mt-5">
+            {quoteAuthor?.name ?? "CNX Cribs"} on{" "}
+            <Link
+              href={`/cribs/${quoted.area}/${quoted.slug}`}
+              className="text-terracotta font-semibold hover:underline"
+            >
+              {quoted.name}
+            </Link>
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...guides]
-              .sort((a, b) => (b.spots.length > 0 ? 1 : 0) - (a.spots.length > 0 ? 1 : 0))
-              .slice(0, 6)
-              .map((g) => (
-                <GuideCard key={g.category} guide={g} pillarTitle={guidePillarTitle(g.pillar)} />
-              ))}
-          </div>
-          <Link
-            href="/directory"
-            className="inline-block mt-6 text-sm font-semibold text-terracotta hover:underline font-sans"
-          >
-            View full directory →
-          </Link>
         </section>
       )}
 
-      {/* ──────────────────────────────────────────────── */}
-      {/* LATEST GUIDES                                     */}
-      {/* ──────────────────────────────────────────────── */}
-      {recentArticles.length > 0 && (
-        <section className="mb-16">
-          <h2 className="font-serif font-bold text-2xl text-espresso tracking-tight mb-2">
-            Latest Guides
-          </h2>
-          <p className="text-sm text-latte mb-6 font-sans">
-            In-depth articles on living in Chiang Mai, written by expats who have figured it out.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {recentArticles.map((article) => {
-              const author = contributors.find((c) => c.slug === article.author);
-              return (
-                <Link
-                  key={article.slug}
-                  href={`/guides/${article.slug}`}
-                  className="block bg-milk rounded-2xl border border-sand p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  <h3 className="font-serif font-bold text-[20px] text-espresso leading-snug">
-                    {article.title}
-                  </h3>
-                  <p className="text-dark-roast text-[14px] mt-2 leading-relaxed line-clamp-2 font-sans">
-                    {article.description}
-                  </p>
-                  <div className="flex items-center gap-3 mt-4 pt-3 border-t border-sand text-xs text-latte font-sans">
-                    {author && <span className="font-medium text-dark-roast">{author.name}</span>}
-                    <span>{article.reading_time} min read</span>
-                  </div>
-                </Link>
-              );
-            })}
+      {/* ── The rest of the field guide ──────────────────── */}
+      <section className="mb-16">
+        <h2 className="font-display font-bold text-[28px] md:text-[32px] text-espresso tracking-tight rule-tick">
+          The rest of the field guide
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 mt-8 items-start">
+          {/* Guides — the long reads */}
+          <div>
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-latte mb-4">
+              In-depth guides
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {articles.slice(0, 4).map((article) => {
+                const author = contributors.find((c) => c.slug === article.author);
+                return (
+                  <Link
+                    key={article.slug}
+                    href={`/guides/${article.slug}`}
+                    className="group block bg-milk rounded-xl border border-sand p-5 hover:shadow-[var(--shadow-card)] hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    <h4 className="font-display font-bold text-[17px] text-espresso leading-snug group-hover:text-terracotta transition-colors">
+                      {article.title}
+                    </h4>
+                    <p className="text-[13px] text-latte mt-1.5 leading-relaxed line-clamp-2">
+                      {article.description}
+                    </p>
+                    <p className="text-[11px] text-mist mt-3 tnum">
+                      {author?.name} · {article.reading_time} min
+                    </p>
+                  </Link>
+                );
+              })}
+            </div>
+            <Link
+              href="/guides"
+              className="inline-block mt-5 text-[13px] font-bold text-terracotta hover:underline"
+            >
+              All {articles.length} guides →
+            </Link>
           </div>
-          <Link
-            href="/guides"
-            className="inline-block mt-6 text-sm font-semibold text-terracotta hover:underline font-sans"
-          >
-            View all guides →
-          </Link>
-        </section>
-      )}
+
+          {/* Directory — a compact index, visually distinct from the cards */}
+          <div>
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-latte mb-4">
+              The directory
+            </h3>
+            <ul className="bg-milk rounded-xl border border-sand divide-y divide-sand overflow-hidden">
+              {guides.slice(0, 8).map((g) => (
+                <li key={g.category}>
+                  <Link
+                    href={`/directory/${g.category}`}
+                    className="group flex items-center justify-between gap-3 px-4 py-2.5 hover:bg-parchment/70 transition-colors"
+                  >
+                    <span className="text-[13px] font-semibold text-dark-roast group-hover:text-terracotta transition-colors">
+                      {g.name}
+                    </span>
+                    <span className="tnum text-[11px] text-mist shrink-0">{g.spots.length}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/directory"
+              className="inline-block mt-4 text-[13px] font-bold text-terracotta hover:underline"
+            >
+              Full directory →
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

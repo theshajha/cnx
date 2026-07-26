@@ -17,7 +17,7 @@ contact:
   email: info@perfecthomes.co.th
   website: null
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "A genuine expat retirement community with regular social events and a communal vibe you won't find in Nimman condos. The River Market restaurant next door hosts the Chiang Mai Expats Club's twice-monthly breakfast. Built in 1994 by Bangkok architect Dan Wongprasat — the units are massive by modern standards: 64sqm 1BR, 100sqm 2BR, 128sqm 3BR, even a 200sqm penthouse. These floor plans are impossible to find in modern Chiang Mai construction. Pool and gym included. 5-minute walk to downtown. It's old and it shows, but the space, community, and riverside location make up for it."
 last_verified: "2026-04-04"
@@ -49,7 +49,28 @@ units:
     recommended_floor: "8-12"
     recommended_facing: "east"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: punspace-tha-phae
+    category: coworking
+    walk_minutes: 11
+  - slug: dental-world-chiang-mai
+    category: dentists
+    walk_minutes: 12
+  - slug: funsabai-dental-kotchasan
+    category: dentists
+    walk_minutes: 15
+  - slug: baan-thai-massage
+    category: massage
+    walk_minutes: 14
+  - slug: journey-chiang-mai
+    category: motorbikes
+    walk_minutes: 10
+  - slug: buddy-bike-rent
+    category: motorbikes
+    walk_minutes: 13
+  - slug: warorot-market
+    category: supermarkets
+    walk_minutes: 8
 ---
 
 ## Overview

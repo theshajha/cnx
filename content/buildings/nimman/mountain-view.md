@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, pool.jpg, exterior.jpg, interior-1.jpg, common-area.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Hidden gem for people who want quiet and mountain views over Nimman nightlife. The 8-metre window fronts and 3-metre ceilings are confirmed and genuinely make the 46sqm units feel much bigger. The covered pool means you can swim in rainy season, though it's described as 'small.' Doi Suthep views from every balcony are real — confirmed by residents. Tight security (keycard + 24hr guards + CCTV). But you're not in Nimman — this is a quiet residential soi 5 minutes by scooter from Maya. The building is designed for foreign expats who want peace and mountains, not for nomads who want to be in the action. Booking.com rates it 9.1/10 from 10 reviews."
 last_verified: "2026-04-04"
@@ -40,7 +40,10 @@ units:
     recommended_floor: "5-7"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ss1254372-cafe
+    category: coffee
+    walk_minutes: 12
 ---
 
 ## Overview

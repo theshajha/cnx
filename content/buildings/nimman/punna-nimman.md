@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, exterior.jpg, gym.jpg, lobby.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 last_verified: "2026-04-04"
 units:
@@ -40,12 +40,30 @@ units:
     recommended_facing: "north or east"
     photos: []
 nearby_spots:
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 4
   - slug: ristr8to-lab
     category: coffee
     walk_minutes: 5
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 3
   - slug: camp-maya
     category: coworking
     walk_minutes: 7
+  - slug: powerhouse-punna-nimman
+    category: gyms
+    walk_minutes: 4
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 3
+  - slug: inspiration-language-nimman
+    category: language-schools
+    walk_minutes: 4
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 1
 ---
 
 ## Overview

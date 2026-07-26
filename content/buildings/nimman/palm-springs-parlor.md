@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, pool.jpg, exterior.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Same compound, same developer, same quality. Pick whichever Palm Springs building has a unit available — they're interchangeable in terms of facilities and price."
 last_verified: "2026-04-04"
@@ -31,7 +31,31 @@ units:
     recommended_floor: "3-8"
     recommended_facing: "north or east"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 2
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 4
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 1
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 4
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 2
+  - slug: inspiration-language-nimman
+    category: language-schools
+    walk_minutes: 2
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 3
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 4
 ---
 
 ## Overview

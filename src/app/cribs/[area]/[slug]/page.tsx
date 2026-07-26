@@ -14,6 +14,7 @@ import QuickSummary from "@/components/QuickSummary";
 import LocationCard from "@/components/LocationCard";
 import NearbyBuildings from "@/components/NearbyBuildings";
 import MobileContactBar from "@/components/MobileContactBar";
+import { wifiLabel } from "@/lib/metrics";
 
 interface Props {
   params: Promise<{ area: string; slug: string }>;
@@ -65,6 +66,9 @@ export default async function BuildingPage({ params }: Props) {
     ...building.units.flatMap((u) => u.photos),
   ];
 
+  const wifi = wifiLabel(building.wifi);
+  const c = building.contact;
+  const hasContact = Boolean(c.phone || c.line || c.email || c.website);
   const areaLabel = getAreaMetadata(building.area).name;
   const typeLabel = building.type.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const allSections = parseContentSections(building.content);
@@ -165,10 +169,8 @@ export default async function BuildingPage({ params }: Props) {
             </div>
             <div className="bg-milk rounded-[10px] border border-sand p-4 text-center">
               <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">WiFi</div>
-              <div className="font-bold text-espresso text-lg mt-1">
-                {building.wifi === "included" ? "Free" : `${building.wifi} ฿`}
-              </div>
-              <div className="text-[10px] text-latte">{building.wifi === "included" ? "included" : "per month"}</div>
+              <div className="font-bold text-espresso text-lg mt-1">{wifi.value}</div>
+              <div className="text-[10px] text-latte">{wifi.note}</div>
             </div>
             <div className="bg-milk rounded-[10px] border border-sand p-4 text-center">
               <div className="text-[10px] text-latte uppercase tracking-[1.5px] font-semibold">Deposit</div>
@@ -228,13 +230,16 @@ export default async function BuildingPage({ params }: Props) {
           {/* Nearby Spots */}
           <NearbySpots spots={building.nearby_spots} guides={guides} />
 
-          {/* Bottom CTA */}
+          {/* Bottom CTA — says something useful even when we hold no contact details,
+              which is the case for roughly half the buildings. */}
           <div className="bg-terracotta rounded-[14px] p-5 md:p-8 text-center">
-            <h2 className="font-serif font-bold text-2xl text-cream mb-2">
-              Interested in {building.name}?
+            <h2 className="font-display font-bold text-2xl text-cream mb-2">
+              {hasContact ? `Interested in ${building.name}?` : "No direct line on file"}
             </h2>
-            <p className="text-cream/80 text-sm mb-5">
-              Get in touch directly or read the playbook first.
+            <p className="text-cream/85 text-sm mb-5 max-w-md mx-auto leading-relaxed">
+              {hasContact
+                ? "Mention CNX Cribs — there is no agent fee and no commission on our side."
+                : `We have not got a landlord contact for ${building.name} yet. Walk in and ask reception, or check the listing sites — then read the playbook first so you know what to negotiate.`}
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               {building.contact.line && (
@@ -250,15 +255,27 @@ export default async function BuildingPage({ params }: Props) {
                   href={`tel:${building.contact.phone}`}
                   className="bg-cream text-espresso px-6 py-3 rounded-[10px] text-sm font-bold hover:bg-sand transition-colors"
                 >
-                  Call Now
+                  Call {building.contact.phone}
                 </a>
               )}
               <Link
                 href="/playbook"
-                className="bg-cream/20 text-cream px-6 py-3 rounded-[10px] text-sm font-bold hover:bg-cream/30 transition-colors"
+                className={`px-6 py-3 rounded-[10px] text-sm font-bold transition-colors ${
+                  hasContact
+                    ? "bg-cream/20 text-cream hover:bg-cream/30"
+                    : "bg-cream text-espresso hover:bg-sand"
+                }`}
               >
-                Read the Playbook
+                Read the playbook
               </Link>
+              {!hasContact && (
+                <a
+                  href={`mailto:hello@cnxcribs.com?subject=${encodeURIComponent(`Contact for ${building.name}`)}`}
+                  className="bg-cream/20 text-cream px-6 py-3 rounded-[10px] text-sm font-bold hover:bg-cream/30 transition-colors"
+                >
+                  Know the landlord? Tell us
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -277,8 +294,12 @@ export default async function BuildingPage({ params }: Props) {
           <div className="hidden lg:block">
             <ContactCard contact={building.contact} />
           </div>
-          <QuickSummary building={building} />
-          <LocationCard coordinates={building.coordinates} address={building.address} />
+          <QuickSummary building={building} areaLabel={areaLabel} />
+          <LocationCard
+            coordinates={building.coordinates}
+            address={building.address}
+            buildingName={building.name}
+          />
           <NearbyBuildings buildings={areaBuildings} currentSlug={building.slug} />
         </div>
       </div>

@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "The 5 THB/unit electric rate is real — confirmed by PerfectHomes and expat blog reviews. That's near-government rate, when most buildings charge 7-8 THB. Rooms described as 'by far the best in their price range' on NomadRental (4.75/5 from 2 reviews). Full kitchens with cooking tools in every unit. Doi Suthep views from most rooms. Quiet soi 10 minutes walk from Maya and Nimman. No pool, no gym though — you're paying for apartment quality, not facilities. WiFi quality varies by unit."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "4-5"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 9
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 14
+  - slug: dentaland-chiang-mai
+    category: dentists
+    walk_minutes: 10
+  - slug: chiang-mai-medical-dental-polyclinic
+    category: dentists
+    walk_minutes: 10
+  - slug: o2-gym-kampangdin
+    category: gyms
+    walk_minutes: 13
+  - slug: oasis-spa-chiang-mai
+    category: massage
+    walk_minutes: 13
+  - slug: bikky-chiang-mai
+    category: motorbikes
+    walk_minutes: 13
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 11
 ---
 
 ## Overview

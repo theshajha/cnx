@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(node -e:*)",
+      "Bash(python3:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(awk:*)",
+      "Bash(sed:*)",
+      "Bash(cat:*)",
+      "Bash(diff:*)",
+      "Bash(jq:*)",
+      "Bash(xargs:*)",
+      "Bash(which:*)",
+      "Bash(basename:*)",
+      "Bash(dirname:*)",
+      "Bash(echo:*)",
+      "Bash(curl -s http://localhost:*)",
+      "Bash(curl -sI http://localhost:*)",
+      "Bash(curl -I http://localhost:*)",
+      "Bash(curl http://localhost:*)",
+      "Bash(kill:*)",
+      "Bash(pkill:*)",
+      "Bash(killall:*)"
+    ]
+  }
+}

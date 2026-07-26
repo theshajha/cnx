@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 recommendation_score: 8
 contributor_note: "A solid all-inclusive deal: water, WiFi, weekly cleaning, washer in-unit, pool, and gym all included at 14-15K. Run by genuinely friendly women who care about the place — multiple reviewers single out the staff. Studios only at 35sqm so it's a solo traveler pick, not couples. The fridge is undersized (won't keep ice cream frozen) so don't plan on heavy meal prep. WiFi is adequate but not blazing — test it on arrival if video calls are your bread and butter. Some units face a farm next door which is actually a bonus: quiet, green, private. Booking.com rates it 9.3/10 from 49 reviews."
@@ -32,7 +32,31 @@ units:
     recommended_floor: "5-7"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 5
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 5
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 7
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 3
+  - slug: dentaland-chiang-mai
+    category: dentists
+    walk_minutes: 7
+  - slug: skykick-muay-thai
+    category: gyms
+    walk_minutes: 7
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 7
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 3
 ---
 
 ## Overview

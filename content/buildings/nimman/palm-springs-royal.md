@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, pool.jpg, exterior.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "The only Palm Springs building with 2BR units. If you're a couple or need a proper home office setup, this is the one to ask about. 2BR at 18-22k with a pool is hard to beat in Nimman. Availability is tighter here than the other four buildings."
 last_verified: "2026-04-04"
@@ -40,7 +40,31 @@ units:
     recommended_floor: "4-8"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 4
+  - slug: camp-maya
+    category: coffee
+    walk_minutes: 4
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 2
+  - slug: camp-maya
+    category: coworking
+    walk_minutes: 4
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 2
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 4
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 3
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 4
 ---
 
 ## Overview

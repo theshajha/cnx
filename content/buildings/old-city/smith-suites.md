@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 recommendation_score: 7
 contributor_note: "The community here is the real draw. Dr. Smith and his wife personally organize Christmas parties, happy hours, and day trips — it feels like a family. TripAdvisor 4.0/5 from 183 reviews (combined with Smith Residence listing). Saturday Walking Street literally at your doorstep. Full kitchen in every unit. But: kitchen counters are scaled for shorter people (taller folks will crouch), lower floors get ant problems, gym gets dangerously hot during the day, and it's cash only — no credit cards at all."
@@ -41,7 +41,31 @@ units:
     recommended_floor: "4-6"
     recommended_facing: "any"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: akha-ama-coffee
+    category: coffee
+    walk_minutes: 14
+  - slug: dc-dental-clinic
+    category: dentists
+    walk_minutes: 14
+  - slug: funsabai-dental-kotchasan
+    category: dentists
+    walk_minutes: 14
+  - slug: ilcc-chiang-mai
+    category: language-schools
+    walk_minutes: 12
+  - slug: chiang-mai-gate-market
+    category: local-eats
+    walk_minutes: 3
+  - slug: saturday-walking-street-wua-lai
+    category: local-eats
+    walk_minutes: 9
+  - slug: chiang-mai-foot-massage-ratchadamnoen
+    category: massage
+    walk_minutes: 12
+  - slug: fah-lanna-spa
+    category: massage
+    walk_minutes: 14
 ---
 
 ## Overview

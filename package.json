@@ -9,7 +9,10 @@
     "generate:guide-placeholder": "node scripts/generate-guide-placeholder.mjs",
     "generate:building-placeholder": "node scripts/generate-building-placeholder.mjs",
     "sync:guide-placeholder-yaml": "node scripts/sync-guide-placeholder-yaml.mjs",
-    "build": "npm run check:guide-photos && npm run check:building-photos && next build",
+    "audit:content": "node scripts/audit-content.mjs",
+    "compute:nearby": "node scripts/compute-nearby-spots.mjs",
+    "check:nearby": "node scripts/compute-nearby-spots.mjs --check",
+    "build": "npm run check:guide-photos && npm run check:building-photos && npm run check:nearby && next build",
     "start": "next start",
     "lint": "eslint"
   },

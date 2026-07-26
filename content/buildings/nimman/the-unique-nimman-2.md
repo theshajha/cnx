@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, pool.jpg, exterior.jpg, lobby.jpg, interior-1.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "The more private, more expensive sibling to The Unique 1 next door. Only 40 units — essentially a private residence. Has a garden and included WiFi that the original building doesn't. But 1BR units are smaller (47-52sqm vs 52-88sqm in Building 1) and rent starts at 20K vs 16K. At time of research, only 2 rental units were listed — availability is genuinely scarce. If privacy and quiet are worth a premium, this is your pick. If you want more space and better value, check Building 1 first."
 last_verified: "2026-04-04"
@@ -40,7 +40,31 @@ units:
     recommended_floor: "5-8"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 3
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 2
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 5
+  - slug: powerhouse-punna-nimman
+    category: gyms
+    walk_minutes: 5
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 2
+  - slug: bikky-chiang-mai
+    category: motorbikes
+    walk_minutes: 2
+  - slug: rimping-nimman
+    category: supermarkets
+    walk_minutes: 3
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 4
 ---
 
 ## Overview

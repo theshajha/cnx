@@ -17,7 +17,7 @@ contact:
   email: info@perfecthomes.co.th
   website: null
 photos: [hero.jpg, common-area.jpg, exterior.jpg, gym.jpg, interior-1.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Google rated 3.9/5 from 83 reviews for Srithana 2. Studios from 6,800 THB at 500m from Nimman is the best location-to-price ratio you'll find. Go for Srithana 2 — it's newer, cleaner, and has fiber-optic WiFi included. Unit quality is wildly inconsistent because each owner maintains differently; always inspect in person. One alarming Wanderlog review describes a security guard incident with management reportedly dismissing it — worth asking about current security staff. A hairdresser named Nuan operating near Srithana is legendary among expats as a 'fixer' who helps with apartment hunting, bank accounts, and general problem-solving."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "8-15"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 9
+  - slug: chiang-mai-medical-dental-polyclinic
+    category: dentists
+    walk_minutes: 4
+  - slug: dentaland-chiang-mai
+    category: dentists
+    walk_minutes: 5
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 9
+  - slug: oasis-spa-chiang-mai
+    category: massage
+    walk_minutes: 7
+  - slug: bikky-chiang-mai
+    category: motorbikes
+    walk_minutes: 7
+  - slug: rimping-nimman
+    category: supermarkets
+    walk_minutes: 10
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 9
 ---
 
 ## Overview

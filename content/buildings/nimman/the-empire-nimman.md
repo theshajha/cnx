@@ -17,7 +17,7 @@ contact:
   email: empire.jsw@gmail.com
   website: null
 photos: [hero.jpg, exterior.jpg, lobby.jpg, interior-1.jpg, gym.jpg, common-area.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "A hotel that rents monthly — and it still feels like one. Big rooms with Lanna design touches, friendly long-tenured staff, zero move-in hassle. But the WiFi disconnects constantly (multiple Agoda reviewers report 10+ reconnects per day with a re-login each time), which is a dealbreaker for remote work. The 'restaurant' is just a repetitive breakfast buffet at 120 THB. Doi Suthep views are only from the Super Deluxe (44K/month) — the 22K Superior gets city views. One guest's mother returns every winter for years, which says something about the comfort level for certain people. But at 22K with no pool and unreliable internet, digital nomads should look at condos instead."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "5-8"
     recommended_facing: "west"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 3
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 2
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 5
+  - slug: powerhouse-punna-nimman
+    category: gyms
+    walk_minutes: 5
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 2
+  - slug: bikky-chiang-mai
+    category: motorbikes
+    walk_minutes: 3
+  - slug: rimping-nimman
+    category: supermarkets
+    walk_minutes: 3
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 3
 ---
 
 ## Overview

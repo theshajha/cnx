@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, pool.jpg, exterior.jpg, lobby.jpg, interior-1.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 recommendation_score: 9
 contributor_note: "You'll almost always find something available here because it's huge — 514 units. But that's also the catch: some units are nicely renovated, others look like 2016 never ended. Don't commit without seeing the exact unit. Best for people who want pool+gym at a low price and don't mind dealing with individual owners instead of a management office."
@@ -45,9 +45,27 @@ nearby_spots:
   - slug: ristr8to-lab
     category: coffee
     walk_minutes: 5
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 5
   - slug: camp-maya
     category: coworking
     walk_minutes: 3
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 3
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 3
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 4
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 1
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 4
 ---
 
 ## Overview

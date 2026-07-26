@@ -1,25 +1,100 @@
 @import "tailwindcss";
 
-@theme {
-  --color-cream: #FBF7F0;
-  --color-espresso: #3D2B1F;
-  --color-dark-roast: #5C4033;
-  --color-terracotta: #C4703F;
-  --color-latte: #8B7355;
-  --color-sand: #F0E6D6;
-  --color-milk: #FFFFFF;
-  --color-line-green: #06C755;
+/*
+  cnx design tokens — "confident field guide"
 
-  --font-serif: Georgia, serif;
-  --font-sans: system-ui, -apple-system, sans-serif;
+  The warm paper base stays; what's new is that colour now *means* something.
+  Previously terracotta did every job — price, link, CTA, bullet, accent — so
+  nothing it touched stood out. Signal colours below are reserved: verified for
+  things confirmed on foot, caution for gotchas, flag for deal-breakers. If a
+  colour isn't carrying meaning, it should be ink or paper.
+*/
+
+@theme {
+  /* ── Paper ─────────────────────────────────────────────── */
+  --color-cream: #fbf7f0; /* page */
+  --color-milk: #ffffff; /* raised surface */
+  --color-parchment: #f7f1e6; /* inset panel — a step warmer than the page */
+  --color-sand: #efe4d2; /* hairlines, chips */
+
+  /* ── Ink ───────────────────────────────────────────────── */
+  --color-espresso: #33241a; /* headings, primary text */
+  --color-dark-roast: #58402f; /* body */
+  --color-latte: #8a7359; /* meta, captions */
+  --color-mist: #a89880; /* disabled, faint rules */
+
+  /* ── Signal ────────────────────────────────────────────── */
+  --color-terracotta: #bc6437; /* brand + primary action */
+  --color-verified: #4a7c59; /* confirmed on foot, good value */
+  --color-caution: #9a6e1f; /* gotchas, watch-outs */
+  --color-flag: #9c3b2e; /* deal-breakers */
+  --color-line-green: #06c755; /* LINE brand, do not reuse */
+
+  /* ── Type ──────────────────────────────────────────────── */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-plex-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+  /* Kept so existing `font-serif` usages don't fall back to Times mid-migration. */
+  --font-serif: var(--font-fraunces), Georgia, serif;
+
+  /* ── Elevation ─────────────────────────────────────────── */
+  --shadow-card: 0 1px 2px rgb(51 36 26 / 0.04), 0 4px 12px rgb(51 36 26 / 0.05);
+  --shadow-lift: 0 2px 4px rgb(51 36 26 / 0.06), 0 12px 28px rgb(51 36 26 / 0.09);
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background-color: #FBF7F0;
-  color: #3D2B1F;
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  font-feature-settings: "cv05" 1;
 }
 
-h1, h2, h3, h4 {
-  font-family: Georgia, serif;
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  /* Fraunces reads bookish at default optical size; nudge it toward display. */
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 40;
+  letter-spacing: -0.011em;
+}
+
+/*
+  Numbers are the product. Prices, sqm, rates and walk times all get tabular
+  figures so columns line up and a ฿ figure never reflows as you scan a list.
+*/
+.tnum {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.02em;
+}
+
+/* Field-guide section rule: a short heavy tick, not a full-width hairline. */
+.rule-tick::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 2px;
+  margin-top: 0.6rem;
+  background: var(--color-terracotta);
+}
+
+/* Horizontal scrollers shouldn't advertise their scrollbar. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

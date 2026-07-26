@@ -17,7 +17,7 @@ contact:
   email: "yantarasriatnimman@gmail.com"
   website: null
 photos: [hero.jpg, exterior.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Good pick if you cook a lot — the shared kitchen has a proper oven and six stovetops, which you won't find at this price anywhere else in Nimman. No gym and no pool on-site, so you'd need to sort those separately. The bathtub is a nice surprise. Wouldn't recommend if you work out daily and don't want the hassle of a separate gym."
 last_verified: "2026-04-04"
@@ -32,12 +32,30 @@ units:
     recommended_facing: "north or east"
     photos: []
 nearby_spots:
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 3
   - slug: ristr8to-lab
     category: coffee
     walk_minutes: 7
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 4
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 5
+  - slug: powerhouse-punna-nimman
+    category: gyms
+    walk_minutes: 3
+  - slug: inspiration-language-nimman
+    category: language-schools
+    walk_minutes: 3
   - slug: lila-thai-massage
     category: massage
     walk_minutes: 4
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 3
 ---
 
 ## Overview

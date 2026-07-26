@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, common-area.jpg, gym.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 recommendation_score: 7
 contributor_note: "Generally considered the best of the three Hillside buildings. Gym, yoga studio, laundry, coffee shop on-site, included WiFi, and bigger units than most newer condos — a typical 1-bed here is 75sqm vs 45sqm in modern builds. Set back 100m from Nimman on quieter Soi 8 but still walkable to everything. The big catch is renovation noise: owners are constantly gutting and modernizing individual units, especially April-October. Ask for floors 5+ to escape bar noise on weekends. Unit quality is a complete lottery — view the actual unit, not photos."
@@ -50,7 +50,31 @@ units:
     recommended_floor: "6-11"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 4
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 5
+  - slug: punspace-nimman
+    category: coworking
+    walk_minutes: 2
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 3
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 3
+  - slug: aua-language-center
+    category: language-schools
+    walk_minutes: 3
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 2
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 3
 ---
 
 ## Overview

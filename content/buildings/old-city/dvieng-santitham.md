@@ -17,7 +17,7 @@ contact:
   email: info@perfecthomes.co.th
   website: null
 photos: [hero.jpg, common-area.jpg, exterior.jpg, garden.jpg, gym.jpg, interior-1.jpg, interior-2.jpg, lobby.jpg, pool.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 contributor_note: "Google rated 4.2/5 from 244 reviews. Sansiri developer means the build quality itself is solid, and the pool is reportedly cleaned almost daily — the best-maintained pool in Chiang Mai per some reviewers. Lanna-design grounds with gardens between buildings create a resort-like feel. But two serious issues: thin walls (you'll hear neighbors' phone conversations) and frequent power blackouts — up to 10 per month, some lasting 14+ hours, even when surrounding buildings have power. This is a building-specific electrical issue, not a city thing. Ironic for a premium Sansiri development. Walkable to Santitham market, Chang Phuak Gate."
 last_verified: "2026-04-04"
@@ -49,7 +49,31 @@ units:
     recommended_floor: "4-5"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: heartwork-coworking
+    category: coworking
+    walk_minutes: 9
+  - slug: dentaland-chiang-mai
+    category: dentists
+    walk_minutes: 15
+  - slug: chiang-mai-dental-clinic-co
+    category: dentists
+    walk_minutes: 15
+  - slug: o2-gym-kampangdin
+    category: gyms
+    walk_minutes: 7
+  - slug: coin-laundry-chaiyaphoom
+    category: laundry
+    walk_minutes: 10
+  - slug: mr-order-bike-car
+    category: motorbikes
+    walk_minutes: 14
+  - slug: cm-legal-business
+    category: visa-legal
+    walk_minutes: 13
+  - slug: first-choice-legal
+    category: visa-legal
+    walk_minutes: 13
 ---
 
 ## Overview

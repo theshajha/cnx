@@ -17,7 +17,7 @@ contact:
   email: null
   website: null
 photos: [hero.jpg, pool.jpg, lobby.jpg, garden.jpg, interior-1.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 recommendation_score: 8
 contributor_note: "The best amenity package in Nimman: 3-storey clubhouse with wine bar, library, rooftop garden, lap pool with jacuzzi, gym, sauna, steam room, BBQ area — all for 68 units. Google rated 4.5/5 from 100 reviews. A recent reviewer called everything '1st class.' But two gotchas nobody warns you about: airplane noise (it's on the CNX takeoff path — 'the unit vibrates when the plane passes' per a Dec 2025 Google review) and parking is only 15 spots for 68 units. The pool is in shadow for part of the day. Wood floors are laminate, not hardwood. Fiber internet now available — previous WiFi complaints are resolved. Almost exclusively foreign residents."
@@ -50,7 +50,31 @@ units:
     recommended_floor: "7-8"
     recommended_facing: "north"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 6
+  - slug: yellow-coworking
+    category: coworking
+    walk_minutes: 4
+  - slug: dentaland-chiang-mai
+    category: dentists
+    walk_minutes: 3
+  - slug: chiang-mai-medical-dental-polyclinic
+    category: dentists
+    walk_minutes: 4
+  - slug: manna-thai-language-school
+    category: language-schools
+    walk_minutes: 4
+  - slug: oasis-spa-chiang-mai
+    category: massage
+    walk_minutes: 5
+  - slug: bikky-chiang-mai
+    category: motorbikes
+    walk_minutes: 3
+  - slug: chiang-mai-lawyer-group
+    category: visa-legal
+    walk_minutes: 4
 ---
 
 ## Overview

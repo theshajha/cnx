@@ -17,7 +17,7 @@ contact:
   email: themirrorchiangmai@gmail.com
   website: https://themirrorchiangmai.com
 photos: [hero.jpg, common-area.jpg, interior-1.jpg, interior-2.jpg]
-verified: false
+verified: true
 contributed_by: shashank
 recommendation_score: 9
 contributor_note: "The best-kept secret in Nimman if you can get a unit. Only 25 apartments and they fill up fast. Owner Pang is personally involved and consistently praised by name in reviews — she'll show you around and is genuinely responsive. Each unit gets its own dedicated WiFi router (not shared building internet), which is a real win for remote work. Kitchen is properly equipped: two-ring stove, utensils, fridge, microwave. Weekly cleaning is thorough. The catch: no pool, no gym, 8 THB/unit electricity, and strict rules — 10,000 THB fine for smoking. If you cook, work remotely, and value a responsive landlord over a pool, this is your place."
@@ -50,7 +50,31 @@ units:
     recommended_floor: "3-4"
     recommended_facing: "any"
     photos: []
-nearby_spots: []
+nearby_spots:
+  - slug: ristr8to-lab
+    category: coffee
+    walk_minutes: 7
+  - slug: graph-cafe
+    category: coffee
+    walk_minutes: 11
+  - slug: powerhouse-punna-nimman
+    category: gyms
+    walk_minutes: 6
+  - slug: tong-tem-toh
+    category: local-eats
+    walk_minutes: 4
+  - slug: sompetch-kitchen
+    category: local-eats
+    walk_minutes: 6
+  - slug: lila-thai-massage
+    category: massage
+    walk_minutes: 6
+  - slug: rimping-nimman
+    category: supermarkets
+    walk_minutes: 8
+  - slug: siam-legal-chiang-mai
+    category: visa-legal
+    walk_minutes: 9
 ---
 
 ## Overview
