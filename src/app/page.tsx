@@ -27,9 +27,9 @@ import CostSection from "@/components/CostSection";
  */
 const ENTRY_PATHS = [
   {
-    href: "/guides/cost-of-living-chiang-mai",
-    kicker: "What will it cost?",
-    body: "Rent, bills, food and transport at three honest budget levels.",
+    href: "/start",
+    kicker: "Just arriving?",
+    body: "The one-page arrival brief — costs, areas, rates and red flags. Free PDF.",
   },
   {
     href: "/cribs",

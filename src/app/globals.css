@@ -89,6 +89,50 @@ h4 {
   display: none;
 }
 
+/*
+  Print rules exist for one page: /start, the arrival brief. Everything that is
+  site chrome drops away so the sheet prints edge to edge on a single A4.
+  `scripts/generate-onepager.mjs` renders the same page to public/*.pdf.
+*/
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  /* Nav, footer and the page shell's padding are screen furniture. */
+  nav,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Colour is load-bearing here — the rate card reads ✓ green vs ✗ red. */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
