@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import QRCode from "qrcode";
 import { getAllBuildings, getAllAreaMetadata } from "@/lib/content";
+import BriefSignup from "@/components/BriefSignup";
+import DownloadButton from "@/components/DownloadButton";
 import { areaStats, costBands, entryPrice, ASSUMED_KWH_PER_MONTH } from "@/lib/metrics";
 
 export const metadata: Metadata = {
@@ -103,19 +105,17 @@ export default async function StartPage() {
           send it to whoever is coming with you.
         </p>
         <div className="flex gap-3 mt-6 flex-wrap">
-          <a
-            href="/cnx-first-two-weeks.pdf"
-            className="bg-terracotta text-cream px-6 py-3 rounded-xl text-[14px] font-bold hover:bg-terracotta/90 transition-colors"
-            download
-          >
-            Download the PDF ↓
-          </a>
+          <DownloadButton />
           <Link
             href="/cribs"
             className="bg-milk border border-sand text-dark-roast px-6 py-3 rounded-xl text-[14px] font-bold hover:border-latte transition-colors"
           >
             Browse every building
           </Link>
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-sand">
+          <BriefSignup />
         </div>
       </div>
 
